@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 export default function VotreNaturopathe() {
   return (
     <>
-      {/* HERO plein écran avec image en fond */}
-      <section className="relative h-[55vh] min-h-[380px] md:h-[65vh] md:min-h-[500px] flex items-center justify-center overflow-hidden">
+      {/* HERO compact avec image en fond */}
+      <section className="relative h-[30vh] min-h-[220px] md:h-[35vh] md:min-h-[260px] max-h-[360px] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -21,23 +21,23 @@ export default function VotreNaturopathe() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/50" />
         <div className="relative z-10 text-center text-white px-6">
-          <p className="text-xs tracking-[0.5em] uppercase mb-6 text-white/90">
+          <p className="text-[10px] md:text-xs tracking-[0.5em] uppercase mb-3 text-white/90">
             Votre naturopathe
           </p>
-          <h1 className="font-display text-6xl md:text-8xl italic font-light">
+          <h1 className="font-display text-4xl md:text-6xl italic font-light">
             Qui suis-je ?
           </h1>
         </div>
       </section>
 
       {/* PORTRAIT — photo à droite, cadre texte qui chevauche à gauche */}
-      <section className="bg-background py-24 md:py-32">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="bg-background py-16 md:py-24">
+        <div className="max-w-5xl mx-auto px-6">
           <div className="relative grid md:grid-cols-12 md:gap-0 items-center">
             {/* Photo à droite */}
-            <div className="md:col-span-7 md:col-start-6 md:row-start-1">
+            <div className="md:col-span-6 md:col-start-7 md:row-start-1">
               <div
-                className="aspect-[4/5] bg-cover bg-center shadow-xl"
+                className="h-[260px] md:h-[420px] w-full bg-cover bg-center shadow-xl"
                 style={{
                   backgroundImage:
                     "url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=900&q=80')",
@@ -46,12 +46,12 @@ export default function VotreNaturopathe() {
             </div>
 
             {/* Cadre texte qui chevauche à gauche */}
-            <div className="md:col-span-6 md:col-start-1 md:row-start-1 md:relative md:z-10 -mt-12 md:mt-0 mx-4 md:mx-0">
-              <div className="bg-card p-8 md:p-12 shadow-2xl border border-border">
-                <p className="text-xs tracking-[0.4em] uppercase text-primary mb-4">
+            <div className="md:col-span-7 md:col-start-1 md:row-start-1 md:relative md:z-10 -mt-10 md:mt-0 mx-4 md:mx-0 md:mr-[-2rem]">
+              <div className="bg-card p-7 md:p-10 shadow-2xl border border-border">
+                <p className="text-xs tracking-[0.4em] uppercase text-primary mb-3">
                   Portrait
                 </p>
-                <h2 className="font-display text-3xl md:text-4xl text-primary-dark italic mb-6 leading-tight">
+                <h2 className="font-display text-2xl md:text-3xl text-primary-dark italic mb-5 leading-tight">
                   Mon parcours : de la rigueur des chiffres à l&apos;équilibre
                   de l&apos;humain
                 </h2>
@@ -74,13 +74,13 @@ export default function VotreNaturopathe() {
       </section>
 
       {/* TOURNANT — texte à droite, photo à gauche (alterné) */}
-      <section className="bg-primary-light/10 py-24 md:py-32">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="bg-primary-light/10 py-16 md:py-24">
+        <div className="max-w-5xl mx-auto px-6">
           <div className="relative grid md:grid-cols-12 md:gap-0 items-center">
             {/* Photo à gauche */}
-            <div className="md:col-span-7 md:col-start-1 md:row-start-1">
+            <div className="md:col-span-6 md:col-start-1 md:row-start-1">
               <div
-                className="aspect-[4/5] bg-cover bg-center shadow-xl"
+                className="h-[260px] md:h-[420px] w-full bg-cover bg-center shadow-xl"
                 style={{
                   backgroundImage:
                     "url('https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=900&q=80')",
@@ -89,12 +89,12 @@ export default function VotreNaturopathe() {
             </div>
 
             {/* Cadre texte qui chevauche à droite */}
-            <div className="md:col-span-6 md:col-start-7 md:row-start-1 md:relative md:z-10 -mt-12 md:mt-0 mx-4 md:mx-0">
-              <div className="bg-card p-8 md:p-12 shadow-2xl border border-border">
-                <p className="text-xs tracking-[0.4em] uppercase text-primary mb-4">
+            <div className="md:col-span-7 md:col-start-6 md:row-start-1 md:relative md:z-10 -mt-10 md:mt-0 mx-4 md:mx-0 md:ml-[-2rem]">
+              <div className="bg-card p-7 md:p-10 shadow-2xl border border-border">
+                <p className="text-xs tracking-[0.4em] uppercase text-primary mb-3">
                   Le tournant
                 </p>
-                <h2 className="font-display text-3xl md:text-4xl text-primary-dark italic mb-6 leading-tight">
+                <h2 className="font-display text-2xl md:text-3xl text-primary-dark italic mb-5 leading-tight">
                   Vers l&apos;accompagnement
                 </h2>
                 <p className="text-foreground/85 leading-[1.8]">
@@ -117,7 +117,7 @@ export default function VotreNaturopathe() {
       </section>
 
       {/* MISSION — pleine largeur, plus aéré */}
-      <section className="bg-background py-24 md:py-32">
+      <section className="bg-background py-16 md:py-24">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <p className="text-xs tracking-[0.4em] uppercase text-primary mb-6">
             Ma mission aujourd&apos;hui
@@ -162,7 +162,7 @@ export default function VotreNaturopathe() {
       </section>
 
       {/* CHEMIN — pleine largeur image fond */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
+      <section className="relative py-16 md:py-24 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -190,7 +190,7 @@ export default function VotreNaturopathe() {
       </section>
 
       {/* PARCOURS — timeline simple */}
-      <section className="bg-background py-24 md:py-32">
+      <section className="bg-background py-16 md:py-24">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-16">
             <p className="text-xs tracking-[0.4em] uppercase text-primary mb-4">
