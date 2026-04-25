@@ -6,41 +6,41 @@ export default function Home() {
   return (
     <>
       {/* ═══════════ HERO ═══════════ */}
-      <section className="relative h-[85vh] min-h-[560px] max-h-[820px] flex items-center overflow-hidden">
+      <section className="relative h-[45vh] min-h-[360px] max-h-[520px] flex items-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1920&q=80')",
+            backgroundImage: "url('/cropped-cascade-foret.png')",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/40 to-transparent" />
+        {/* Calque blanc semi-opaque pour assurer la lisibilité par-dessus la photo */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/30" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
           <div className="max-w-2xl">
-            <p className="text-xs tracking-[0.5em] uppercase text-primary-dark mb-6">
+            <p className="text-xs md:text-sm tracking-[0.5em] uppercase text-primary-dark mb-5 font-medium">
               Florence Debattice — Naturopathe
             </p>
-            <h1 className="font-display text-5xl md:text-7xl text-foreground leading-[1.05] mb-4">
+            <h1 className="font-display text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-2">
               Trouvez votre équilibre naturel
             </h1>
-            <p className="font-script text-5xl md:text-7xl text-accent leading-none mb-10">
+            <p className="font-script text-5xl md:text-7xl text-accent leading-none mb-6">
               en douceur
             </p>
-            <p className="text-lg text-foreground/85 leading-relaxed mb-10 max-w-lg">
+            <p className="text-base md:text-lg text-foreground leading-relaxed mb-8 max-w-lg">
               « Décodez les messages de votre corps grâce à la naturopathie
               pour cultiver votre santé et booster votre vitalité. »
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3">
               <Link
                 href="/prendre-rdv"
-                className="px-8 py-4 bg-primary-dark text-white text-xs tracking-[0.25em] uppercase hover:bg-primary transition-colors"
+                className="px-7 py-3 bg-primary-dark text-white text-xs tracking-[0.25em] uppercase hover:bg-primary transition-colors"
               >
                 Réserve ton appel gratuit
               </Link>
               <Link
                 href="/votre-naturopathe"
-                className="px-8 py-4 border border-primary-dark text-primary-dark text-xs tracking-[0.25em] uppercase hover:bg-primary-dark hover:text-white transition-colors"
+                className="px-7 py-3 border border-primary-dark text-primary-dark text-xs tracking-[0.25em] uppercase hover:bg-primary-dark hover:text-white transition-colors"
               >
                 Me découvrir
               </Link>
@@ -52,9 +52,9 @@ export default function Home() {
         <a
           href="#bienvenue"
           aria-label="Faire défiler"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-primary-dark animate-soft-bounce"
+          className="absolute bottom-5 left-1/2 -translate-x-1/2 z-10 text-primary-dark animate-soft-bounce"
         >
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 5v14" />
             <path d="M19 12l-7 7-7-7" />
           </svg>
@@ -122,51 +122,33 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-[1.2fr,1fr] gap-12 items-center">
-            <div className="space-y-5 text-foreground/85 text-lg leading-[1.8]">
-              <p>
-                Une approche de santé{" "}
-                <strong className="text-primary-dark font-medium">
-                  globale
-                </strong>{" "}
-                qui considère l&apos;aspect physique, psychique, émotionnel
-                ainsi que l&apos;environnement de la personne.
-              </p>
-              <p>
-                Inspirée de la pensée d&apos;Hippocrate, elle vise à délivrer
-                des conseils personnalisés en hygiène vitale, nutrition et
-                régulateurs naturels (phytothérapie, compléments alimentaires…)
-                en prévention comme en complément de la médecine
-                conventionnelle.
-              </p>
-              <Link
-                href="/la-naturopathie/les-bases"
-                className="inline-block mt-2 text-primary-dark border-b border-primary-dark pb-1 text-sm tracking-[0.2em] uppercase hover:text-primary hover:border-primary"
-              >
-                en savoir plus
-              </Link>
-            </div>
+          <ul className="max-w-3xl mx-auto space-y-7">
+            {[
+              "La naturopathie est une approche de santé à un niveau global de la personne qui prend en considération aussi bien l'aspect physique, psychique et émotionnel ainsi que l'environnement dans lequel évolue la personne.",
+              "Elle s'inspire de la pensée d'Hippocrate de Cos, père de la médecine, selon laquelle nous sommes tous constitués de liquides (le sang, la lymphe, la bile…) et qu'une surcharge en déchets dans ces liquides entraîne un déséquilibre au niveau de la santé à plus ou moins long terme.",
+              "L'objectif du naturopathe est de délivrer des conseils personnalisés en hygiène vitale, en nutrition et parfois en régulateurs de terrain issus de remèdes naturels si besoin (phytologie, compléments alimentaires…).",
+              "La naturopathie intervient aussi bien en prévention qu'en complément de la médecine conventionnelle et des traitements existants.",
+            ].map((paragraph) => (
+              <li key={paragraph} className="flex items-start gap-5">
+                <span className="shrink-0 w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center mt-1">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12l5 5L20 7" />
+                  </svg>
+                </span>
+                <p className="text-foreground/90 text-lg leading-[1.8]">
+                  {paragraph}
+                </p>
+              </li>
+            ))}
+          </ul>
 
-            <ul className="space-y-5">
-              {[
-                "Approche personnalisée",
-                "Méthodes 100 % naturelles",
-                "Préventif & complémentaire",
-                "Écoute & bienveillance",
-                "Reconnue par l'OMS",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-4">
-                  <span className="shrink-0 w-9 h-9 rounded-full bg-primary-dark text-white flex items-center justify-center mt-0.5">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12l5 5L20 7" />
-                    </svg>
-                  </span>
-                  <span className="text-foreground/90 text-lg pt-1">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
+          <div className="text-center mt-12">
+            <Link
+              href="/la-naturopathie/les-bases"
+              className="inline-block text-primary-dark border-b border-primary-dark pb-1 text-sm tracking-[0.2em] uppercase hover:text-primary hover:border-primary"
+            >
+              en savoir plus
+            </Link>
           </div>
         </div>
       </section>
@@ -183,9 +165,7 @@ export default function Home() {
           </h2>
           <p className="text-lg text-foreground/85 leading-[1.9] max-w-3xl mx-auto mb-8">
             Hommes, femmes, adolescents, enfants, bébés, femmes enceintes,
-            personnes âgées… La naturopathie est considérée comme la troisième
-            médecine traditionnelle par l&apos;OMS depuis 1970. Il existe de
-            multiples raisons de consulter.
+            personnes âgées… Il existe de multiples raisons de consulter.
           </p>
           <Link
             href="/pourquoi-consulter"
