@@ -209,6 +209,52 @@ export default function PourquoiConsulter() {
 
       <section className="bg-card py-20">
         <div className="max-w-5xl mx-auto px-6">
+          <h2 className="font-display text-4xl text-center mb-4">
+            Questions fréquentes
+          </h2>
+          <p className="text-center text-muted mb-14 max-w-2xl mx-auto">
+            Tout ce qu&apos;il faut savoir avant votre première consultation.
+          </p>
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
+            {[
+              {
+                q: "Pourquoi consulter ici ?",
+                a: "Pour retrouver un équilibre naturel et mieux comprendre votre corps.",
+              },
+              {
+                q: "Quels bienfaits espérer ?",
+                a: "Amélioration du bien-être général, gestion du stress, et soutien à votre vitalité.",
+              },
+              {
+                q: "Comment se déroule une séance ?",
+                a: "Chaque séance commence par un échange personnalisé, suivi de conseils adaptés à vos besoins.",
+              },
+              {
+                q: "Faut-il une préparation ?",
+                a: "Non, venez simplement avec votre motivation et vos questions.",
+              },
+              {
+                q: "À qui s'adresse ce service ?",
+                a: "À toute personne souhaitant mieux vivre au quotidien et prendre soin d'elle.",
+              },
+              {
+                q: "Comment prendre rendez-vous facilement ?",
+                a: "Vous pouvez appeler directement ou envoyer un message via le formulaire en ligne.",
+              },
+            ].map((item) => (
+              <div key={item.q}>
+                <h3 className="font-display text-xl text-foreground mb-3">
+                  {item.q}
+                </h3>
+                <p className="text-muted leading-relaxed text-sm">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-background py-20">
+        <div className="max-w-5xl mx-auto px-6">
           <h2 className="font-display text-4xl text-center mb-12">
             Témoignages
           </h2>
@@ -235,7 +281,7 @@ export default function PourquoiConsulter() {
             ].map((t) => (
               <blockquote
                 key={t.name}
-                className="bg-background p-8 border border-border flex flex-col"
+                className="bg-card p-8 border border-border flex flex-col"
               >
                 <p className="text-muted italic leading-relaxed flex-1">
                   &ldquo;{t.quote}&rdquo;
