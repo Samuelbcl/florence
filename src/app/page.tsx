@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       {/* ═══════════ HERO ═══════════ */}
-      <section className="relative -mt-[88px] min-h-[640px] flex items-center overflow-hidden">
+      <section className="relative -mt-[100px] min-h-[560px] flex items-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -16,20 +16,20 @@ export default function Home() {
         {/* Calque blanc semi-opaque pour assurer la lisibilité par-dessus la photo */}
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/30" />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pt-[120px] pb-20">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pt-[120px] pb-14">
           <div className="grid md:grid-cols-[minmax(0,1.7fr),minmax(0,1fr)] gap-10 items-center">
             {/* Colonne texte + bouton secondaire */}
             <div>
-              <p className="text-xs md:text-sm tracking-[0.5em] uppercase text-primary-dark mb-5 font-medium">
+              <p className="text-xs md:text-sm tracking-[0.5em] uppercase text-primary-dark mb-4 font-medium">
                 Florence Debattice — Naturopathe
               </p>
-              <h1 className="font-display text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-2">
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-primary-dark leading-[1.05] mb-1">
                 Trouvez votre équilibre naturel
               </h1>
-              <p className="font-script text-5xl md:text-7xl text-accent leading-none mb-6">
+              <p className="font-script text-5xl md:text-6xl lg:text-7xl text-accent leading-none mb-5">
                 en douceur
               </p>
-              <p className="text-base md:text-lg text-foreground leading-relaxed mb-8 max-w-xl">
+              <p className="text-base md:text-lg text-foreground leading-relaxed mb-6 max-w-xl">
                 « Décodez les messages de votre corps grâce à la naturopathie
                 pour cultiver votre santé et booster votre vitalité. »
               </p>
@@ -41,7 +41,7 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Colonne CTA principal */}
+            {/* Colonne CTA principal — milieu droite */}
             <div className="flex justify-start md:justify-end">
               <Link
                 href="/prendre-rdv"
@@ -57,7 +57,7 @@ export default function Home() {
         <a
           href="#bienvenue"
           aria-label="Faire défiler"
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 text-primary-dark animate-soft-bounce"
+          className="absolute bottom-5 left-1/2 -translate-x-1/2 z-10 text-primary-dark animate-soft-bounce"
         >
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 5v14" />
@@ -91,7 +91,7 @@ export default function Home() {
             <div className="space-y-5 text-foreground/85 text-lg leading-[1.8]">
               <p>
                 Je suis{" "}
-                <strong className="text-primary-dark font-medium">
+                <strong className="text-primary-dark font-bold">
                   Florence Debattice
                 </strong>
                 , naturopathe. Mon parcours m&apos;a menée de la rigueur des
@@ -131,50 +131,50 @@ export default function Home() {
             {[
               <>
                 La naturopathie est une{" "}
-                <strong className="text-primary-dark font-medium">
+                <strong className="text-primary-dark font-bold">
                   approche de santé à un niveau global
                 </strong>{" "}
                 de la personne qui prend en considération aussi bien
                 l&apos;aspect{" "}
-                <strong className="text-primary-dark font-medium">
+                <strong className="text-primary-dark font-bold">
                   physique, psychique et émotionnel
                 </strong>{" "}
                 ainsi que l&apos;environnement dans lequel évolue la personne.
               </>,
               <>
                 Elle s&apos;inspire de la pensée d&apos;
-                <strong className="text-primary-dark font-medium">
+                <strong className="text-primary-dark font-bold">
                   Hippocrate de Cos
                 </strong>
                 , père de la médecine, selon laquelle nous sommes tous
                 constitués de liquides (le sang, la lymphe, la bile…) et
                 qu&apos;une surcharge en déchets dans ces liquides entraîne un{" "}
-                <strong className="text-primary-dark font-medium">
+                <strong className="text-primary-dark font-bold">
                   déséquilibre
                 </strong>{" "}
                 au niveau de la santé à plus ou moins long terme.
               </>,
               <>
                 L&apos;objectif du naturopathe est de délivrer des{" "}
-                <strong className="text-primary-dark font-medium">
+                <strong className="text-primary-dark font-bold">
                   conseils personnalisés
                 </strong>{" "}
                 en{" "}
-                <strong className="text-primary-dark font-medium">
+                <strong className="text-primary-dark font-bold">
                   hygiène vitale
                 </strong>
                 , en{" "}
-                <strong className="text-primary-dark font-medium">nutrition</strong>{" "}
+                <strong className="text-primary-dark font-bold">nutrition</strong>{" "}
                 et parfois en régulateurs de terrain issus de remèdes naturels
                 si besoin (phytologie, compléments alimentaires…).
               </>,
               <>
                 La naturopathie intervient aussi bien en{" "}
-                <strong className="text-primary-dark font-medium">
+                <strong className="text-primary-dark font-bold">
                   prévention
                 </strong>{" "}
                 qu&apos;en{" "}
-                <strong className="text-primary-dark font-medium">
+                <strong className="text-primary-dark font-bold">
                   complément de la médecine conventionnelle
                 </strong>{" "}
                 et des traitements existants.
@@ -211,7 +211,7 @@ export default function Home() {
           <p className="text-xs tracking-[0.5em] uppercase text-primary-dark mb-4">
             Pour qui ? Pour quoi ?
           </p>
-          <h2 className="font-script text-5xl md:text-7xl text-foreground leading-none mb-10">
+          <h2 className="font-script text-5xl md:text-7xl text-primary-dark leading-none mb-10">
             la naturopathie est pour tous
           </h2>
           <p className="text-lg text-foreground/85 leading-[1.9] max-w-3xl mx-auto mb-8">
@@ -244,22 +244,22 @@ export default function Home() {
               {
                 title: "Consultation de naturopathie",
                 desc: "Approche globale permettant de définir un bilan de vitalité débouchant sur des conseils personnalisés en alimentation, hygiène vitale et régulateurs de terrain.",
-                img: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=900&q=80",
+                img: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=900&q=80",
               },
               {
                 title: "Séance de réflexologie plantaire",
                 desc: "Technique manuelle ancestrale par pression sur les zones réflexes des pieds pour faciliter l'auto-guérison, apporter détente et éliminer les toxines.",
-                img: "https://images.unsplash.com/photo-1611073615452-4889bf4c5c2c?w=900&q=80",
+                img: "https://images.unsplash.com/photo-1591343395082-e120087004b4?w=900&q=80",
               },
               {
                 title: "Ateliers & conférences naturo",
                 desc: "Rencontres en petits groupes sur des thématiques en lien avec la naturopathie : alimentation, hygiène vitale, gestion du stress, phytothérapie.",
-                img: "https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=900&q=80",
+                img: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=900&q=80",
               },
             ].map((item) => (
               <article
                 key={item.title}
-                className="bg-white/5 backdrop-blur-sm border border-white/15 overflow-hidden flex flex-col"
+                className="bg-white text-foreground overflow-hidden flex flex-col shadow-md"
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
@@ -269,15 +269,15 @@ export default function Home() {
                   />
                 </div>
                 <div className="p-6 md:p-8 flex flex-col flex-1">
-                  <h3 className="font-display text-xl md:text-2xl text-white mb-3 leading-snug">
+                  <h3 className="font-display text-xl md:text-2xl text-primary-dark mb-3 leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-white/80 leading-relaxed mb-6 flex-1">
+                  <p className="text-sm text-foreground/75 leading-relaxed mb-6 flex-1">
                     {item.desc}
                   </p>
                   <Link
                     href="/mes-prestations"
-                    className="text-xs tracking-[0.25em] uppercase text-accent border-b border-accent pb-1 self-start hover:text-white hover:border-white"
+                    className="text-xs tracking-[0.25em] uppercase text-primary-dark border-b border-primary-dark pb-1 self-start hover:text-primary hover:border-primary"
                   >
                     En savoir plus
                   </Link>
@@ -289,7 +289,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link
               href="/mes-prestations"
-              className="inline-block px-8 py-4 bg-accent text-primary-dark text-xs tracking-[0.25em] uppercase hover:bg-white transition-colors"
+              className="inline-block px-8 py-4 bg-background text-primary-dark text-xs tracking-[0.25em] uppercase hover:bg-white transition-colors"
             >
               Voir toutes les prestations
             </Link>
@@ -304,7 +304,7 @@ export default function Home() {
             <p className="text-xs tracking-[0.5em] uppercase text-primary-dark mb-4">
               À découvrir sur
             </p>
-            <h2 className="font-script text-5xl md:text-7xl text-foreground leading-none">
+            <h2 className="font-script text-5xl md:text-7xl text-primary-dark leading-none">
               mon blog
             </h2>
           </div>
@@ -314,17 +314,17 @@ export default function Home() {
               {
                 title: "Mieux dormir naturellement",
                 excerpt: "Conseils pour retrouver un sommeil profond et réparateur.",
-                img: "https://images.unsplash.com/photo-1455642305367-68834a9c4337?w=900&q=80",
+                img: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=900&q=80",
               },
               {
                 title: "Équilibre hormonal féminin",
                 excerpt: "Comprendre son cycle et accompagner les changements.",
-                img: "https://images.unsplash.com/photo-1611690899595-a4ed1ad79b6e?w=900&q=80",
+                img: "https://images.unsplash.com/photo-1532635241-17e820acc59f?w=900&q=80",
               },
               {
                 title: "L'alimentation comme première médecine",
                 excerpt: "Les bases d'une assiette qui soutient votre vitalité.",
-                img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=900&q=80",
+                img: "https://images.unsplash.com/photo-1543362906-acfc16c67564?w=900&q=80",
               },
             ].map((post) => (
               <article key={post.title} className="group cursor-pointer">
