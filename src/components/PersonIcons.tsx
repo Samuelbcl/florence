@@ -7,24 +7,18 @@ const baseSvg = "stroke-current fill-none";
 export function IconWoman({ className }: IconProps) {
   return (
     <svg
-      viewBox="0 0 100 110"
-      strokeWidth={1.2}
+      viewBox="0 0 80 80"
+      strokeWidth={1.4}
       strokeLinecap="round"
       strokeLinejoin="round"
       className={`${baseSvg} ${className ?? ""}`}
       aria-hidden
     >
-      {/* Cheveux longs ondulés */}
-      <path d="M30 38 Q26 60, 30 82" />
-      <path d="M70 38 Q74 60, 70 82" />
-      {/* Visage / tête */}
-      <ellipse cx="50" cy="40" rx="17" ry="20" />
-      {/* Mèche frange */}
-      <path d="M37 30 Q45 22, 50 28 Q55 22, 63 30" />
-      {/* Cou */}
-      <path d="M44 60 L44 70 M56 60 L56 70" />
-      {/* Épaules */}
-      <path d="M28 90 Q40 78, 50 78 Q60 78, 72 90" />
+      {/* Tête simple */}
+      <path d="M40 12 C30 12, 26 20, 26 30 C26 38, 30 44, 40 44 C50 44, 54 38, 54 30 C54 20, 50 12, 40 12 Z" />
+      {/* Cou + épaules avec petit léger évasement (suggère cheveux longs) */}
+      <path d="M34 44 L33 52 C25 56, 18 64, 16 76" />
+      <path d="M46 44 L47 52 C55 56, 62 64, 64 76" />
     </svg>
   );
 }
@@ -32,22 +26,18 @@ export function IconWoman({ className }: IconProps) {
 export function IconMan({ className }: IconProps) {
   return (
     <svg
-      viewBox="0 0 100 110"
-      strokeWidth={1.2}
+      viewBox="0 0 80 80"
+      strokeWidth={1.4}
       strokeLinecap="round"
       strokeLinejoin="round"
       className={`${baseSvg} ${className ?? ""}`}
       aria-hidden
     >
-      {/* Tête */}
-      <ellipse cx="50" cy="40" rx="16" ry="19" />
-      {/* Cheveux courts */}
-      <path d="M34 32 Q42 22, 50 22 Q58 22, 66 32" />
-      <path d="M36 36 Q43 30, 50 30 Q57 30, 64 36" />
-      {/* Cou */}
-      <path d="M44 59 L44 70 M56 59 L56 70" />
-      {/* Épaules */}
-      <path d="M26 90 Q38 76, 50 76 Q62 76, 74 90" />
+      {/* Tête plus carrée */}
+      <path d="M40 12 C30 12, 27 18, 27 28 C27 36, 31 42, 40 42 C49 42, 53 36, 53 28 C53 18, 50 12, 40 12 Z" />
+      {/* Cou + épaules plus larges */}
+      <path d="M34 42 L33 50 C24 54, 16 64, 14 76" />
+      <path d="M46 42 L47 50 C56 54, 64 64, 66 76" />
     </svg>
   );
 }
@@ -55,27 +45,20 @@ export function IconMan({ className }: IconProps) {
 export function IconElderly({ className }: IconProps) {
   return (
     <svg
-      viewBox="0 0 100 110"
-      strokeWidth={1.2}
+      viewBox="0 0 80 80"
+      strokeWidth={1.4}
       strokeLinecap="round"
       strokeLinejoin="round"
       className={`${baseSvg} ${className ?? ""}`}
       aria-hidden
     >
-      {/* Chignon */}
-      <circle cx="50" cy="20" r="6" />
+      {/* Petit chignon */}
+      <circle cx="40" cy="10" r="4" />
       {/* Tête */}
-      <ellipse cx="50" cy="42" rx="16" ry="19" />
-      {/* Cheveux tirés vers chignon */}
-      <path d="M36 36 Q42 28, 50 26 Q58 28, 64 36" />
-      {/* Lunettes ovales */}
-      <ellipse cx="44" cy="42" rx="3.5" ry="2.5" />
-      <ellipse cx="56" cy="42" rx="3.5" ry="2.5" />
-      <path d="M47.5 42 L52.5 42" />
-      {/* Cou */}
-      <path d="M45 60 L45 70 M55 60 L55 70" />
-      {/* Épaules */}
-      <path d="M28 90 Q40 78, 50 78 Q60 78, 72 90" />
+      <path d="M40 14 C30 14, 26 22, 26 32 C26 40, 30 46, 40 46 C50 46, 54 40, 54 32 C54 22, 50 14, 40 14 Z" />
+      {/* Cou + épaules */}
+      <path d="M34 46 L33 54 C25 58, 18 66, 16 76" />
+      <path d="M46 46 L47 54 C55 58, 62 66, 64 76" />
     </svg>
   );
 }
@@ -83,22 +66,18 @@ export function IconElderly({ className }: IconProps) {
 export function IconChild({ className }: IconProps) {
   return (
     <svg
-      viewBox="0 0 100 110"
-      strokeWidth={1.2}
+      viewBox="0 0 80 80"
+      strokeWidth={1.4}
       strokeLinecap="round"
       strokeLinejoin="round"
       className={`${baseSvg} ${className ?? ""}`}
       aria-hidden
     >
-      {/* Tête plus ronde */}
-      <circle cx="50" cy="42" r="18" />
-      {/* Cheveux mèche courte */}
-      <path d="M34 38 Q42 26, 50 26 Q58 26, 66 38" />
-      <path d="M40 32 Q45 28, 50 30" />
-      {/* Cou */}
-      <path d="M45 62 L45 72 M55 62 L55 72" />
-      {/* Épaules plus étroites */}
-      <path d="M32 92 Q42 80, 50 80 Q58 80, 68 92" />
+      {/* Tête plus ronde et plus petite */}
+      <path d="M40 18 C32 18, 29 24, 29 32 C29 38, 32 43, 40 43 C48 43, 51 38, 51 32 C51 24, 48 18, 40 18 Z" />
+      {/* Cou + épaules plus étroites */}
+      <path d="M35 43 L34 50 C28 54, 22 62, 20 76" />
+      <path d="M45 43 L46 50 C52 54, 58 62, 60 76" />
     </svg>
   );
 }
@@ -106,22 +85,21 @@ export function IconChild({ className }: IconProps) {
 export function IconCouple({ className }: IconProps) {
   return (
     <svg
-      viewBox="0 0 140 110"
-      strokeWidth={1.2}
+      viewBox="0 0 140 80"
+      strokeWidth={1.4}
       strokeLinecap="round"
       strokeLinejoin="round"
       className={`${baseSvg} ${className ?? ""}`}
       aria-hidden
     >
-      {/* Personne gauche */}
-      <ellipse cx="50" cy="40" rx="14" ry="17" />
-      <path d="M36 32 Q44 22, 50 22 Q56 22, 64 32" />
-      <path d="M30 90 Q42 76, 50 76 Q58 76, 66 84" />
+      {/* Personne gauche (homme) */}
+      <path d="M50 12 C40 12, 37 18, 37 28 C37 36, 41 42, 50 42 C59 42, 63 36, 63 28 C63 18, 60 12, 50 12 Z" />
+      <path d="M44 42 L43 50 C36 54, 28 64, 26 76" />
+      <path d="M56 42 L57 50 C64 54, 70 60, 72 70" />
       {/* Personne droite (femme) */}
-      <ellipse cx="92" cy="42" rx="14" ry="17" />
-      <path d="M78 36 Q75 56, 78 76" />
-      <path d="M106 36 Q109 56, 106 76" />
-      <path d="M74 90 Q86 78, 92 78 Q100 78, 110 90" />
+      <path d="M92 12 C82 12, 78 20, 78 30 C78 38, 82 44, 92 44 C102 44, 106 38, 106 30 C106 20, 102 12, 92 12 Z" />
+      <path d="M86 44 L85 52 C78 56, 72 64, 70 76" />
+      <path d="M98 44 L99 52 C107 56, 113 64, 115 76" />
     </svg>
   );
 }
