@@ -17,41 +17,44 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/30" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pt-[120px] pb-14">
-          <div className="grid md:grid-cols-[minmax(0,1.7fr),minmax(0,1fr)] gap-10 items-center">
-            {/* Colonne texte + bouton secondaire */}
-            <div>
-              <p className="text-xs md:text-sm tracking-[0.5em] uppercase text-primary-dark mb-4 font-medium">
-                Florence Debattice — Naturopathe
-              </p>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-primary-dark leading-[1.05] mb-1">
-                Trouvez votre équilibre naturel
-              </h1>
-              <p className="font-script text-5xl md:text-6xl lg:text-7xl text-accent leading-none mb-5">
-                en douceur
-              </p>
-              <p className="text-base md:text-lg text-foreground leading-relaxed mb-6 max-w-xl">
-                « Décodez les messages de votre corps grâce à la naturopathie
-                pour cultiver votre santé et booster votre vitalité. »
-              </p>
-              <Link
-                href="/votre-naturopathe"
-                className="inline-block px-7 py-3 border border-primary-dark text-primary-dark text-xs tracking-[0.25em] uppercase hover:bg-primary-dark hover:text-white transition-colors"
-              >
-                Me découvrir
-              </Link>
-            </div>
+          <div className="max-w-2xl">
+            <p className="text-xs md:text-sm tracking-[0.5em] uppercase text-primary-dark mb-4 font-medium">
+              Florence Debattice — Naturopathe
+            </p>
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-primary-dark leading-[1.05] mb-1">
+              Trouvez votre équilibre naturel
+            </h1>
+            <p className="font-script text-5xl md:text-6xl lg:text-7xl text-accent leading-none mb-5">
+              en douceur
+            </p>
+            <p className="text-base md:text-lg text-foreground leading-relaxed mb-6 max-w-xl">
+              « Décodez les messages de votre corps grâce à la naturopathie
+              pour cultiver votre santé et booster votre vitalité. »
+            </p>
+            <Link
+              href="/votre-naturopathe"
+              className="inline-block px-7 py-3 border border-primary-dark text-primary-dark text-xs tracking-[0.25em] uppercase hover:bg-primary-dark hover:text-white transition-colors"
+            >
+              Me découvrir
+            </Link>
 
-            {/* Colonne CTA principal — milieu droite */}
-            <div className="flex justify-start md:justify-end">
-              <Link
-                href="/prendre-rdv"
-                className="inline-flex items-center justify-center px-8 py-5 bg-primary-dark text-white text-sm tracking-[0.25em] uppercase hover:bg-primary transition-colors text-center leading-snug shadow-lg max-w-xs"
-              >
-                Réserve ton appel gratuit
-              </Link>
-            </div>
+            {/* Mobile : bouton Réservé sous le texte */}
+            <Link
+              href="/prendre-rdv"
+              className="md:hidden mt-4 inline-flex items-center justify-center px-8 py-4 bg-primary-dark text-white text-sm tracking-[0.25em] uppercase shadow-lg"
+            >
+              Réserve ton appel gratuit
+            </Link>
           </div>
         </div>
+
+        {/* Desktop : bouton Réservé au centre vertical à droite du hero */}
+        <Link
+          href="/prendre-rdv"
+          className="hidden md:inline-flex absolute right-8 lg:right-16 top-1/2 -translate-y-1/2 z-20 items-center justify-center px-8 py-5 bg-primary-dark text-white text-sm tracking-[0.25em] uppercase hover:bg-primary transition-colors text-center leading-snug shadow-lg max-w-[220px]"
+        >
+          Réserve ton appel gratuit
+        </Link>
 
         {/* Flèche animée bas */}
         <a
