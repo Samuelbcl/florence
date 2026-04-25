@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       {/* ═══════════ HERO ═══════════ */}
-      <section className="relative h-[45vh] min-h-[360px] max-h-[520px] flex items-center overflow-hidden">
+      <section className="relative -mt-[88px] min-h-[640px] flex items-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -16,33 +16,38 @@ export default function Home() {
         {/* Calque blanc semi-opaque pour assurer la lisibilité par-dessus la photo */}
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/30" />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
-          <div className="max-w-2xl">
-            <p className="text-xs md:text-sm tracking-[0.5em] uppercase text-primary-dark mb-5 font-medium">
-              Florence Debattice — Naturopathe
-            </p>
-            <h1 className="font-display text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-2">
-              Trouvez votre équilibre naturel
-            </h1>
-            <p className="font-script text-5xl md:text-7xl text-accent leading-none mb-6">
-              en douceur
-            </p>
-            <p className="text-base md:text-lg text-foreground leading-relaxed mb-8 max-w-lg">
-              « Décodez les messages de votre corps grâce à la naturopathie
-              pour cultiver votre santé et booster votre vitalité. »
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link
-                href="/prendre-rdv"
-                className="px-7 py-3 bg-primary-dark text-white text-xs tracking-[0.25em] uppercase hover:bg-primary transition-colors"
-              >
-                Réserve ton appel gratuit
-              </Link>
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pt-[120px] pb-20">
+          <div className="grid md:grid-cols-[minmax(0,1.7fr),minmax(0,1fr)] gap-10 items-center">
+            {/* Colonne texte + bouton secondaire */}
+            <div>
+              <p className="text-xs md:text-sm tracking-[0.5em] uppercase text-primary-dark mb-5 font-medium">
+                Florence Debattice — Naturopathe
+              </p>
+              <h1 className="font-display text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-2">
+                Trouvez votre équilibre naturel
+              </h1>
+              <p className="font-script text-5xl md:text-7xl text-accent leading-none mb-6">
+                en douceur
+              </p>
+              <p className="text-base md:text-lg text-foreground leading-relaxed mb-8 max-w-xl">
+                « Décodez les messages de votre corps grâce à la naturopathie
+                pour cultiver votre santé et booster votre vitalité. »
+              </p>
               <Link
                 href="/votre-naturopathe"
-                className="px-7 py-3 border border-primary-dark text-primary-dark text-xs tracking-[0.25em] uppercase hover:bg-primary-dark hover:text-white transition-colors"
+                className="inline-block px-7 py-3 border border-primary-dark text-primary-dark text-xs tracking-[0.25em] uppercase hover:bg-primary-dark hover:text-white transition-colors"
               >
                 Me découvrir
+              </Link>
+            </div>
+
+            {/* Colonne CTA principal */}
+            <div className="flex justify-start md:justify-end">
+              <Link
+                href="/prendre-rdv"
+                className="inline-flex items-center justify-center px-8 py-5 bg-primary-dark text-white text-sm tracking-[0.25em] uppercase hover:bg-primary transition-colors text-center leading-snug shadow-lg max-w-xs"
+              >
+                Réserve ton appel gratuit
               </Link>
             </div>
           </div>
@@ -52,7 +57,7 @@ export default function Home() {
         <a
           href="#bienvenue"
           aria-label="Faire défiler"
-          className="absolute bottom-5 left-1/2 -translate-x-1/2 z-10 text-primary-dark animate-soft-bounce"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 text-primary-dark animate-soft-bounce"
         >
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 5v14" />
@@ -124,19 +129,65 @@ export default function Home() {
 
           <ul className="max-w-3xl mx-auto space-y-7">
             {[
-              "La naturopathie est une approche de santé à un niveau global de la personne qui prend en considération aussi bien l'aspect physique, psychique et émotionnel ainsi que l'environnement dans lequel évolue la personne.",
-              "Elle s'inspire de la pensée d'Hippocrate de Cos, père de la médecine, selon laquelle nous sommes tous constitués de liquides (le sang, la lymphe, la bile…) et qu'une surcharge en déchets dans ces liquides entraîne un déséquilibre au niveau de la santé à plus ou moins long terme.",
-              "L'objectif du naturopathe est de délivrer des conseils personnalisés en hygiène vitale, en nutrition et parfois en régulateurs de terrain issus de remèdes naturels si besoin (phytologie, compléments alimentaires…).",
-              "La naturopathie intervient aussi bien en prévention qu'en complément de la médecine conventionnelle et des traitements existants.",
-            ].map((paragraph) => (
-              <li key={paragraph} className="flex items-start gap-5">
+              <>
+                La naturopathie est une{" "}
+                <strong className="text-primary-dark font-medium">
+                  approche de santé à un niveau global
+                </strong>{" "}
+                de la personne qui prend en considération aussi bien
+                l&apos;aspect{" "}
+                <strong className="text-primary-dark font-medium">
+                  physique, psychique et émotionnel
+                </strong>{" "}
+                ainsi que l&apos;environnement dans lequel évolue la personne.
+              </>,
+              <>
+                Elle s&apos;inspire de la pensée d&apos;
+                <strong className="text-primary-dark font-medium">
+                  Hippocrate de Cos
+                </strong>
+                , père de la médecine, selon laquelle nous sommes tous
+                constitués de liquides (le sang, la lymphe, la bile…) et
+                qu&apos;une surcharge en déchets dans ces liquides entraîne un{" "}
+                <strong className="text-primary-dark font-medium">
+                  déséquilibre
+                </strong>{" "}
+                au niveau de la santé à plus ou moins long terme.
+              </>,
+              <>
+                L&apos;objectif du naturopathe est de délivrer des{" "}
+                <strong className="text-primary-dark font-medium">
+                  conseils personnalisés
+                </strong>{" "}
+                en{" "}
+                <strong className="text-primary-dark font-medium">
+                  hygiène vitale
+                </strong>
+                , en{" "}
+                <strong className="text-primary-dark font-medium">nutrition</strong>{" "}
+                et parfois en régulateurs de terrain issus de remèdes naturels
+                si besoin (phytologie, compléments alimentaires…).
+              </>,
+              <>
+                La naturopathie intervient aussi bien en{" "}
+                <strong className="text-primary-dark font-medium">
+                  prévention
+                </strong>{" "}
+                qu&apos;en{" "}
+                <strong className="text-primary-dark font-medium">
+                  complément de la médecine conventionnelle
+                </strong>{" "}
+                et des traitements existants.
+              </>,
+            ].map((content, i) => (
+              <li key={i} className="flex items-start gap-5">
                 <span className="shrink-0 w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center mt-1">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12l5 5L20 7" />
                   </svg>
                 </span>
                 <p className="text-foreground/90 text-lg leading-[1.8]">
-                  {paragraph}
+                  {content}
                 </p>
               </li>
             ))}
