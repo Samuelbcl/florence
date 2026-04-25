@@ -49,7 +49,7 @@ export default function PourquoiConsulter() {
       <section className="bg-card py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-14">
-            <IconCouple className="w-20 h-16 text-foreground/70 mx-auto mb-6" />
+            <IconCouple className="w-16 h-16 mx-auto mb-6" />
             <h2 className="font-script text-5xl md:text-6xl text-foreground leading-none">
               un accompagnement pour tous
             </h2>
@@ -89,7 +89,7 @@ export default function PourquoiConsulter() {
               },
             ].map(({ Icon, title, text }) => (
               <div key={title} className="text-center">
-                <Icon className="w-16 h-20 text-foreground/70 mx-auto mb-5" />
+                <Icon className="w-20 h-20 mx-auto mb-5" />
                 <h3 className="font-script text-3xl md:text-4xl text-foreground mb-4 leading-none">
                   {title}
                 </h3>
