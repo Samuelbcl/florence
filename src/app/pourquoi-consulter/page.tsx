@@ -40,52 +40,65 @@ export default function PourquoiConsulter() {
       </section>
 
       <section className="bg-card py-20">
-        <div className="max-w-5xl mx-auto px-6">
-          <h2 className="font-display text-4xl text-center mb-12">
-            Un accompagnement pour tous
-          </h2>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <p className="text-xs tracking-[0.4em] uppercase text-primary mb-4">
+              Pour qui ?
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl italic text-primary-dark">
+              Un accompagnement adapté à chacun
+            </h2>
+          </div>
 
-          <div className="mb-12 bg-background p-8 border border-border">
-            <h3 className="font-display text-xl text-primary-dark mb-4">
-              Troubles fréquemment accompagnés
-            </h3>
-            <p className="text-muted leading-relaxed">
-              Troubles du sommeil, digestion perturbée, intolérances
-              alimentaires, perturbation du bilan sanguin, surpoids, allergies
-              respiratoires et alimentaires, migraines, problèmes de peau,
-              chutes de cheveux, perturbation hormonale, stress, burn-out,
-              dépression, chocs émotionnels, douleurs articulaires, système
-              immunitaire fragile, troubles ORL à répétition.
+          <div className="mb-16 max-w-3xl mx-auto text-center">
+            <p className="text-foreground/85 leading-[1.9]">
+              <span className="block text-xs tracking-[0.3em] uppercase text-primary mb-3">
+                Troubles fréquemment accompagnés
+              </span>
+              Sommeil, digestion, intolérances alimentaires, surpoids,
+              allergies, migraines, problèmes de peau, chutes de cheveux,
+              perturbations hormonales, stress, burn-out, chocs émotionnels,
+              douleurs articulaires, système immunitaire fragile, troubles
+              ORL à répétition…
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {[
               {
+                emoji: "👩",
                 title: "Femmes",
-                text: "Cycle féminin perturbé, désir d'enfant, grossesse, allaitement, accompagnement de la ménopause.",
+                text: "Cycle perturbé, désir d'enfant, grossesse, allaitement, ménopause.",
               },
               {
+                emoji: "👨",
                 title: "Hommes",
-                text: "Désir d'enfant, troubles prostatiques.",
+                text: "Désir d'enfant, troubles prostatiques, vitalité.",
               },
               {
+                emoji: "👵",
                 title: "Personnes âgées",
-                text: "Rhumatisme, douleurs articulaires, conseils en alimentation adaptée aux besoins de la personne âgée.",
+                text: "Rhumatismes, douleurs articulaires, alimentation adaptée.",
               },
               {
-                title: "Enfants & adolescents",
-                text: "Conseils en alimentation équilibrée adaptée à chaque âge, carences, croissance/puberté, allergies.",
+                emoji: "🧒",
+                title: "Enfants & ados",
+                text: "Alimentation équilibrée, carences, croissance, allergies.",
               },
             ].map((item) => (
               <div
                 key={item.title}
-                className="bg-background p-6 border border-border"
+                className="bg-background p-6 md:p-8 text-center border border-border hover:border-primary transition-colors"
               >
-                <h3 className="font-display text-xl text-primary-dark mb-3">
+                <div className="text-5xl md:text-6xl mb-4" aria-hidden>
+                  {item.emoji}
+                </div>
+                <h3 className="font-display text-lg md:text-xl text-primary-dark mb-3">
                   {item.title}
                 </h3>
-                <p className="text-sm text-muted leading-relaxed">{item.text}</p>
+                <p className="text-xs md:text-sm text-foreground/75 leading-relaxed">
+                  {item.text}
+                </p>
               </div>
             ))}
           </div>
@@ -203,97 +216,6 @@ export default function PourquoiConsulter() {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-card py-20">
-        <div className="max-w-5xl mx-auto px-6">
-          <h2 className="font-display text-4xl text-center mb-4">
-            Questions fréquentes
-          </h2>
-          <p className="text-center text-muted mb-14 max-w-2xl mx-auto">
-            Tout ce qu&apos;il faut savoir avant votre première consultation.
-          </p>
-          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
-            {[
-              {
-                q: "Pourquoi consulter ici ?",
-                a: "Pour retrouver un équilibre naturel et mieux comprendre votre corps.",
-              },
-              {
-                q: "Quels bienfaits espérer ?",
-                a: "Amélioration du bien-être général, gestion du stress, et soutien à votre vitalité.",
-              },
-              {
-                q: "Comment se déroule une séance ?",
-                a: "Chaque séance commence par un échange personnalisé, suivi de conseils adaptés à vos besoins.",
-              },
-              {
-                q: "Faut-il une préparation ?",
-                a: "Non, venez simplement avec votre motivation et vos questions.",
-              },
-              {
-                q: "À qui s'adresse ce service ?",
-                a: "À toute personne souhaitant mieux vivre au quotidien et prendre soin d'elle.",
-              },
-              {
-                q: "Comment prendre rendez-vous facilement ?",
-                a: "Vous pouvez appeler directement ou envoyer un message via le formulaire en ligne.",
-              },
-            ].map((item) => (
-              <div key={item.q}>
-                <h3 className="font-display text-xl text-foreground mb-3">
-                  {item.q}
-                </h3>
-                <p className="text-muted leading-relaxed text-sm">{item.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-background py-20">
-        <div className="max-w-5xl mx-auto px-6">
-          <h2 className="font-display text-4xl text-center mb-12">
-            Témoignages
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                name: "Olivia, 45 ans",
-                role: "Professeur des Écoles",
-                quote:
-                  "Sa passion pour son métier et son approche globale et humaine m'ont énormément aidée. Elle a su prendre en compte ma personne dans son ensemble et trouver des solutions personnalisées et efficaces.",
-              },
-              {
-                name: "Michel, 73 ans",
-                role: "Retraité",
-                quote:
-                  "J'avais beaucoup de problèmes digestifs liés à une alimentation pas très adéquate. C'est à présent du passé. À 73 ans, j'ai retrouvé ma forme et un bon sommeil.",
-              },
-              {
-                name: "Soizick, 46 ans",
-                role: "Webdesigner",
-                quote:
-                  "Les plantes, l'alimentation et les bonnes astuces nature n'ont pas de secret. En seulement une séance et en suivant ses conseils, j'ai amélioré mon sommeil et ma digestion.",
-              },
-            ].map((t) => (
-              <blockquote
-                key={t.name}
-                className="bg-card p-8 border border-border flex flex-col"
-              >
-                <p className="text-muted italic leading-relaxed flex-1">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <footer className="mt-6 pt-4 border-t border-border">
-                  <p className="font-display text-lg text-primary-dark">
-                    {t.name}
-                  </p>
-                  <p className="text-xs text-muted tracking-wider">{t.role}</p>
-                </footer>
-              </blockquote>
-            ))}
           </div>
         </div>
       </section>
