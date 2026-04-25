@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 export default function VotreNaturopathe() {
   return (
     <>
-      {/* HERO compact avec image en fond */}
-      <section className="relative h-[30vh] min-h-[220px] md:h-[35vh] md:min-h-[260px] max-h-[360px] flex items-center justify-center overflow-hidden">
+      {/* HERO compact avec image en fond, titre à droite */}
+      <section className="relative h-[30vh] min-h-[220px] md:h-[35vh] md:min-h-[260px] max-h-[360px] flex items-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -19,14 +19,16 @@ export default function VotreNaturopathe() {
               "url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1920&q=80')",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/50" />
-        <div className="relative z-10 text-center text-white px-6">
-          <p className="text-[10px] md:text-xs tracking-[0.5em] uppercase mb-3 text-white/90">
-            Votre naturopathe
-          </p>
-          <h1 className="font-display text-4xl md:text-6xl italic font-light">
-            Qui suis-je ?
-          </h1>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/10 to-black/50" />
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
+          <div className="md:ml-auto md:max-w-md text-right text-white">
+            <p className="text-[10px] md:text-xs tracking-[0.5em] uppercase mb-3 text-white/90">
+              Votre naturopathe
+            </p>
+            <h1 className="font-display text-4xl md:text-6xl italic font-light">
+              Qui suis-je ?
+            </h1>
+          </div>
         </div>
       </section>
 
