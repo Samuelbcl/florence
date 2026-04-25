@@ -25,7 +25,7 @@
   --font-sans: var(--font-cormorant), Georgia, serif;
   --font-display: var(--font-cormorant), Georgia, serif;
   --font-body: var(--font-inter), system-ui, sans-serif;
-  --font-script: var(--font-pinyon), "Pinyon Script", cursive;
+  --font-script: var(--font-aston), "Aston Script", cursive;
 }
 
 body {

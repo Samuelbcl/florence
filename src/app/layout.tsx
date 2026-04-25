@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter, Pinyon_Script } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -16,10 +17,10 @@ const inter = Inter({
   weight: ["300", "400", "500"],
 });
 
-const pinyon = Pinyon_Script({
-  variable: "--font-pinyon",
-  subsets: ["latin"],
-  weight: ["400"],
+const aston = localFont({
+  src: "../../public/font/AstonScript.ttf",
+  variable: "--font-aston",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -36,7 +37,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${cormorant.variable} ${inter.variable} ${pinyon.variable} h-full antialiased`}
+      className={`${cormorant.variable} ${inter.variable} ${aston.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <Header />
