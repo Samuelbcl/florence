@@ -10,31 +10,25 @@ export const metadata: Metadata = {
 export default function VotreNaturopathe() {
   return (
     <>
-      <section className="bg-primary-light/30 py-20">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <p className="text-xs tracking-[0.4em] uppercase text-primary-dark mb-6">
-            Votre naturopathe
-          </p>
-          <h1 className="font-display text-5xl md:text-6xl">Portrait</h1>
-        </div>
+      <section className="max-w-3xl mx-auto px-6 pt-12 pb-6">
+        <p className="text-xs tracking-[0.4em] uppercase text-primary-dark mb-4">
+          Votre naturopathe
+        </p>
+        <h1 className="font-display text-5xl md:text-6xl text-foreground">
+          Portrait
+        </h1>
       </section>
 
-      <section className="max-w-5xl mx-auto px-6 py-20 grid md:grid-cols-[1fr,1.5fr] gap-12 items-start">
-        <div className="aspect-[4/5] rounded-full md:rounded-sm bg-gradient-to-br from-primary-light to-accent/40 sticky top-24 flex items-center justify-center">
-          <span className="text-primary-dark/40 text-sm tracking-[0.3em] uppercase">
-            Photo
-          </span>
-        </div>
-
-        <div className="space-y-12">
+      <section className="max-w-3xl mx-auto px-6 pt-6 pb-16">
+        <div className="space-y-14">
           <article>
             <h2 className="font-display text-3xl text-primary-dark italic mb-5">
               Mon parcours : de la rigueur des chiffres à l&apos;équilibre de
               l&apos;humain
             </h2>
-            <p className="text-lg text-muted leading-relaxed">
+            <p className="text-lg text-foreground/85 leading-[1.8]">
               Pendant dix ans, j&apos;ai évolué dans l&apos;univers de la{" "}
-              <strong className="text-foreground font-normal">
+              <strong className="text-primary-dark font-medium">
                 comptabilité
               </strong>
               . Mon quotidien consistait à analyser, conseiller et veiller à
@@ -42,7 +36,7 @@ export default function VotreNaturopathe() {
               croissance. C&apos;était un métier de rigueur, mais avec le
               temps, une évidence s&apos;est imposée : il me manquait
               l&apos;essentiel, le{" "}
-              <strong className="text-foreground font-normal">sens</strong>.
+              <strong className="text-primary-dark font-medium">sens</strong>.
             </p>
           </article>
 
@@ -50,12 +44,12 @@ export default function VotreNaturopathe() {
             <h2 className="font-display text-3xl text-primary-dark italic mb-5">
               Le tournant vers l&apos;accompagnement
             </h2>
-            <p className="text-lg text-muted leading-relaxed">
+            <p className="text-lg text-foreground/85 leading-[1.8]">
               À 35 ans, j&apos;ai ressenti le besoin profond de mettre mon
               expertise au service de l&apos;individu plutôt que des
               organisations. Ce chemin m&apos;a d&apos;abord menée vers
               l&apos;enseignement auprès de{" "}
-              <strong className="text-foreground font-normal">
+              <strong className="text-primary-dark font-medium">
                 jeunes en difficulté
               </strong>
               . Cette expérience a été un véritable catalyseur : j&apos;y ai
@@ -68,24 +62,24 @@ export default function VotreNaturopathe() {
             <h2 className="font-display text-3xl text-primary-dark italic mb-5">
               Ma mission aujourd&apos;hui : votre bien-être
             </h2>
-            <p className="text-lg text-muted leading-relaxed mb-6">
+            <p className="text-lg text-foreground/85 leading-[1.8] mb-6">
               Aujourd&apos;hui, riche de ces expériences, je vous accompagne
               en tant que{" "}
-              <strong className="text-foreground font-normal">naturopathe</strong>
+              <strong className="text-primary-dark font-medium">naturopathe</strong>
               . Prendre soin de mon entourage a toujours été dans ma nature ;
               c&apos;est désormais mon métier. Mon approche repose sur deux
               piliers :
             </p>
             <ul className="space-y-4 pl-6 mb-8">
-              <li className="text-lg text-muted leading-relaxed">
-                <strong className="text-foreground font-normal">
+              <li className="text-lg text-foreground/85 leading-[1.8]">
+                <strong className="text-primary-dark font-medium">
                   L&apos;empathie
                 </strong>{" "}
                 : comprendre comment votre corps et votre esprit interagissent,
                 sans jugement.
               </li>
-              <li className="text-lg text-muted leading-relaxed">
-                <strong className="text-foreground font-normal">
+              <li className="text-lg text-foreground/85 leading-[1.8]">
+                <strong className="text-primary-dark font-medium">
                   La bienveillance
                 </strong>{" "}
                 : vous proposer des solutions concrètes et adaptées pour
@@ -95,9 +89,9 @@ export default function VotreNaturopathe() {
             <blockquote className="font-display text-2xl text-primary-dark italic border-l-2 border-accent pl-6 my-8">
               « La santé est un voyage universel, propre à chacun. »
             </blockquote>
-            <p className="text-lg text-muted leading-relaxed">
+            <p className="text-lg text-foreground/85 leading-[1.8]">
               La naturopathie n&apos;est pas une solution miracle, mais un{" "}
-              <strong className="text-foreground font-normal">
+              <strong className="text-primary-dark font-medium">
                 chemin de connaissance de soi
               </strong>
               . Elle m&apos;a apporté force et confiance au quotidien, et
@@ -134,7 +128,7 @@ export default function VotreNaturopathe() {
                 <span className="font-display text-xl text-primary">
                   {item.year}
                 </span>
-                <p className="text-muted pt-1">{item.text}</p>
+                <p className="text-foreground/85 pt-1">{item.text}</p>
               </div>
             ))}
           </div>
