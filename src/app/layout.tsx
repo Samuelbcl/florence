@@ -17,9 +17,9 @@ const inter = Inter({
   weight: ["300", "400", "500"],
 });
 
-const aston = localFont({
-  src: "../../public/font/AstonScript.ttf",
-  variable: "--font-aston",
+const sparkling = localFont({
+  src: "../../public/font/SparklingValentine.ttf",
+  variable: "--font-sparkling",
   display: "swap",
 });
 
@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${cormorant.variable} ${inter.variable} ${aston.variable} h-full antialiased`}
+      className={`${cormorant.variable} ${inter.variable} ${sparkling.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <Header />
