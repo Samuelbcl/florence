@@ -49,8 +49,8 @@ export default function Home() {
         <p className="text-xs tracking-[0.4em] uppercase text-primary-dark mb-6">
           Ma mission
         </p>
-        <h2 className="font-display text-4xl md:text-5xl mb-10">
-          Votre bien-être
+        <h2 className="font-script text-5xl md:text-7xl mb-10 leading-none text-foreground">
+          votre bien-être
         </h2>
         <p className="text-lg text-muted leading-relaxed mb-6">
           Prendre soin de mon entourage a toujours été dans ma nature ;
@@ -78,8 +78,8 @@ export default function Home() {
             <p className="text-xs tracking-[0.4em] uppercase text-primary-dark mb-6">
               Pédagogie
             </p>
-            <h2 className="font-display text-4xl md:text-5xl mb-6">
-              La naturopathie, c&apos;est quoi ?
+            <h2 className="font-script text-5xl md:text-7xl mb-6 leading-none text-foreground">
+              la naturopathie, c&apos;est quoi ?
             </h2>
             <p className="text-muted max-w-2xl mx-auto leading-relaxed">
               Une approche globale, fondée sur les principes hippocratiques.
@@ -124,8 +124,8 @@ export default function Home() {
           <p className="text-xs tracking-[0.4em] uppercase text-primary-dark mb-6">
             Mes prestations
           </p>
-          <h2 className="font-display text-4xl md:text-5xl">
-            Un accompagnement adapté
+          <h2 className="font-script text-5xl md:text-7xl leading-none text-foreground">
+            un accompagnement adapté
           </h2>
         </div>
         <div className="grid md:grid-cols-3 gap-8">

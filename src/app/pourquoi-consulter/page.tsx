@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  IconChild,
+  IconCouple,
+  IconElderly,
+  IconMan,
+  IconWoman,
+} from "../../components/PersonIcons";
 
 export const metadata: Metadata = {
   title: "Pourquoi consulter ? — Florence Debattice",
@@ -42,19 +49,14 @@ export default function PourquoiConsulter() {
       <section className="bg-card py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-14">
-            <p className="text-xs tracking-[0.4em] uppercase text-primary mb-4">
-              Pour qui ?
-            </p>
-            <h2 className="font-display text-4xl md:text-5xl italic text-primary-dark">
-              Un accompagnement adapté à chacun
+            <IconCouple className="w-20 h-16 text-foreground/70 mx-auto mb-6" />
+            <h2 className="font-script text-5xl md:text-6xl text-foreground leading-none">
+              un accompagnement pour tous
             </h2>
           </div>
 
           <div className="mb-16 max-w-3xl mx-auto text-center">
             <p className="text-foreground/85 leading-[1.9]">
-              <span className="block text-xs tracking-[0.3em] uppercase text-primary mb-3">
-                Troubles fréquemment accompagnés
-              </span>
               Sommeil, digestion, intolérances alimentaires, surpoids,
               allergies, migraines, problèmes de peau, chutes de cheveux,
               perturbations hormonales, stress, burn-out, chocs émotionnels,
@@ -63,41 +65,36 @@ export default function PourquoiConsulter() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
             {[
               {
-                emoji: "👩",
-                title: "Femmes",
+                Icon: IconWoman,
+                title: "femmes",
                 text: "Cycle perturbé, désir d'enfant, grossesse, allaitement, ménopause.",
               },
               {
-                emoji: "👨",
-                title: "Hommes",
+                Icon: IconMan,
+                title: "hommes",
                 text: "Désir d'enfant, troubles prostatiques, vitalité.",
               },
               {
-                emoji: "👵",
-                title: "Personnes âgées",
+                Icon: IconElderly,
+                title: "personnes âgées",
                 text: "Rhumatismes, douleurs articulaires, alimentation adaptée.",
               },
               {
-                emoji: "🧒",
-                title: "Enfants & ados",
+                Icon: IconChild,
+                title: "enfants, adolescents",
                 text: "Alimentation équilibrée, carences, croissance, allergies.",
               },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="bg-background p-6 md:p-8 text-center border border-border hover:border-primary transition-colors"
-              >
-                <div className="text-5xl md:text-6xl mb-4" aria-hidden>
-                  {item.emoji}
-                </div>
-                <h3 className="font-display text-lg md:text-xl text-primary-dark mb-3">
-                  {item.title}
+            ].map(({ Icon, title, text }) => (
+              <div key={title} className="text-center">
+                <Icon className="w-16 h-20 text-foreground/70 mx-auto mb-5" />
+                <h3 className="font-script text-3xl md:text-4xl text-foreground mb-4 leading-none">
+                  {title}
                 </h3>
-                <p className="text-xs md:text-sm text-foreground/75 leading-relaxed">
-                  {item.text}
+                <p className="text-sm text-foreground/75 leading-relaxed">
+                  {text}
                 </p>
               </div>
             ))}
@@ -105,9 +102,9 @@ export default function PourquoiConsulter() {
         </div>
       </section>
 
-      <section className="max-w-3xl mx-auto px-6 py-20 space-y-6 text-lg text-muted leading-relaxed">
-        <h2 className="font-display text-4xl text-center text-foreground mb-8">
-          Pourquoi me consulter ?
+      <section className="max-w-3xl mx-auto px-6 py-20 space-y-6 text-lg text-foreground/85 leading-[1.8]">
+        <h2 className="font-script text-5xl md:text-6xl text-center text-foreground mb-10 leading-none">
+          pourquoi me consulter ?
         </h2>
         <p>
           À votre écoute pendant plus d&apos;une heure lors de notre première
@@ -143,8 +140,8 @@ export default function PourquoiConsulter() {
 
       <section className="bg-primary-light/30 py-20">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="font-display text-4xl text-center mb-8">
-            La force vitale
+          <h2 className="font-script text-5xl md:text-6xl text-center text-foreground mb-10 leading-none">
+            la force vitale
           </h2>
           <div className="space-y-5 text-lg text-muted leading-relaxed">
             <p>
@@ -172,8 +169,8 @@ export default function PourquoiConsulter() {
       </section>
 
       <section className="max-w-5xl mx-auto px-6 py-20">
-        <h2 className="font-display text-4xl text-center mb-12">
-          Réflexologie plantaire : pour qui ? pourquoi ?
+        <h2 className="font-script text-5xl md:text-6xl text-center text-foreground mb-14 leading-none">
+          réflexologie plantaire : pour qui ? pourquoi ?
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-card p-8 border border-border">

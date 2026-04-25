@@ -184,8 +184,8 @@ export default function MesPrestations() {
 
       <section className="bg-primary text-white py-20">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="font-display text-3xl md:text-4xl mb-6">
-            Réservez votre prochain rendez-vous
+          <h2 className="font-script text-5xl md:text-6xl mb-8 leading-none">
+            réservez votre prochain rendez-vous
           </h2>
           <Link
             href="/prendre-rdv"

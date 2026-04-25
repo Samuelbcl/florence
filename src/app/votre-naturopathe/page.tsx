@@ -124,8 +124,8 @@ export default function VotreNaturopathe() {
           <p className="text-xs tracking-[0.4em] uppercase text-primary mb-6">
             Ma mission aujourd&apos;hui
           </p>
-          <h2 className="font-display text-4xl md:text-5xl text-primary-dark italic mb-10 leading-tight">
-            Votre bien-être
+          <h2 className="font-script text-5xl md:text-7xl text-foreground mb-10 leading-none">
+            votre bien-être
           </h2>
           <p className="text-lg text-foreground/85 leading-[1.9] mb-10">
             Aujourd&apos;hui, riche de ces expériences, je vous accompagne en
@@ -138,8 +138,8 @@ export default function VotreNaturopathe() {
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-card p-8 border border-border">
-              <p className="font-display text-2xl text-primary-dark italic mb-3">
-                L&apos;empathie
+              <p className="font-script text-4xl text-foreground mb-3 leading-none">
+                l&apos;empathie
               </p>
               <p className="text-foreground/85 leading-[1.7]">
                 Comprendre comment votre corps et votre esprit interagissent,
@@ -147,8 +147,8 @@ export default function VotreNaturopathe() {
               </p>
             </div>
             <div className="bg-card p-8 border border-border">
-              <p className="font-display text-2xl text-primary-dark italic mb-3">
-                La bienveillance
+              <p className="font-script text-4xl text-foreground mb-3 leading-none">
+                la bienveillance
               </p>
               <p className="text-foreground/85 leading-[1.7]">
                 Vous proposer des solutions concrètes et adaptées pour
@@ -177,8 +177,8 @@ export default function VotreNaturopathe() {
           <p className="text-xs tracking-[0.4em] uppercase mb-6 text-white/80">
             Mon approche
           </p>
-          <h2 className="font-display text-4xl md:text-5xl italic mb-8 leading-tight">
-            Un chemin de connaissance de soi
+          <h2 className="font-script text-5xl md:text-7xl mb-8 leading-none">
+            un chemin de connaissance de soi
           </h2>
           <p className="text-lg leading-[1.9] text-white/90">
             La naturopathie n&apos;est pas une solution miracle, mais un chemin
@@ -198,8 +198,8 @@ export default function VotreNaturopathe() {
             <p className="text-xs tracking-[0.4em] uppercase text-primary mb-4">
               Étapes
             </p>
-            <h2 className="font-display text-4xl md:text-5xl italic text-primary-dark">
-              Parcours
+            <h2 className="font-script text-5xl md:text-7xl text-foreground leading-none">
+              parcours
             </h2>
           </div>
           <div className="space-y-8">
@@ -236,8 +236,8 @@ export default function VotreNaturopathe() {
       {/* CTA */}
       <section className="bg-primary-light/20 py-24">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="font-display text-3xl md:text-4xl italic text-primary-dark mb-6">
-            Une envie de me rencontrer ?
+          <h2 className="font-script text-5xl md:text-6xl text-foreground mb-6 leading-none">
+            une envie de me rencontrer ?
           </h2>
           <p className="text-foreground/85 mb-10">
             Réservez votre appel découverte gratuit, sans engagement.

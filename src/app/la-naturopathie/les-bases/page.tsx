@@ -20,8 +20,8 @@ export default function LesBases() {
 
       <article className="max-w-3xl mx-auto px-6 py-20 space-y-10 text-muted leading-relaxed text-lg">
         <section>
-          <h2 className="font-display text-3xl text-foreground mb-4">
-            Définition
+          <h2 className="font-script text-5xl md:text-6xl text-foreground mb-6 leading-none">
+            définition
           </h2>
           <p>
             La naturopathie est une médecine traditionnelle reconnue par
@@ -34,8 +34,8 @@ export default function LesBases() {
         </section>
 
         <section>
-          <h2 className="font-display text-3xl text-foreground mb-4">
-            Une vision holistique
+          <h2 className="font-script text-5xl md:text-6xl text-foreground mb-6 leading-none">
+            une vision holistique
           </h2>
           <p>
             Le naturopathe considère la personne dans sa globalité — physique,
@@ -48,8 +48,8 @@ export default function LesBases() {
         </section>
 
         <section>
-          <h2 className="font-display text-3xl text-foreground mb-4">
-            La force vitale
+          <h2 className="font-script text-5xl md:text-6xl text-foreground mb-6 leading-none">
+            la force vitale
           </h2>
           <p>
             C&apos;est le capital énergétique dont dispose l&apos;être vivant
@@ -67,8 +67,8 @@ export default function LesBases() {
         </section>
 
         <section>
-          <h2 className="font-display text-3xl text-foreground mb-4">
-            Les principes hippocratiques
+          <h2 className="font-script text-5xl md:text-6xl text-foreground mb-6 leading-none">
+            les principes hippocratiques
           </h2>
           <ul className="space-y-3 list-none">
             {[
