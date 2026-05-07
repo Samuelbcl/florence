@@ -11,7 +11,7 @@ export default function VotreNaturopathe() {
   return (
     <>
       {/* HERO avec photo (femme à droite), titre à gauche sur la zone claire */}
-      <section className="relative h-[40vh] min-h-[300px] md:h-[45vh] md:min-h-[360px] max-h-[460px] flex items-center overflow-hidden">
+      <section className="relative h-[32vh] min-h-[260px] md:h-[38vh] md:min-h-[300px] max-h-[400px] flex items-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
