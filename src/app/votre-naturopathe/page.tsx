@@ -10,24 +10,29 @@ export const metadata: Metadata = {
 export default function VotreNaturopathe() {
   return (
     <>
-      {/* HERO compact avec image en fond, titre à droite */}
-      <section className="relative h-[30vh] min-h-[220px] md:h-[35vh] md:min-h-[260px] max-h-[360px] flex items-center overflow-hidden">
+      {/* HERO avec photo (femme à droite), titre à gauche sur la zone claire */}
+      <section className="relative h-[40vh] min-h-[300px] md:h-[45vh] md:min-h-[360px] max-h-[460px] flex items-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1920&q=80')",
+            backgroundImage: "url('/hero-naturopathe.png')",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/10 to-black/50" />
+        {/* Léger calque cream à gauche pour renforcer la lisibilité du titre,
+            transparent à droite pour ne pas gâcher la photo */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background/50 via-background/15 to-transparent" />
+
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
-          <div className="md:ml-auto md:max-w-md text-right text-white">
-            <p className="text-[10px] md:text-xs tracking-[0.5em] uppercase mb-3 text-white/90">
+          <div className="max-w-sm md:max-w-md">
+            <p className="text-[10px] md:text-xs tracking-[0.5em] uppercase mb-4 text-primary-dark font-medium">
               Votre naturopathe
             </p>
-            <h1 className="font-display text-4xl md:text-6xl italic font-light">
+            <h1 className="font-display text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3">
               Qui suis-je ?
             </h1>
+            <p className="font-script text-3xl md:text-4xl text-accent leading-none">
+              ravie de vous rencontrer
+            </p>
           </div>
         </div>
       </section>
