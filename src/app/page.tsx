@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { IconCouple } from "../components/PersonIcons";
+import { prestations } from "../lib/prestations";
 
 export default function Home() {
   return (
@@ -242,50 +243,66 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-            {[
-              {
-                title: "Consultation de naturopathie",
-                desc: "Approche globale permettant de définir un bilan de vitalité débouchant sur des conseils personnalisés en alimentation, hygiène vitale et régulateurs de terrain.",
-                img: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=900&q=80",
-              },
-              {
-                title: "Séance de réflexologie plantaire",
-                desc: "Technique manuelle ancestrale par pression sur les zones réflexes des pieds pour faciliter l'auto-guérison, apporter détente et éliminer les toxines.",
-                img: "https://images.unsplash.com/photo-1591343395082-e120087004b4?w=900&q=80",
-              },
-              {
-                title: "Ateliers & conférences naturo",
-                desc: "Rencontres en petits groupes sur des thématiques en lien avec la naturopathie : alimentation, hygiène vitale, gestion du stress, phytothérapie.",
-                img: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=900&q=80",
-              },
-            ].map((item) => (
-              <article
-                key={item.title}
-                className="bg-white text-foreground overflow-hidden flex flex-col shadow-md"
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {prestations.map((p) => (
+              <Link
+                key={p.slug}
+                href={`/mes-prestations/${p.slug}`}
+                className="group bg-white text-foreground overflow-hidden flex flex-col shadow-md hover:shadow-xl transition-shadow"
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
-                    src={item.img}
-                    alt={item.title}
-                    className="w-full h-full object-cover"
+                    src={p.image}
+                    alt={p.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                <div className="p-6 md:p-8 flex flex-col flex-1">
-                  <h3 className="font-display text-xl md:text-2xl text-primary-dark mb-3 leading-snug">
-                    {item.title}
+                <div className="p-6 md:p-7 flex flex-col flex-1">
+                  <h3 className="font-display text-lg md:text-xl text-primary-dark mb-3 leading-snug">
+                    {p.title}
                   </h3>
-                  <p className="text-sm text-foreground/75 leading-relaxed mb-6 flex-1">
-                    {item.desc}
+                  <p className="text-sm text-foreground/75 leading-relaxed mb-5 flex-1">
+                    {p.short}
                   </p>
-                  <Link
-                    href="/mes-prestations"
-                    className="text-xs tracking-[0.25em] uppercase text-primary-dark border-b border-primary-dark pb-1 self-start hover:text-primary hover:border-primary"
-                  >
-                    En savoir plus
-                  </Link>
+                  <div className="flex items-center gap-5 pt-4 border-t border-border">
+                    <span className="flex items-center gap-2 text-primary-dark">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden
+                      >
+                        <path d="M14 6a4 4 0 1 0 0 12" />
+                        <path d="M5 10h7" />
+                        <path d="M5 14h7" />
+                      </svg>
+                      <span className="font-display">{p.price}</span>
+                    </span>
+                    <span className="flex items-center gap-2 text-primary-dark">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden
+                      >
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 7v5l3 2" />
+                      </svg>
+                      <span className="font-display">{p.duration}</span>
+                    </span>
+                  </div>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
 
