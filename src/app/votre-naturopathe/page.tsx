@@ -27,7 +27,7 @@ export default function VotreNaturopathe() {
             <p className="text-[10px] md:text-xs tracking-[0.5em] uppercase mb-4 text-primary-dark font-medium -ml-[3px] md:-ml-[5px]">
               Votre naturopathe
             </p>
-            <h1 className="font-display text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3">
+            <h1 className="font-display text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3 -ml-[3px] md:-ml-[5px]">
               Qui suis-je ?
             </h1>
             <p className="font-script text-3xl md:text-4xl text-primary-dark leading-none -ml-[1px] md:-ml-[2px]">
