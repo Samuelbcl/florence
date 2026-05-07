@@ -123,8 +123,7 @@ function PrendreRdvContent() {
                 Tarifs
               </strong>
               80 € la première consultation, 65 € pour un suivi. Le rendez-vous
-              informatif (30 min) est gratuit. Règlement par chèque, espèces
-              ou virement.
+              informatif (30 min) est gratuit.
             </li>
             <li className="pl-6 border-l-2 border-accent">
               <strong className="text-primary-dark block mb-1">
