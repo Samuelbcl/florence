@@ -30,5 +30,5 @@ export const IconChild = makeIcon("/icon-child.png", "Enfant", "scale-[1.4]");
 export const IconCouple = makeIcon(
   "/couple.png",
   "Accompagnement pour tous",
-  "scale-[1.4]"
+  "scale-[1.7]"
 );

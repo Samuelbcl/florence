@@ -40,9 +40,7 @@ export default function Header() {
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
-        transparent
-          ? "bg-transparent"
-          : "bg-background/95 backdrop-blur shadow-[0_1px_0_0_var(--border)]"
+        transparent ? "bg-transparent" : "bg-background/95 backdrop-blur"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
