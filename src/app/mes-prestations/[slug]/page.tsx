@@ -67,22 +67,8 @@ export default async function PrestationPage({ params }: Props) {
               {/* Prix + Durée */}
               <div className="flex flex-wrap gap-10 py-6 border-y border-border mb-8">
                 <div className="flex items-center gap-4">
-                  <span className="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center shadow-md">
-                    <svg
-                      width="26"
-                      height="26"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.6"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden
-                    >
-                      <path d="M14 6a4 4 0 1 0 0 12" />
-                      <path d="M5 10h7" />
-                      <path d="M5 14h7" />
-                    </svg>
+                  <span className="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center shadow-md font-body font-bold text-2xl">
+                    €
                   </span>
                   <div>
                     <p className="text-[10px] tracking-[0.3em] uppercase text-muted mb-1">

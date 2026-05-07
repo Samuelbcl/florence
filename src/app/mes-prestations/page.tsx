@@ -52,22 +52,8 @@ export default function MesPrestations() {
 
                 <div className="flex items-center gap-6 pt-4 border-t border-border">
                   <div className="flex items-center gap-2.5">
-                    <span className="w-9 h-9 rounded-full bg-accent text-white flex items-center justify-center shadow-sm shrink-0">
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2.6"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        aria-hidden
-                      >
-                        <path d="M14 6a4 4 0 1 0 0 12" />
-                        <path d="M5 10h7" />
-                        <path d="M5 14h7" />
-                      </svg>
+                    <span className="w-9 h-9 rounded-full bg-accent text-white flex items-center justify-center shadow-sm shrink-0 font-body font-bold text-base">
+                      €
                     </span>
                     <span className="font-body text-lg font-bold text-accent leading-none">
                       {p.price}
