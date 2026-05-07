@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function VotreNaturopathe() {
   return (
     <>
-      {/* HERO avec photo (femme à droite), titre à gauche sur la zone claire */}
+      {/* HERO avec photo (objets à gauche), titre à droite sur la zone claire */}
       <section className="relative h-[40vh] min-h-[280px] md:h-[50vh] md:min-h-[340px] max-h-[460px] flex items-center overflow-hidden bg-background">
         <div
           className="absolute inset-0 bg-contain bg-center bg-no-repeat"
@@ -18,12 +18,12 @@ export default function VotreNaturopathe() {
             backgroundImage: "url('/hero-naturopathe.png')",
           }}
         />
-        {/* Léger calque cream à gauche pour renforcer la lisibilité du titre,
-            transparent à droite pour ne pas gâcher la photo */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background/50 via-background/15 to-transparent" />
+        {/* Léger calque cream à droite pour renforcer la lisibilité du titre,
+            transparent à gauche pour ne pas gâcher la photo */}
+        <div className="absolute inset-0 bg-gradient-to-l from-background/50 via-background/15 to-transparent" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
-          <div className="max-w-sm md:max-w-md">
+          <div className="md:ml-auto max-w-sm md:max-w-md md:text-right">
             <p className="text-[10px] md:text-xs tracking-[0.5em] uppercase mb-4 text-primary-dark font-medium">
               Votre naturopathe
             </p>
