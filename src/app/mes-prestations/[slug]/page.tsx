@@ -109,7 +109,7 @@ export default async function PrestationPage({ params }: Props) {
               </div>
 
               <Link
-                href="/prendre-rdv"
+                href={`/prendre-rdv?service=${prestation.slug}`}
                 className="inline-block px-8 py-4 bg-primary-dark text-white text-xs tracking-[0.25em] uppercase hover:bg-primary transition-colors"
               >
                 Réserver ce rendez-vous

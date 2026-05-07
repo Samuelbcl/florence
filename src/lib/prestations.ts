@@ -6,7 +6,20 @@ export type Prestation = {
   price: string;
   duration: string;
   image: string;
+  /**
+   * Lien Cal.com vers le créneau correspondant. Format attendu :
+   *   "https://cal.com/florence-debattice/{event-slug}"
+   * (ou ce que ta mère choisira comme username Cal.com)
+   *
+   * Quand le compte Cal.com est créé, remplace simplement chaque URL ci-dessous.
+   * Pour le moment, le lien renvoie vers /prendre-rdv?service=slug.
+   */
+  bookingUrl: string;
 };
+
+// 👉 PLACEHOLDER : remplacer par les vrais liens Cal.com une fois le compte créé.
+// Voir le README pour la marche à suivre (création compte, event types, etc.).
+const CAL_USER = "florence-debattice"; // username Cal.com à confirmer
 
 export const prestations: Prestation[] = [
   {
@@ -19,6 +32,7 @@ export const prestations: Prestation[] = [
     price: "Gratuit",
     duration: "30 min",
     image: "/presta-rdv-informatif.png",
+    bookingUrl: `https://cal.com/${CAL_USER}/rdv-informatif`,
   },
   {
     slug: "consultation-initiale-en-ligne",
@@ -30,6 +44,7 @@ export const prestations: Prestation[] = [
     price: "80 €",
     duration: "90 min",
     image: "/presta-online-initiale.png",
+    bookingUrl: `https://cal.com/${CAL_USER}/consultation-initiale-en-ligne`,
   },
   {
     slug: "consultation-suivi-en-ligne",
@@ -41,6 +56,7 @@ export const prestations: Prestation[] = [
     price: "65 €",
     duration: "60 min",
     image: "/presta-online-suivi.png",
+    bookingUrl: `https://cal.com/${CAL_USER}/consultation-suivi-en-ligne`,
   },
   {
     slug: "consultation-initiale-cabinet",
@@ -52,6 +68,7 @@ export const prestations: Prestation[] = [
     price: "80 €",
     duration: "90 min",
     image: "/presta-cabinet-initiale.png",
+    bookingUrl: `https://cal.com/${CAL_USER}/consultation-initiale-cabinet`,
   },
   {
     slug: "consultation-suivi-cabinet",
@@ -63,6 +80,7 @@ export const prestations: Prestation[] = [
     price: "65 €",
     duration: "60 min",
     image: "/presta-cabinet-suivi.png",
+    bookingUrl: `https://cal.com/${CAL_USER}/consultation-suivi-cabinet`,
   },
 ];
 
