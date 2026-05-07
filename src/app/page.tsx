@@ -51,7 +51,7 @@ export default function Home() {
         {/* Desktop : bouton Réservé au centre vertical à droite du hero */}
         <Link
           href="/prendre-rdv"
-          className="hidden md:inline-flex absolute right-8 lg:right-16 top-[calc(50%+12px)] -translate-y-1/2 z-20 items-center justify-center px-7 py-4 bg-primary-dark text-white text-xs tracking-[0.25em] uppercase hover:bg-primary transition-colors text-center leading-snug shadow-lg max-w-[200px]"
+          className="hidden md:inline-flex absolute right-20 md:right-28 lg:right-40 top-[calc(50%+12px)] -translate-y-1/2 z-20 items-center justify-center px-7 py-4 bg-primary-dark text-white text-xs tracking-[0.25em] uppercase hover:bg-primary transition-colors text-center leading-snug shadow-lg max-w-[200px]"
         >
           Réserve ton appel gratuit
         </Link>
