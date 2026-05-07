@@ -46,7 +46,7 @@ export default function VotreNaturopathe() {
               <div
                 className="h-[300px] md:h-[560px] w-full bg-cover bg-center shadow-xl"
                 style={{
-                  backgroundImage: "url('/portrait-florence.png')",
+                  backgroundImage: "url('/presentation-naturopathe.png')",
                 }}
               />
             </div>

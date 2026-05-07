@@ -83,7 +83,7 @@ export default function Home() {
           <div className="order-2 md:order-1">
             <div className="relative h-[420px] md:h-[520px] w-full">
               <img
-                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=900&q=80"
+                src="/presentation-home.png"
                 alt="Florence Debattice"
                 className="absolute inset-0 w-full h-full object-cover"
               />
