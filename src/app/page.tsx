@@ -48,12 +48,20 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Desktop : bouton Réservé au centre vertical à droite du hero */}
+        {/* Desktop : médaillon "Réserve ton appel" — circulaire rotaté */}
         <Link
           href="/prendre-rdv"
-          className="hidden md:inline-flex absolute right-20 md:right-28 lg:right-40 top-[calc(50%+12px)] -translate-y-1/2 z-20 items-center justify-center px-7 py-4 bg-primary-dark text-white text-xs tracking-[0.25em] uppercase hover:bg-primary transition-colors text-center leading-snug shadow-lg max-w-[200px]"
+          className="group hidden md:flex absolute right-12 md:right-20 lg:right-32 top-[calc(50%+12px)] -translate-y-1/2 z-20 w-44 h-44 lg:w-48 lg:h-48 rounded-full border-2 border-primary-dark bg-background/90 backdrop-blur-sm flex-col items-center justify-center text-center rotate-[-8deg] hover:rotate-0 hover:bg-primary-dark transition-all duration-500 shadow-lg"
         >
-          Réserve ton appel gratuit
+          <span className="font-script text-3xl lg:text-4xl text-primary-dark group-hover:text-white leading-none mb-1.5 transition-colors">
+            appel gratuit
+          </span>
+          <span className="block w-10 h-px bg-primary-dark/60 group-hover:bg-white mb-2 transition-colors" />
+          <span className="text-[10px] tracking-[0.3em] uppercase text-primary-dark group-hover:text-white leading-relaxed transition-colors">
+            Réserve ton
+            <br />
+            créneau
+          </span>
         </Link>
 
         {/* Flèche animée bas */}
