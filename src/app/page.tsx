@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       {/* ═══════════ HERO ═══════════ */}
-      <section className="relative -mt-[100px] min-h-[560px] flex items-center overflow-hidden">
+      <section className="relative -mt-[100px] min-h-[480px] flex items-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -16,24 +16,24 @@ export default function Home() {
         {/* Calque blanc semi-opaque pour assurer la lisibilité par-dessus la photo */}
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/30" />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pt-[120px] pb-14">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pt-[100px] pb-10">
           <div className="max-w-2xl">
-            <p className="text-xs md:text-sm tracking-[0.5em] uppercase text-primary-dark mb-4 font-medium">
+            <p className="text-[10px] md:text-xs tracking-[0.5em] uppercase text-primary-dark mb-3 font-medium">
               Florence Debattice — Naturopathe
             </p>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-primary-dark leading-[1.05] mb-1">
+            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-primary-dark leading-[1.1] mb-1">
               Trouvez votre équilibre naturel
             </h1>
-            <p className="font-script text-5xl md:text-6xl lg:text-7xl text-accent leading-none mb-5">
+            <p className="font-script text-4xl md:text-5xl lg:text-6xl text-accent leading-none mb-4">
               en douceur
             </p>
-            <p className="text-base md:text-lg text-foreground leading-relaxed mb-6 max-w-xl">
+            <p className="text-sm md:text-base text-foreground leading-relaxed mb-5 max-w-xl">
               « Décodez les messages de votre corps grâce à la naturopathie
               pour cultiver votre santé et booster votre vitalité. »
             </p>
             <Link
               href="/votre-naturopathe"
-              className="inline-block px-7 py-3 border border-primary-dark text-primary-dark text-xs tracking-[0.25em] uppercase hover:bg-primary-dark hover:text-white transition-colors"
+              className="inline-block px-6 py-2.5 border border-primary-dark text-primary-dark text-xs tracking-[0.25em] uppercase hover:bg-primary-dark hover:text-white transition-colors"
             >
               Me découvrir
             </Link>
@@ -41,7 +41,7 @@ export default function Home() {
             {/* Mobile : bouton Réservé sous le texte */}
             <Link
               href="/prendre-rdv"
-              className="md:hidden mt-4 inline-flex items-center justify-center px-8 py-4 bg-primary-dark text-white text-sm tracking-[0.25em] uppercase shadow-lg"
+              className="md:hidden mt-3 inline-flex items-center justify-center px-6 py-3 bg-primary-dark text-white text-xs tracking-[0.25em] uppercase shadow-lg"
             >
               Réserve ton appel gratuit
             </Link>
@@ -51,7 +51,7 @@ export default function Home() {
         {/* Desktop : bouton Réservé au centre vertical à droite du hero */}
         <Link
           href="/prendre-rdv"
-          className="hidden md:inline-flex absolute right-8 lg:right-16 top-1/2 -translate-y-1/2 z-20 items-center justify-center px-8 py-5 bg-primary-dark text-white text-sm tracking-[0.25em] uppercase hover:bg-primary transition-colors text-center leading-snug shadow-lg max-w-[220px]"
+          className="hidden md:inline-flex absolute right-8 lg:right-16 top-[calc(50%+12px)] -translate-y-1/2 z-20 items-center justify-center px-7 py-4 bg-primary-dark text-white text-xs tracking-[0.25em] uppercase hover:bg-primary transition-colors text-center leading-snug shadow-lg max-w-[200px]"
         >
           Réserve ton appel gratuit
         </Link>
