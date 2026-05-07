@@ -41,7 +41,7 @@ function PrendreRdvContent() {
 
       <section className="max-w-6xl mx-auto px-5 md:px-6 py-10 md:py-16">
         {/* Étape 1 : choix de la prestation */}
-        <div className="mb-8 md:mb-10">
+        <div className="mb-8 md:mb-10 text-center md:text-left">
           <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-accent font-medium mb-3">
             Étape 1 — votre prestation
           </p>
@@ -57,7 +57,7 @@ function PrendreRdvContent() {
                   key={p.slug}
                   type="button"
                   onClick={() => setService(p.slug)}
-                  className={`text-left bg-white border-2 px-5 py-4 transition-all ${
+                  className={`text-center md:text-left bg-white border-2 px-5 py-4 transition-all ${
                     active
                       ? "border-accent shadow-md"
                       : "border-border hover:border-accent/60"
@@ -66,7 +66,7 @@ function PrendreRdvContent() {
                   <p className="font-display text-base md:text-lg text-primary-dark leading-tight mb-2">
                     {p.title}
                   </p>
-                  <div className="flex items-center gap-3 text-sm">
+                  <div className="flex items-center justify-center md:justify-start gap-3 text-sm">
                     <span className="text-accent font-bold">{p.price}</span>
                     <span className="text-foreground/60">·</span>
                     <span className="text-accent font-bold">
@@ -81,7 +81,7 @@ function PrendreRdvContent() {
 
         {/* Étape 2 : calendrier */}
         {selected ? (
-          <div className="mt-10 md:mt-12">
+          <div className="mt-10 md:mt-12 text-center md:text-left">
             <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-accent font-medium mb-3">
               Étape 2 — votre créneau
             </p>

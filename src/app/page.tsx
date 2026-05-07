@@ -9,16 +9,16 @@ export default function Home() {
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative -mt-[100px] min-h-[480px] flex items-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-[center_80%]"
+          className="absolute inset-0 bg-cover bg-[right_80%] md:bg-[center_80%]"
           style={{
             backgroundImage: "url('/hero-home.png')",
           }}
         />
         {/* Calque blanc semi-opaque pour assurer la lisibilité par-dessus la photo */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/30" />
+        <div className="absolute inset-0 bg-background/70 md:bg-gradient-to-r md:from-background/95 md:via-background/80 md:to-background/30" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-12 pt-[90px] md:pt-[100px] pb-10">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl text-center md:text-left mx-auto md:mx-0">
             <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-primary-dark mb-3 font-medium">
               Florence Debattice — Naturopathe
             </p>
@@ -28,24 +28,26 @@ export default function Home() {
             <p className="font-script text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-accent leading-none mb-4">
               en douceur
             </p>
-            <p className="text-sm md:text-base text-foreground leading-relaxed mb-5 max-w-xl">
+            <p className="text-sm md:text-base text-foreground leading-relaxed mb-5 max-w-xl mx-auto md:mx-0">
               « Décodez les messages de votre corps grâce à la naturopathie
               pour cultiver votre santé et booster votre vitalité. »
             </p>
-            <Link
-              href="/votre-naturopathe"
-              className="inline-block px-6 py-2.5 border border-primary-dark text-primary-dark text-xs tracking-[0.25em] uppercase hover:bg-primary-dark hover:text-white transition-colors"
-            >
-              Me découvrir
-            </Link>
+            <div className="flex flex-col items-center md:items-start gap-3">
+              <Link
+                href="/votre-naturopathe"
+                className="inline-block px-6 py-2.5 border border-primary-dark text-primary-dark text-xs tracking-[0.25em] uppercase hover:bg-primary-dark hover:text-white transition-colors"
+              >
+                Me découvrir
+              </Link>
 
-            {/* Mobile : bouton Réservé sous le texte */}
-            <Link
-              href="/prendre-rdv"
-              className="md:hidden mt-3 inline-flex items-center justify-center px-6 py-3 bg-primary-dark text-white text-xs tracking-[0.25em] uppercase shadow-lg"
-            >
-              Réserve ton appel gratuit
-            </Link>
+              {/* Mobile : bouton Réservé sous le texte */}
+              <Link
+                href="/prendre-rdv"
+                className="md:hidden inline-flex items-center justify-center px-6 py-3 bg-primary-dark text-white text-xs tracking-[0.25em] uppercase shadow-lg"
+              >
+                Réserve ton appel gratuit
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -93,7 +95,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="order-1 md:order-2">
+          <div className="order-1 md:order-2 text-center md:text-left">
             <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-primary-dark mb-3 md:mb-4">
               Bienvenue
             </p>
@@ -243,7 +245,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-5 px-5 pb-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:overflow-visible md:mx-0 md:px-0 md:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {prestations
               .filter((p) =>
                 [
@@ -256,7 +258,7 @@ export default function Home() {
               <Link
                 key={p.slug}
                 href={`/mes-prestations/${p.slug}`}
-                className="group bg-white text-foreground overflow-hidden flex flex-col shadow-md hover:shadow-xl transition-shadow"
+                className="group bg-white text-foreground overflow-hidden flex flex-col shadow-md hover:shadow-xl transition-shadow snap-center shrink-0 w-[85%] sm:w-[70%] md:w-auto"
               >
                 <div className="aspect-square overflow-hidden bg-background">
                   <img

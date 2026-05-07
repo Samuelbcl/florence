@@ -41,7 +41,7 @@ export default function Contact() {
       {/* BLOC INFO + NEWSLETTER */}
       <section className="max-w-5xl mx-auto px-5 md:px-6 py-12 md:py-24 grid md:grid-cols-2 gap-8 md:gap-16">
         {/* Coordonnées */}
-        <div>
+        <div className="text-center md:text-left">
           <h2 className="font-script text-3xl sm:text-4xl md:text-5xl text-primary-dark mb-5 md:mb-6 leading-none">
             le cabinet
           </h2>

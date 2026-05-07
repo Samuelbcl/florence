@@ -43,6 +43,15 @@ export default function Header() {
     };
   }, [mobileOpen]);
 
+  // Ferme le drawer si la fenêtre passe en desktop
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 1024) setMobileOpen(false);
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   const transparent = hasTransparentHero && !scrolled && !mobileOpen;
 
   const scrollToTop = () => {
@@ -55,131 +64,130 @@ export default function Header() {
   };
 
   return (
-    <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        transparent ? "bg-transparent" : "bg-background/95 backdrop-blur"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-5 md:px-6 py-4 md:py-5 flex items-center justify-between">
-        <Link
-          href="/"
-          onClick={scrollToTop}
-          className="flex flex-col leading-none"
-        >
-          <span className="font-display text-lg sm:text-xl md:text-2xl tracking-wide text-primary-dark">
-            Florence Debattice
-          </span>
-          <span className="text-[9px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-muted mt-1">
-            Naturopathe
-          </span>
-        </Link>
-
-        {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-7">
-          {navLinks.map((link) => (
-            <div key={link.href} className="relative group">
-              <Link
-                href={link.href}
-                onClick={scrollToTop}
-                className="text-sm text-foreground hover:text-primary transition-colors"
-              >
-                {link.label}
-              </Link>
-              {link.children && (
-                <div className="absolute top-full left-0 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-                  <div className="bg-card border border-border shadow-lg rounded-sm py-2 min-w-[180px]">
-                    {link.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        onClick={scrollToTop}
-                        className="block px-4 py-2 text-sm text-foreground hover:bg-background hover:text-primary"
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
-          <Link
-            href="/prendre-rdv"
-            onClick={scrollToTop}
-            className="ml-2 px-5 py-2.5 bg-primary text-white text-xs tracking-[0.2em] uppercase hover:bg-primary-dark transition-colors"
-          >
-            Prendre RDV
-          </Link>
-        </nav>
-
-        {/* Mobile hamburger / close */}
-        <button
-          aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
-          aria-expanded={mobileOpen}
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden relative w-10 h-10 flex items-center justify-center"
-        >
-          <span
-            className={`absolute h-px w-6 bg-foreground transition-all duration-300 ${
-              mobileOpen ? "rotate-45" : "-translate-y-2"
-            }`}
-          />
-          <span
-            className={`absolute h-px w-6 bg-foreground transition-all duration-300 ${
-              mobileOpen ? "opacity-0" : ""
-            }`}
-          />
-          <span
-            className={`absolute h-px w-6 bg-foreground transition-all duration-300 ${
-              mobileOpen ? "-rotate-45" : "translate-y-2"
-            }`}
-          />
-        </button>
-      </div>
-
-      {/* Mobile drawer plein écran */}
-      <div
-        className={`lg:hidden fixed inset-x-0 top-[64px] md:top-[72px] bottom-0 bg-background z-40 transition-all duration-300 ${
-          mobileOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
+    <>
+      <header
+        className={`sticky top-0 z-50 transition-all duration-300 ${
+          transparent ? "bg-transparent" : "bg-background/95 backdrop-blur"
         }`}
       >
-        <nav className="h-full overflow-y-auto px-6 py-8 flex flex-col">
-          <ul className="flex flex-col">
+        <div className="max-w-7xl mx-auto px-5 md:px-6 py-4 md:py-5 flex items-center justify-between">
+          <Link
+            href="/"
+            onClick={scrollToTop}
+            className="flex flex-col leading-none"
+          >
+            <span className="font-display text-lg sm:text-xl md:text-2xl tracking-wide text-primary-dark">
+              Florence Debattice
+            </span>
+            <span className="text-[9px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-muted mt-1">
+              Naturopathe
+            </span>
+          </Link>
+
+          {/* Desktop nav */}
+          <nav className="hidden lg:flex items-center gap-7">
             {navLinks.map((link) => (
-              <li key={link.href} className="border-b border-border">
+              <div key={link.href} className="relative group">
                 <Link
                   href={link.href}
-                  onClick={closeAndScroll}
-                  className="block py-4 text-lg font-display text-primary-dark hover:text-primary"
+                  onClick={scrollToTop}
+                  className="text-sm text-foreground hover:text-primary transition-colors"
                 >
                   {link.label}
                 </Link>
-              </li>
+                {link.children && (
+                  <div className="absolute top-full left-0 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                    <div className="bg-card border border-border shadow-lg rounded-sm py-2 min-w-[180px]">
+                      {link.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          onClick={scrollToTop}
+                          className="block px-4 py-2 text-sm text-foreground hover:bg-background hover:text-primary"
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             ))}
-          </ul>
+            <Link
+              href="/prendre-rdv"
+              onClick={scrollToTop}
+              className="ml-2 px-5 py-2.5 bg-primary text-white text-xs tracking-[0.2em] uppercase hover:bg-primary-dark transition-colors"
+            >
+              Prendre RDV
+            </Link>
+          </nav>
 
-          <Link
-            href="/prendre-rdv"
-            onClick={closeAndScroll}
-            className="mt-8 px-6 py-4 bg-primary-dark text-white text-xs tracking-[0.25em] uppercase text-center hover:bg-primary transition-colors"
+          {/* Mobile hamburger */}
+          <button
+            type="button"
+            aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen((v) => !v)}
+            className="lg:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 z-[60]"
           >
-            Prendre RDV
-          </Link>
+            <span
+              className={`block h-px w-6 bg-foreground transition-transform duration-300 ${
+                mobileOpen ? "rotate-45 translate-y-[7px]" : ""
+              }`}
+            />
+            <span
+              className={`block h-px w-6 bg-foreground transition-opacity duration-300 ${
+                mobileOpen ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`block h-px w-6 bg-foreground transition-transform duration-300 ${
+                mobileOpen ? "-rotate-45 -translate-y-[7px]" : ""
+              }`}
+            />
+          </button>
+        </div>
+      </header>
 
-          <div className="mt-auto pt-10 text-center">
-            <p className="text-xs tracking-[0.25em] uppercase text-muted mb-3">
-              Cabinet
-            </p>
-            <p className="text-sm text-foreground/85 leading-relaxed">
-              Rue de Beaufays 17b
-              <br />
-              4870 Trooz, Belgique
-            </p>
-          </div>
-        </nav>
-      </div>
-    </header>
+      {/* Mobile drawer plein écran (rendu conditionnel) */}
+      {mobileOpen && (
+        <div className="lg:hidden fixed inset-0 z-40 bg-background pt-[68px] md:pt-[80px]">
+          <nav className="h-full overflow-y-auto px-6 py-8 flex flex-col text-center">
+            <ul className="flex flex-col">
+              {navLinks.map((link) => (
+                <li key={link.href} className="border-b border-border">
+                  <Link
+                    href={link.href}
+                    onClick={closeAndScroll}
+                    className="block py-4 text-lg font-display text-primary-dark hover:text-primary"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <Link
+              href="/prendre-rdv"
+              onClick={closeAndScroll}
+              className="mt-8 mx-auto px-8 py-4 bg-primary-dark text-white text-xs tracking-[0.25em] uppercase hover:bg-primary transition-colors"
+            >
+              Prendre RDV
+            </Link>
+
+            <div className="mt-auto pt-10">
+              <p className="text-xs tracking-[0.25em] uppercase text-muted mb-3">
+                Cabinet
+              </p>
+              <p className="text-sm text-foreground/85 leading-relaxed">
+                Rue de Beaufays 17b
+                <br />
+                4870 Trooz, Belgique
+              </p>
+            </div>
+          </nav>
+        </div>
+      )}
+    </>
   );
 }

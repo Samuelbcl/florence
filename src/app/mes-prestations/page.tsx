@@ -26,13 +26,13 @@ export default function MesPrestations() {
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-5 md:px-6 py-12 md:py-24">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
+      <section className="max-w-6xl mx-auto md:px-6 py-12 md:py-24">
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 px-5 pb-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:overflow-visible md:px-0 md:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {prestations.map((p) => (
             <Link
               key={p.slug}
               href={`/mes-prestations/${p.slug}`}
-              className="group bg-white shadow-md hover:shadow-xl transition-shadow overflow-hidden flex flex-col"
+              className="group bg-white shadow-md hover:shadow-xl transition-shadow overflow-hidden flex flex-col snap-center shrink-0 w-[85%] sm:w-[60%] md:w-auto"
             >
               <div className="aspect-square overflow-hidden bg-background">
                 <img

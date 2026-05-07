@@ -52,7 +52,7 @@ export default async function PrestationPage({ params }: Props) {
             </div>
 
             {/* TITRE + DESC + PRIX/DURÉE À DROITE */}
-            <div className="md:pt-4">
+            <div className="md:pt-4 text-center md:text-left">
               <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-accent font-medium mb-3 md:mb-4">
                 Prestation
               </p>
@@ -65,7 +65,7 @@ export default async function PrestationPage({ params }: Props) {
               </p>
 
               {/* Prix + Durée */}
-              <div className="flex flex-wrap gap-6 md:gap-10 py-5 md:py-6 border-y border-border mb-7 md:mb-8">
+              <div className="flex flex-wrap justify-center md:justify-start gap-6 md:gap-10 py-5 md:py-6 border-y border-border mb-7 md:mb-8">
                 <div className="flex items-center gap-3 md:gap-4">
                   <span className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-accent text-white flex items-center justify-center shadow-md font-body font-bold text-xl md:text-2xl">
                     €

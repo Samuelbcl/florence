@@ -20,12 +20,12 @@ export default function PourquoiConsulter() {
       {/* HERO photo, header transparent en haut, titre centré */}
       <section className="relative -mt-[100px] min-h-[400px] md:min-h-[500px] flex items-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-left md:bg-center"
           style={{
             backgroundImage: "url('/hero-pourquoi-consulter.png')",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-background/20 to-background/40" />
+        <div className="absolute inset-0 bg-background/70 md:bg-gradient-to-t md:from-background/60 md:via-background/20 md:to-background/40" />
 
         <div className="relative z-10 w-full max-w-5xl mx-auto px-5 md:px-12 pt-[90px] md:pt-[100px] pb-10 text-center">
           <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase mb-3 md:mb-4 text-primary-dark font-medium">
