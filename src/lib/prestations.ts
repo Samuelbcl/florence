@@ -10,6 +10,17 @@ export type Prestation = {
 
 export const prestations: Prestation[] = [
   {
+    slug: "rendez-vous-informatif",
+    title: "Rendez-vous informatif",
+    short:
+      "Premier échange gratuit pour faire connaissance et répondre à vos questions.",
+    description:
+      "Vous hésitez à franchir le pas ? Vous avez des questions sur la naturopathie ou sur ma façon de travailler ? Ce rendez-vous informatif gratuit est fait pour vous. En 30 minutes, nous prenons le temps de faire connaissance, de discuter de votre situation et de voir ensemble si un accompagnement vous correspondrait. Aucun engagement, juste un moment d'échange.",
+    price: "Gratuit",
+    duration: "30 min",
+    image: "/presta-rdv-informatif.png",
+  },
+  {
     slug: "consultation-initiale-en-ligne",
     title: "Consultation initiale en ligne",
     short:
@@ -52,17 +63,6 @@ export const prestations: Prestation[] = [
     price: "65 €",
     duration: "60 min",
     image: "/presta-cabinet-suivi.png",
-  },
-  {
-    slug: "rendez-vous-informatif",
-    title: "Rendez-vous informatif",
-    short:
-      "Premier échange gratuit pour faire connaissance et répondre à vos questions.",
-    description:
-      "Vous hésitez à franchir le pas ? Vous avez des questions sur la naturopathie ou sur ma façon de travailler ? Ce rendez-vous informatif gratuit est fait pour vous. En 30 minutes, nous prenons le temps de faire connaissance, de discuter de votre situation et de voir ensemble si un accompagnement vous correspondrait. Aucun engagement, juste un moment d'échange.",
-    price: "Gratuit",
-    duration: "30 min",
-    image: "/presta-rdv-informatif.png",
   },
 ];
 

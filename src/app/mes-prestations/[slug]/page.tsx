@@ -39,16 +39,16 @@ export default async function PrestationPage({ params }: Props) {
           </Link>
 
           <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-start">
-            {/* IMAGE À GAUCHE */}
+            {/* IMAGE À GAUCHE — carrée */}
             <div className="relative">
-              <div className="aspect-[4/5] w-full overflow-hidden shadow-xl">
+              <div className="aspect-square w-full overflow-hidden shadow-xl bg-background">
                 <img
                   src={prestation.image}
                   alt={prestation.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
-              <div className="absolute -bottom-4 -left-4 w-20 h-20 border-2 border-primary -z-10" />
+              <div className="absolute -bottom-4 -left-4 w-20 h-20 border-2 border-accent -z-10" />
             </div>
 
             {/* TITRE + DESC + PRIX/DURÉE À DROITE */}
@@ -65,16 +65,16 @@ export default async function PrestationPage({ params }: Props) {
               </p>
 
               {/* Prix + Durée */}
-              <div className="flex flex-wrap gap-6 py-6 border-y border-border mb-8">
-                <div className="flex items-center gap-3">
-                  <span className="w-12 h-12 rounded-full border border-accent flex items-center justify-center text-accent">
+              <div className="flex flex-wrap gap-8 py-6 border-y border-border mb-8">
+                <div className="flex items-center gap-4">
+                  <span className="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center shadow-md">
                     <svg
-                      width="22"
-                      height="22"
+                      width="26"
+                      height="26"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      strokeWidth="1.5"
+                      strokeWidth="2.4"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       aria-hidden
@@ -85,24 +85,24 @@ export default async function PrestationPage({ params }: Props) {
                     </svg>
                   </span>
                   <div>
-                    <p className="text-[10px] tracking-[0.3em] uppercase text-muted">
+                    <p className="text-[10px] tracking-[0.3em] uppercase text-muted mb-0.5">
                       Tarif
                     </p>
-                    <p className="font-script text-3xl text-accent leading-none">
+                    <p className="font-display text-2xl text-accent font-medium leading-none">
                       {prestation.price}
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3">
-                  <span className="w-12 h-12 rounded-full border border-accent flex items-center justify-center text-accent">
+                <div className="flex items-center gap-4">
+                  <span className="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center shadow-md">
                     <svg
-                      width="22"
-                      height="22"
+                      width="26"
+                      height="26"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      strokeWidth="1.5"
+                      strokeWidth="2.4"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       aria-hidden
@@ -112,10 +112,10 @@ export default async function PrestationPage({ params }: Props) {
                     </svg>
                   </span>
                   <div>
-                    <p className="text-[10px] tracking-[0.3em] uppercase text-muted">
+                    <p className="text-[10px] tracking-[0.3em] uppercase text-muted mb-0.5">
                       Durée
                     </p>
-                    <p className="font-script text-3xl text-accent leading-none">
+                    <p className="font-display text-2xl text-accent font-medium leading-none">
                       {prestation.duration}
                     </p>
                   </div>

@@ -21,7 +21,7 @@ export default function MesPrestations() {
             Prestations & tarifs
           </h1>
           <p className="font-script text-3xl md:text-4xl text-accent leading-none">
-            choisissez le format qui vous convient
+            choisissez le rendez-vous qui vous convient
           </p>
         </div>
       </section>
@@ -34,11 +34,11 @@ export default function MesPrestations() {
               href={`/mes-prestations/${p.slug}`}
               className="group bg-white shadow-md hover:shadow-xl transition-shadow overflow-hidden flex flex-col"
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-square overflow-hidden bg-background">
                 <img
                   src={p.image}
                   alt={p.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
 
@@ -51,14 +51,14 @@ export default function MesPrestations() {
                 </p>
 
                 <div className="flex items-center gap-5 pt-4 border-t border-border">
-                  <span className="flex items-center gap-2 text-primary-dark">
+                  <span className="flex items-center gap-2 text-accent">
                     <svg
-                      width="16"
-                      height="16"
+                      width="18"
+                      height="18"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      strokeWidth="1.5"
+                      strokeWidth="2.2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       aria-hidden
@@ -67,16 +67,18 @@ export default function MesPrestations() {
                       <path d="M5 10h7" />
                       <path d="M5 14h7" />
                     </svg>
-                    <span className="font-display text-base">{p.price}</span>
+                    <span className="font-display text-base font-medium">
+                      {p.price}
+                    </span>
                   </span>
-                  <span className="flex items-center gap-2 text-primary-dark">
+                  <span className="flex items-center gap-2 text-accent">
                     <svg
-                      width="16"
-                      height="16"
+                      width="18"
+                      height="18"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      strokeWidth="1.5"
+                      strokeWidth="2.2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       aria-hidden
@@ -84,7 +86,7 @@ export default function MesPrestations() {
                       <circle cx="12" cy="12" r="9" />
                       <path d="M12 7v5l3 2" />
                     </svg>
-                    <span className="font-display text-base">
+                    <span className="font-display text-base font-medium">
                       {p.duration}
                     </span>
                   </span>

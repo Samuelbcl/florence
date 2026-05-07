@@ -239,22 +239,30 @@ export default function Home() {
               Mes prestations
             </p>
             <h2 className="font-script text-5xl md:text-7xl text-white leading-none">
-              naturo
+              mes naturopathie
             </h2>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {prestations.map((p) => (
+            {prestations
+              .filter((p) =>
+                [
+                  "rendez-vous-informatif",
+                  "consultation-initiale-en-ligne",
+                  "consultation-initiale-cabinet",
+                ].includes(p.slug)
+              )
+              .map((p) => (
               <Link
                 key={p.slug}
                 href={`/mes-prestations/${p.slug}`}
                 className="group bg-white text-foreground overflow-hidden flex flex-col shadow-md hover:shadow-xl transition-shadow"
               >
-                <div className="aspect-[4/3] overflow-hidden">
+                <div className="aspect-square overflow-hidden bg-background">
                   <img
                     src={p.image}
                     alt={p.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-6 md:p-7 flex flex-col flex-1">
@@ -265,14 +273,14 @@ export default function Home() {
                     {p.short}
                   </p>
                   <div className="flex items-center gap-5 pt-4 border-t border-border">
-                    <span className="flex items-center gap-2 text-primary-dark">
+                    <span className="flex items-center gap-2 text-accent">
                       <svg
-                        width="16"
-                        height="16"
+                        width="18"
+                        height="18"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        strokeWidth="1.5"
+                        strokeWidth="2.2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         aria-hidden
@@ -281,16 +289,18 @@ export default function Home() {
                         <path d="M5 10h7" />
                         <path d="M5 14h7" />
                       </svg>
-                      <span className="font-display">{p.price}</span>
+                      <span className="font-display font-medium">
+                        {p.price}
+                      </span>
                     </span>
-                    <span className="flex items-center gap-2 text-primary-dark">
+                    <span className="flex items-center gap-2 text-accent">
                       <svg
-                        width="16"
-                        height="16"
+                        width="18"
+                        height="18"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        strokeWidth="1.5"
+                        strokeWidth="2.2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         aria-hidden
@@ -298,7 +308,9 @@ export default function Home() {
                         <circle cx="12" cy="12" r="9" />
                         <path d="M12 7v5l3 2" />
                       </svg>
-                      <span className="font-display">{p.duration}</span>
+                      <span className="font-display font-medium">
+                        {p.duration}
+                      </span>
                     </span>
                   </div>
                 </div>
@@ -319,8 +331,8 @@ export default function Home() {
 
       {/* ═══════════ BLOG ═══════════ */}
       <section className="bg-background py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-14">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="text-center mb-10">
             <p className="text-xs tracking-[0.5em] uppercase text-primary-dark mb-4">
               À découvrir sur
             </p>
@@ -329,50 +341,25 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Mieux dormir naturellement",
-                excerpt: "Conseils pour retrouver un sommeil profond et réparateur.",
-                img: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=900&q=80",
-              },
-              {
-                title: "Équilibre hormonal féminin",
-                excerpt: "Comprendre son cycle et accompagner les changements.",
-                img: "https://images.unsplash.com/photo-1532635241-17e820acc59f?w=900&q=80",
-              },
-              {
-                title: "L'alimentation comme première médecine",
-                excerpt: "Les bases d'une assiette qui soutient votre vitalité.",
-                img: "https://images.unsplash.com/photo-1543362906-acfc16c67564?w=900&q=80",
-              },
-            ].map((post) => (
-              <article key={post.title} className="group cursor-pointer">
-                <div className="aspect-[4/3] overflow-hidden mb-5">
-                  <img
-                    src={post.img}
-                    alt={post.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <h3 className="font-display text-2xl text-foreground mb-2 group-hover:text-primary-dark">
-                  {post.title}
-                </h3>
-                <p className="text-sm text-foreground/75 leading-relaxed">
-                  {post.excerpt}
-                </p>
-              </article>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              href="/blog"
-              className="inline-block text-primary-dark border-b border-primary-dark pb-1 text-sm tracking-[0.25em] uppercase hover:text-primary hover:border-primary"
-            >
-              Autres articles
-            </Link>
-          </div>
+          <Link
+            href="/blog"
+            className="group block bg-card border border-border rounded-xl px-6 py-7 md:px-10 md:py-8 text-center hover:border-primary-dark hover:shadow-md transition-all"
+          >
+            <span className="inline-block text-[11px] font-medium tracking-[0.15em] uppercase text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">
+              Premier article
+            </span>
+            <h3 className="font-display text-2xl md:text-3xl text-primary-dark mb-3 leading-snug">
+              « Tu es juste fatiguée » — et si c&apos;était faux ?
+            </h3>
+            <p className="text-foreground/75 leading-relaxed mb-5">
+              Des femmes brillantes, actives, qui savent que quelque chose ne
+              va pas mais qu&apos;on n&apos;a jamais vraiment écoutées.
+              Découvrez l&apos;article complet sur le blog.
+            </p>
+            <span className="inline-block text-primary-dark border-b border-primary-dark pb-1 text-sm tracking-[0.25em] uppercase group-hover:text-primary group-hover:border-primary">
+              Lire l&apos;article ↗
+            </span>
+          </Link>
         </div>
       </section>
 
