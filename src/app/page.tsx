@@ -10,7 +10,7 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/cropped-cascade-foret.png')",
+            backgroundImage: "url('/hero-home.png')",
           }}
         />
         {/* Calque blanc semi-opaque pour assurer la lisibilité par-dessus la photo */}
