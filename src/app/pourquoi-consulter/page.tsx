@@ -18,7 +18,7 @@ export default function PourquoiConsulter() {
   return (
     <>
       {/* HERO photo, header transparent en haut, titre centré */}
-      <section className="relative -mt-[100px] min-h-[420px] md:min-h-[500px] flex items-center overflow-hidden">
+      <section className="relative -mt-[100px] min-h-[400px] md:min-h-[500px] flex items-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -27,21 +27,21 @@ export default function PourquoiConsulter() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-background/20 to-background/40" />
 
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-12 pt-[100px] pb-10 text-center">
-          <p className="text-[10px] md:text-xs tracking-[0.5em] uppercase mb-4 text-primary-dark font-medium">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-5 md:px-12 pt-[90px] md:pt-[100px] pb-10 text-center">
+          <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase mb-3 md:mb-4 text-primary-dark font-medium">
             Parce que la naturopathie
           </p>
-          <h1 className="font-display text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3">
             Pourquoi consulter ?
           </h1>
-          <p className="font-script text-3xl md:text-4xl text-accent leading-none">
+          <p className="font-script text-2xl sm:text-3xl md:text-4xl text-accent leading-none">
             agit en préventif comme en accompagnement
           </p>
         </div>
       </section>
 
-      <section className="max-w-3xl mx-auto px-6 py-20">
-        <p className="text-lg text-foreground/85 leading-[1.8]">
+      <section className="max-w-3xl mx-auto px-5 md:px-6 py-12 md:py-20">
+        <p className="text-base md:text-lg text-foreground/85 leading-[1.7] md:leading-[1.8]">
           Tout le monde peut consulter un naturopathe, que ce soit pour
           recevoir des{" "}
           <strong className="text-primary-dark font-bold">
@@ -67,17 +67,17 @@ export default function PourquoiConsulter() {
         </p>
       </section>
 
-      <section className="bg-card py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <IconCouple className="w-16 h-16 mx-auto mb-6" />
-            <h2 className="font-script text-5xl md:text-6xl text-primary-dark leading-none">
+      <section className="bg-card py-12 md:py-20">
+        <div className="max-w-6xl mx-auto px-5 md:px-6">
+          <div className="text-center mb-10 md:mb-14">
+            <IconCouple className="w-14 h-14 md:w-16 md:h-16 mx-auto mb-5 md:mb-6" />
+            <h2 className="font-script text-4xl sm:text-5xl md:text-6xl text-primary-dark leading-none">
               un accompagnement pour tous
             </h2>
           </div>
 
-          <div className="mb-16 max-w-3xl mx-auto text-center">
-            <p className="text-foreground/85 leading-[1.9]">
+          <div className="mb-10 md:mb-16 max-w-3xl mx-auto text-center">
+            <p className="text-sm md:text-base text-foreground/85 leading-[1.7] md:leading-[1.9]">
               <strong className="text-primary-dark font-bold">Sommeil</strong>
               ,{" "}
               <strong className="text-primary-dark font-bold">digestion</strong>
@@ -102,7 +102,7 @@ export default function PourquoiConsulter() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 sm:gap-7 md:gap-10">
             {[
               {
                 Icon: IconWoman,
@@ -126,11 +126,11 @@ export default function PourquoiConsulter() {
               },
             ].map(({ Icon, title, text }) => (
               <div key={title} className="text-center flex flex-col">
-                <Icon className="w-20 h-20 mx-auto mb-5" />
-                <h3 className="font-script text-3xl md:text-4xl text-accent mb-4 leading-tight min-h-[2.5em] flex items-center justify-center">
+                <Icon className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-5" />
+                <h3 className="font-script text-2xl sm:text-3xl md:text-4xl text-accent mb-3 md:mb-4 leading-tight min-h-[2.5em] flex items-center justify-center">
                   {title}
                 </h3>
-                <p className="text-sm text-foreground/75 leading-relaxed">
+                <p className="text-xs sm:text-sm text-foreground/75 leading-relaxed">
                   {text}
                 </p>
               </div>
@@ -139,8 +139,8 @@ export default function PourquoiConsulter() {
         </div>
       </section>
 
-      <section className="max-w-3xl mx-auto px-6 py-20 space-y-6 text-lg text-foreground/85 leading-[1.8]">
-        <h2 className="font-script text-5xl md:text-6xl text-center text-primary-dark mb-10 leading-none">
+      <section className="max-w-3xl mx-auto px-5 md:px-6 py-12 md:py-20 space-y-5 md:space-y-6 text-base md:text-lg text-foreground/85 leading-[1.7] md:leading-[1.8]">
+        <h2 className="font-script text-4xl sm:text-5xl md:text-6xl text-center text-primary-dark mb-8 md:mb-10 leading-none">
           pourquoi me consulter ?
         </h2>
         <p>
@@ -187,14 +187,14 @@ export default function PourquoiConsulter() {
         </p>
       </section>
 
-      <section className="bg-primary text-white py-20">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="font-display text-3xl md:text-4xl mb-6">
+      <section className="bg-primary text-white py-14 md:py-20">
+        <div className="max-w-3xl mx-auto px-5 md:px-6 text-center">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl mb-5 md:mb-6">
             Et vous, quelle sera votre raison de consulter ?
           </h2>
           <Link
             href="/prendre-rdv"
-            className="inline-block px-8 py-4 bg-white text-primary-dark text-xs tracking-[0.2em] uppercase hover:bg-accent hover:text-white transition-colors"
+            className="inline-block px-7 py-3.5 md:px-8 md:py-4 bg-white text-primary-dark text-xs tracking-[0.2em] uppercase hover:bg-accent hover:text-white transition-colors"
           >
             Prendre rendez-vous
           </Link>

@@ -12,22 +12,22 @@ export const metadata: Metadata = {
 export default function MesPrestations() {
   return (
     <>
-      <section className="bg-primary-light/20 py-20 md:py-24">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <p className="text-xs tracking-[0.5em] uppercase text-primary-dark font-medium mb-4">
+      <section className="bg-primary-light/20 py-14 md:py-24">
+        <div className="max-w-5xl mx-auto px-5 md:px-6 text-center">
+          <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-primary-dark font-medium mb-3 md:mb-4">
             Mes prestations
           </p>
-          <h1 className="font-display text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3">
             Prestations & tarifs
           </h1>
-          <p className="font-script text-3xl md:text-4xl text-accent leading-none">
+          <p className="font-script text-2xl sm:text-3xl md:text-4xl text-accent leading-none">
             choisissez le rendez-vous qui vous convient
           </p>
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <section className="max-w-6xl mx-auto px-5 md:px-6 py-12 md:py-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
           {prestations.map((p) => (
             <Link
               key={p.slug}
@@ -87,26 +87,26 @@ export default function MesPrestations() {
         </div>
       </section>
 
-      <section className="bg-card py-16 border-t border-border">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <p className="text-foreground/85 leading-relaxed mb-3">
+      <section className="bg-card py-12 md:py-16 border-t border-border">
+        <div className="max-w-3xl mx-auto px-5 md:px-6 text-center">
+          <p className="text-sm md:text-base text-foreground/85 leading-relaxed mb-3">
             Paiements acceptés : chèques, espèces et virement.
           </p>
-          <p className="text-foreground/70 text-sm italic">
+          <p className="text-foreground/70 text-xs md:text-sm italic">
             Non remboursé par la Sécurité Sociale, mais possibles
             remboursements partiels par certaines mutuelles.
           </p>
         </div>
       </section>
 
-      <section className="bg-primary-dark text-white py-20">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="font-script text-5xl md:text-6xl text-accent mb-6 leading-none">
+      <section className="bg-primary-dark text-white py-14 md:py-20">
+        <div className="max-w-3xl mx-auto px-5 md:px-6 text-center">
+          <h2 className="font-script text-4xl sm:text-5xl md:text-6xl text-accent mb-5 md:mb-6 leading-none">
             réservez votre prochain rendez-vous
           </h2>
           <Link
             href="/prendre-rdv"
-            className="inline-block px-8 py-4 bg-accent text-primary-dark text-xs tracking-[0.25em] uppercase hover:bg-white transition-colors"
+            className="inline-block px-7 py-3.5 md:px-8 md:py-4 bg-accent text-primary-dark text-xs tracking-[0.25em] uppercase hover:bg-white transition-colors"
           >
             Prendre rendez-vous
           </Link>

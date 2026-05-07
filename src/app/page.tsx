@@ -17,15 +17,15 @@ export default function Home() {
         {/* Calque blanc semi-opaque pour assurer la lisibilité par-dessus la photo */}
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/30" />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pt-[100px] pb-10">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-12 pt-[90px] md:pt-[100px] pb-10">
           <div className="max-w-2xl">
-            <p className="text-[10px] md:text-xs tracking-[0.5em] uppercase text-primary-dark mb-3 font-medium">
+            <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-primary-dark mb-3 font-medium">
               Florence Debattice — Naturopathe
             </p>
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-primary-dark leading-[1.1] mb-1">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary-dark leading-[1.1] mb-1">
               Trouvez votre équilibre naturel
             </h1>
-            <p className="font-script text-4xl md:text-5xl lg:text-6xl text-accent leading-none mb-4">
+            <p className="font-script text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-accent leading-none mb-4">
               en douceur
             </p>
             <p className="text-sm md:text-base text-foreground leading-relaxed mb-5 max-w-xl">
@@ -79,25 +79,25 @@ export default function Home() {
       </section>
 
       {/* ═══════════ BIENVENUE ═══════════ */}
-      <section id="bienvenue" className="bg-background py-20 md:py-28">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+      <section id="bienvenue" className="bg-background py-14 md:py-28">
+        <div className="max-w-6xl mx-auto px-5 md:px-6 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div className="order-2 md:order-1">
-            <div className="relative h-[420px] md:h-[520px] w-full">
+            <div className="relative h-[280px] sm:h-[360px] md:h-[520px] w-full">
               <img
                 src="/presentation-home.png"
                 alt="Florence Debattice"
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 border-2 border-primary -z-10" />
-              <div className="absolute -top-4 -left-4 w-24 h-24 bg-primary-light/40 -z-10" />
+              <div className="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 w-16 h-16 md:w-24 md:h-24 border-2 border-primary -z-10" />
+              <div className="absolute -top-3 -left-3 md:-top-4 md:-left-4 w-16 h-16 md:w-24 md:h-24 bg-primary-light/40 -z-10" />
             </div>
           </div>
 
           <div className="order-1 md:order-2">
-            <p className="text-xs tracking-[0.5em] uppercase text-primary-dark mb-4">
+            <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-primary-dark mb-3 md:mb-4">
               Bienvenue
             </p>
-            <h2 className="font-script text-6xl md:text-7xl text-primary-dark mb-8 leading-none">
+            <h2 className="font-script text-4xl sm:text-5xl md:text-7xl text-primary-dark mb-6 md:mb-8 leading-none">
               ravie de vous rencontrer
             </h2>
             <div className="space-y-5 text-foreground/85 text-lg leading-[1.8]">
@@ -128,18 +128,18 @@ export default function Home() {
       </section>
 
       {/* ═══════════ LA NATUROPATHIE C'EST QUOI ═══════════ */}
-      <section className="bg-primary-light/15 py-20 md:py-28">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <p className="text-xs tracking-[0.5em] uppercase text-primary-dark mb-4">
+      <section className="bg-primary-light/15 py-14 md:py-28">
+        <div className="max-w-5xl mx-auto px-5 md:px-6">
+          <div className="text-center mb-10 md:mb-14">
+            <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-primary-dark mb-3 md:mb-4">
               Pédagogie
             </p>
-            <h2 className="font-script text-5xl md:text-7xl text-primary-dark leading-none">
+            <h2 className="font-script text-4xl sm:text-5xl md:text-7xl text-primary-dark leading-none">
               la naturopathie, c&apos;est quoi ?
             </h2>
           </div>
 
-          <ul className="max-w-3xl mx-auto space-y-7">
+          <ul className="max-w-3xl mx-auto space-y-6 md:space-y-7">
             {[
               <>
                 La naturopathie est une{" "}
@@ -192,13 +192,13 @@ export default function Home() {
                 et des traitements existants.
               </>,
             ].map((content, i) => (
-              <li key={i} className="flex items-start gap-5">
-                <span className="shrink-0 w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center mt-1">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <li key={i} className="flex items-start gap-3 md:gap-5">
+                <span className="shrink-0 w-8 h-8 md:w-9 md:h-9 rounded-full bg-primary text-white flex items-center justify-center mt-1">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12l5 5L20 7" />
                   </svg>
                 </span>
-                <p className="text-foreground/90 text-lg leading-[1.8]">
+                <p className="text-foreground/90 text-base md:text-lg leading-[1.7] md:leading-[1.8]">
                   {content}
                 </p>
               </li>
@@ -209,22 +209,22 @@ export default function Home() {
       </section>
 
       {/* ═══════════ POUR QUI POUR QUOI ═══════════ */}
-      <section className="bg-background py-20 md:py-28">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <IconCouple className="w-16 h-16 mx-auto mb-6" />
-          <p className="text-xs tracking-[0.5em] uppercase text-primary-dark mb-4">
+      <section className="bg-background py-14 md:py-28">
+        <div className="max-w-5xl mx-auto px-5 md:px-6 text-center">
+          <IconCouple className="w-14 h-14 md:w-16 md:h-16 mx-auto mb-5 md:mb-6" />
+          <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-primary-dark mb-3 md:mb-4">
             Pour qui ? Pour quoi ?
           </p>
-          <h2 className="font-script text-5xl md:text-7xl text-primary-dark leading-none mb-10">
+          <h2 className="font-script text-4xl sm:text-5xl md:text-7xl text-primary-dark leading-none mb-8 md:mb-10">
             la naturopathie est pour tous
           </h2>
-          <p className="text-lg text-foreground/85 leading-[1.9] max-w-3xl mx-auto mb-8">
+          <p className="text-base md:text-lg text-foreground/85 leading-[1.8] md:leading-[1.9] max-w-3xl mx-auto mb-7 md:mb-8">
             Hommes, femmes, adolescents, enfants, bébés, femmes enceintes,
             personnes âgées… Il existe de multiples raisons de consulter.
           </p>
           <Link
             href="/pourquoi-consulter"
-            className="inline-block px-8 py-4 border border-primary-dark text-primary-dark text-xs tracking-[0.25em] uppercase hover:bg-primary-dark hover:text-white transition-colors"
+            className="inline-block px-7 py-3.5 md:px-8 md:py-4 border border-primary-dark text-primary-dark text-xs tracking-[0.25em] uppercase hover:bg-primary-dark hover:text-white transition-colors"
           >
             Pourquoi consulter ?
           </Link>
@@ -232,18 +232,18 @@ export default function Home() {
       </section>
 
       {/* ═══════════ MES PRESTATIONS ═══════════ */}
-      <section className="bg-primary-dark text-white py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <p className="text-xs tracking-[0.5em] uppercase text-white/70 mb-4">
+      <section className="bg-primary-dark text-white py-14 md:py-28">
+        <div className="max-w-7xl mx-auto px-5 md:px-6">
+          <div className="text-center mb-10 md:mb-16">
+            <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-white/70 mb-3 md:mb-4">
               Mes prestations
             </p>
-            <h2 className="font-script text-5xl md:text-7xl text-white leading-none">
+            <h2 className="font-script text-4xl sm:text-5xl md:text-7xl text-white leading-none">
               mes naturopathie
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {prestations
               .filter((p) =>
                 [
@@ -320,33 +320,33 @@ export default function Home() {
       </section>
 
       {/* ═══════════ BLOG ═══════════ */}
-      <section className="bg-background py-20 md:py-28">
-        <div className="max-w-3xl mx-auto px-6">
-          <div className="text-center mb-10">
-            <p className="text-xs tracking-[0.5em] uppercase text-primary-dark mb-4">
+      <section className="bg-background py-14 md:py-28">
+        <div className="max-w-3xl mx-auto px-5 md:px-6">
+          <div className="text-center mb-8 md:mb-10">
+            <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-primary-dark mb-3 md:mb-4">
               À découvrir sur
             </p>
-            <h2 className="font-script text-5xl md:text-7xl text-primary-dark leading-none">
+            <h2 className="font-script text-4xl sm:text-5xl md:text-7xl text-primary-dark leading-none">
               mon blog
             </h2>
           </div>
 
           <Link
             href="/blog"
-            className="group block bg-card border border-border rounded-xl px-6 py-7 md:px-10 md:py-8 text-center hover:border-primary-dark hover:shadow-md transition-all"
+            className="group block bg-card border border-border rounded-xl px-5 py-6 md:px-10 md:py-8 text-center hover:border-primary-dark hover:shadow-md transition-all"
           >
-            <span className="inline-block text-[11px] font-medium tracking-[0.15em] uppercase text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">
+            <span className="inline-block text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">
               Premier article
             </span>
-            <h3 className="font-display text-2xl md:text-3xl text-primary-dark mb-3 leading-snug">
+            <h3 className="font-display text-xl sm:text-2xl md:text-3xl text-primary-dark mb-3 leading-snug">
               « Tu es juste fatiguée » — et si c&apos;était faux ?
             </h3>
-            <p className="text-foreground/75 leading-relaxed mb-5">
+            <p className="text-sm md:text-base text-foreground/75 leading-relaxed mb-5">
               Des femmes brillantes, actives, qui savent que quelque chose ne
               va pas mais qu&apos;on n&apos;a jamais vraiment écoutées.
               Découvrez l&apos;article complet sur le blog.
             </p>
-            <span className="inline-block text-primary-dark border-b border-primary-dark pb-1 text-sm tracking-[0.25em] uppercase group-hover:text-primary group-hover:border-primary">
+            <span className="inline-block text-primary-dark border-b border-primary-dark pb-1 text-xs md:text-sm tracking-[0.25em] uppercase group-hover:text-primary group-hover:border-primary">
               Lire l&apos;article ↗
             </span>
           </Link>
@@ -354,7 +354,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════ CTA FINAL ═══════════ */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
+      <section className="relative py-16 md:py-32 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -363,11 +363,11 @@ export default function Home() {
           }}
         />
         <div className="absolute inset-0 bg-primary-dark/80" />
-        <div className="relative z-10 max-w-3xl mx-auto px-6 text-center text-white">
-          <p className="font-script text-4xl md:text-5xl text-accent mb-8 leading-none">
+        <div className="relative z-10 max-w-3xl mx-auto px-5 md:px-6 text-center text-white">
+          <p className="font-script text-3xl sm:text-4xl md:text-5xl text-accent mb-6 md:mb-8 leading-none">
             prendre soin de vous
           </p>
-          <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-10 font-light">
+          <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-8 md:mb-10 font-light">
             La naturopathie, en prévention ou en complément de la médecine
             conventionnelle.
           </p>

@@ -24,28 +24,28 @@ export default function Contact() {
   return (
     <>
       {/* HEADER de page */}
-      <section className="bg-primary-light/20 py-20 md:py-24">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <p className="text-xs tracking-[0.5em] uppercase text-accent font-medium mb-4">
+      <section className="bg-primary-light/20 py-14 md:py-24">
+        <div className="max-w-4xl mx-auto px-5 md:px-6 text-center">
+          <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-accent font-medium mb-3 md:mb-4">
             Contact
           </p>
-          <h1 className="font-display text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3">
             Restons en contact
           </h1>
-          <p className="font-script text-3xl md:text-4xl text-accent leading-none">
+          <p className="font-script text-2xl sm:text-3xl md:text-4xl text-accent leading-none">
             une question, un échange ?
           </p>
         </div>
       </section>
 
       {/* BLOC INFO + NEWSLETTER */}
-      <section className="max-w-5xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 md:gap-16">
+      <section className="max-w-5xl mx-auto px-5 md:px-6 py-12 md:py-24 grid md:grid-cols-2 gap-8 md:gap-16">
         {/* Coordonnées */}
         <div>
-          <h2 className="font-script text-4xl md:text-5xl text-primary-dark mb-6 leading-none">
+          <h2 className="font-script text-3xl sm:text-4xl md:text-5xl text-primary-dark mb-5 md:mb-6 leading-none">
             le cabinet
           </h2>
-          <div className="space-y-4 text-foreground/85 leading-[1.8]">
+          <div className="space-y-4 text-sm md:text-base text-foreground/85 leading-[1.7] md:leading-[1.8]">
             <p>
               <span className="block text-xs tracking-[0.3em] uppercase text-muted mb-1">
                 Adresse
@@ -69,11 +69,11 @@ export default function Contact() {
         </div>
 
         {/* Newsletter */}
-        <div className="bg-card border border-border rounded-xl p-8 md:p-10">
-          <h2 className="font-script text-4xl md:text-5xl text-accent mb-3 leading-none">
+        <div className="bg-card border border-border rounded-xl p-6 sm:p-8 md:p-10">
+          <h2 className="font-script text-3xl sm:text-4xl md:text-5xl text-accent mb-3 leading-none">
             la newsletter
           </h2>
-          <p className="text-foreground/85 leading-[1.7] mb-6">
+          <p className="text-sm md:text-base text-foreground/85 leading-[1.7] mb-5 md:mb-6">
             Recevez chaque mois mes articles, conseils et inspirations
             naturopathiques directement par mail. Aucune publicité, aucun
             spam — uniquement du contenu choisi pour vous.

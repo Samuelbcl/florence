@@ -21,7 +21,6 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  // Pages dont le hero doit passer derrière le header transparent
   const transparentPages = ["/", "/votre-naturopathe", "/pourquoi-consulter"];
   const hasTransparentHero = transparentPages.includes(pathname);
 
@@ -32,10 +31,27 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const transparent = hasTransparentHero && !scrolled;
+  // Bloque le scroll du body quand le menu mobile est ouvert
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
+  const transparent = hasTransparentHero && !scrolled && !mobileOpen;
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const closeAndScroll = () => {
+    setMobileOpen(false);
+    scrollToTop();
   };
 
   return (
@@ -44,20 +60,21 @@ export default function Header() {
         transparent ? "bg-transparent" : "bg-background/95 backdrop-blur"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-5 md:px-6 py-4 md:py-5 flex items-center justify-between">
         <Link
           href="/"
           onClick={scrollToTop}
           className="flex flex-col leading-none"
         >
-          <span className="font-display text-2xl tracking-wide text-primary-dark">
+          <span className="font-display text-lg sm:text-xl md:text-2xl tracking-wide text-primary-dark">
             Florence Debattice
           </span>
-          <span className="text-xs tracking-[0.3em] uppercase text-muted mt-1">
+          <span className="text-[9px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-muted mt-1">
             Naturopathe
           </span>
         </Link>
 
+        {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-7">
           {navLinks.map((link) => (
             <div key={link.href} className="relative group">
@@ -95,64 +112,74 @@ export default function Header() {
           </Link>
         </nav>
 
+        {/* Mobile hamburger / close */}
         <button
-          aria-label="Menu"
+          aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-expanded={mobileOpen}
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden flex flex-col gap-1.5 p-2"
+          className="lg:hidden relative w-10 h-10 flex items-center justify-center"
         >
-          <span className="w-6 h-px bg-foreground" />
-          <span className="w-6 h-px bg-foreground" />
-          <span className="w-6 h-px bg-foreground" />
+          <span
+            className={`absolute h-px w-6 bg-foreground transition-all duration-300 ${
+              mobileOpen ? "rotate-45" : "-translate-y-2"
+            }`}
+          />
+          <span
+            className={`absolute h-px w-6 bg-foreground transition-all duration-300 ${
+              mobileOpen ? "opacity-0" : ""
+            }`}
+          />
+          <span
+            className={`absolute h-px w-6 bg-foreground transition-all duration-300 ${
+              mobileOpen ? "-rotate-45" : "translate-y-2"
+            }`}
+          />
         </button>
       </div>
 
-      {mobileOpen && (
-        <nav className="lg:hidden border-t border-border bg-background">
-          <div className="px-6 py-4 flex flex-col gap-1">
+      {/* Mobile drawer plein écran */}
+      <div
+        className={`lg:hidden fixed inset-x-0 top-[64px] md:top-[72px] bottom-0 bg-background z-40 transition-all duration-300 ${
+          mobileOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <nav className="h-full overflow-y-auto px-6 py-8 flex flex-col">
+          <ul className="flex flex-col">
             {navLinks.map((link) => (
-              <div key={link.href}>
+              <li key={link.href} className="border-b border-border">
                 <Link
                   href={link.href}
-                  onClick={() => {
-                    setMobileOpen(false);
-                    scrollToTop();
-                  }}
-                  className="block py-2 text-foreground hover:text-primary"
+                  onClick={closeAndScroll}
+                  className="block py-4 text-lg font-display text-primary-dark hover:text-primary"
                 >
                   {link.label}
                 </Link>
-                {link.children && (
-                  <div className="pl-4 flex flex-col">
-                    {link.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        onClick={() => {
-                          setMobileOpen(false);
-                          scrollToTop();
-                        }}
-                        className="block py-1.5 text-sm text-muted hover:text-primary"
-                      >
-                        — {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+              </li>
             ))}
-            <Link
-              href="/prendre-rdv"
-              onClick={() => {
-                setMobileOpen(false);
-                scrollToTop();
-              }}
-              className="mt-3 px-5 py-3 bg-primary text-white text-xs tracking-[0.2em] uppercase text-center"
-            >
-              Prendre RDV
-            </Link>
+          </ul>
+
+          <Link
+            href="/prendre-rdv"
+            onClick={closeAndScroll}
+            className="mt-8 px-6 py-4 bg-primary-dark text-white text-xs tracking-[0.25em] uppercase text-center hover:bg-primary transition-colors"
+          >
+            Prendre RDV
+          </Link>
+
+          <div className="mt-auto pt-10 text-center">
+            <p className="text-xs tracking-[0.25em] uppercase text-muted mb-3">
+              Cabinet
+            </p>
+            <p className="text-sm text-foreground/85 leading-relaxed">
+              Rue de Beaufays 17b
+              <br />
+              4870 Trooz, Belgique
+            </p>
           </div>
         </nav>
-      )}
+      </div>
     </header>
   );
 }

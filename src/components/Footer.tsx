@@ -2,10 +2,12 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-dark text-white mt-24">
-      <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
+    <footer className="bg-primary-dark text-white mt-16 md:mt-24">
+      <div className="max-w-7xl mx-auto px-6 py-12 md:py-16 grid md:grid-cols-3 gap-8 md:gap-12">
         <div>
-          <h3 className="font-display text-2xl mb-3">Florence Debattice</h3>
+          <h3 className="font-display text-xl md:text-2xl mb-3">
+            Florence Debattice
+          </h3>
           <p className="text-sm text-white/80 leading-relaxed">
             Naturopathe certifiée. Pour un retour à votre équilibre naturel,
             en douceur et en bienveillance.
@@ -13,7 +15,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="text-xs tracking-[0.3em] uppercase mb-4 text-white/70">
+          <h4 className="text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase mb-4 text-white/70">
             Navigation
           </h4>
           <ul className="space-y-2 text-sm">
@@ -27,7 +29,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="text-xs tracking-[0.3em] uppercase mb-4 text-white/70">
+          <h4 className="text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase mb-4 text-white/70">
             Contact
           </h4>
           <p className="text-sm text-white/80 mb-4">

@@ -25,31 +25,31 @@ function PrendreRdvContent() {
   return (
     <>
       {/* HERO de page */}
-      <section className="bg-primary-light/20 py-16 md:py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <p className="text-xs tracking-[0.5em] uppercase text-accent font-medium mb-4">
+      <section className="bg-primary-light/20 py-12 md:py-20">
+        <div className="max-w-4xl mx-auto px-5 md:px-6 text-center">
+          <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-accent font-medium mb-3 md:mb-4">
             Réservation en ligne
           </p>
-          <h1 className="font-display text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3">
             Prendre rendez-vous
           </h1>
-          <p className="font-script text-3xl md:text-4xl text-accent leading-none">
+          <p className="font-script text-2xl sm:text-3xl md:text-4xl text-accent leading-none">
             choisissez votre créneau
           </p>
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+      <section className="max-w-6xl mx-auto px-5 md:px-6 py-10 md:py-16">
         {/* Étape 1 : choix de la prestation */}
-        <div className="mb-10">
-          <p className="text-[10px] md:text-xs tracking-[0.5em] uppercase text-accent font-medium mb-3">
+        <div className="mb-8 md:mb-10">
+          <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-accent font-medium mb-3">
             Étape 1 — votre prestation
           </p>
-          <h2 className="font-display text-2xl md:text-3xl text-primary-dark mb-6">
+          <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-primary-dark mb-5 md:mb-6">
             Quel rendez-vous souhaitez-vous réserver ?
           </h2>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
             {prestations.map((p) => {
               const active = selected?.slug === p.slug;
               return (
@@ -81,14 +81,14 @@ function PrendreRdvContent() {
 
         {/* Étape 2 : calendrier */}
         {selected ? (
-          <div className="mt-12">
-            <p className="text-[10px] md:text-xs tracking-[0.5em] uppercase text-accent font-medium mb-3">
+          <div className="mt-10 md:mt-12">
+            <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-accent font-medium mb-3">
               Étape 2 — votre créneau
             </p>
-            <h2 className="font-display text-2xl md:text-3xl text-primary-dark mb-2">
+            <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-primary-dark mb-2">
               {selected.title}
             </h2>
-            <p className="text-foreground/75 mb-8">
+            <p className="text-sm md:text-base text-foreground/75 mb-6 md:mb-8">
               Choisissez ci-dessous la date et l&apos;heure qui vous
               conviennent. Une confirmation vous sera envoyée par email.
             </p>
@@ -96,8 +96,8 @@ function PrendreRdvContent() {
             <CalEmbed bookingUrl={selected.bookingUrl} />
           </div>
         ) : (
-          <div className="mt-12 bg-card border border-dashed border-border p-12 text-center">
-            <p className="text-foreground/60">
+          <div className="mt-10 md:mt-12 bg-card border border-dashed border-border p-8 md:p-12 text-center">
+            <p className="text-sm md:text-base text-foreground/60">
               Sélectionnez une prestation ci-dessus pour voir le calendrier
               de réservation.
             </p>
@@ -106,12 +106,12 @@ function PrendreRdvContent() {
       </section>
 
       {/* Bloc infos pratiques */}
-      <section className="bg-card py-14 md:py-16">
-        <div className="max-w-3xl mx-auto px-6">
-          <h2 className="font-script text-4xl md:text-5xl text-primary-dark mb-8 text-center leading-none">
+      <section className="bg-card py-12 md:py-16">
+        <div className="max-w-3xl mx-auto px-5 md:px-6">
+          <h2 className="font-script text-3xl sm:text-4xl md:text-5xl text-primary-dark mb-6 md:mb-8 text-center leading-none">
             avant votre première consultation
           </h2>
-          <ul className="space-y-4 text-foreground/85">
+          <ul className="space-y-4 text-sm md:text-base text-foreground/85">
             <li className="pl-6 border-l-2 border-accent">
               <strong className="text-primary-dark block mb-1">
                 Durée
