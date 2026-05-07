@@ -48,9 +48,9 @@ export const prestations: Prestation[] = [
     short:
       "Premier rendez-vous au cabinet pour un bilan global en présentiel.",
     description:
-      "Au cabinet, nous prenons le temps d'un échange humain et chaleureux. Pendant 1h, je réalise une anamnèse complète : santé, événements clés de vie, sommeil, alimentation, émotions. Un bilan d'iridologie peut compléter l'analyse. Vous repartez avec un programme personnalisé et concret à mettre en œuvre, organisé autour de l'hygiène vitale, l'alimentation et les régulateurs naturels.",
+      "Au cabinet, nous prenons le temps d'un échange humain et chaleureux. Pendant 1h30, je réalise une anamnèse complète : santé, événements clés de vie, sommeil, alimentation, émotions. Un bilan d'iridologie peut compléter l'analyse. Vous repartez avec un programme personnalisé et concret à mettre en œuvre, organisé autour de l'hygiène vitale, l'alimentation et les régulateurs naturels.",
     price: "80 €",
-    duration: "60 min",
+    duration: "90 min",
     image: "/presta-cabinet-initiale.png",
   },
   {

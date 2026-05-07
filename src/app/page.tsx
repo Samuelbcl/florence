@@ -272,46 +272,50 @@ export default function Home() {
                   <p className="text-sm text-foreground/75 leading-relaxed mb-5 flex-1">
                     {p.short}
                   </p>
-                  <div className="flex items-center gap-5 pt-4 border-t border-border">
-                    <span className="flex items-center gap-2 text-accent">
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2.2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        aria-hidden
-                      >
-                        <path d="M14 6a4 4 0 1 0 0 12" />
-                        <path d="M5 10h7" />
-                        <path d="M5 14h7" />
-                      </svg>
-                      <span className="font-display font-medium">
+                  <div className="flex items-center gap-6 pt-4 border-t border-border">
+                    <div className="flex items-center gap-2.5">
+                      <span className="w-9 h-9 rounded-full bg-accent text-white flex items-center justify-center shadow-sm shrink-0">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.6"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          aria-hidden
+                        >
+                          <path d="M14 6a4 4 0 1 0 0 12" />
+                          <path d="M5 10h7" />
+                          <path d="M5 14h7" />
+                        </svg>
+                      </span>
+                      <span className="font-body text-lg font-bold text-accent leading-none">
                         {p.price}
                       </span>
-                    </span>
-                    <span className="flex items-center gap-2 text-accent">
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2.2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        aria-hidden
-                      >
-                        <circle cx="12" cy="12" r="9" />
-                        <path d="M12 7v5l3 2" />
-                      </svg>
-                      <span className="font-display font-medium">
+                    </div>
+                    <div className="flex items-center gap-2.5">
+                      <span className="w-9 h-9 rounded-full bg-accent text-white flex items-center justify-center shadow-sm shrink-0">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.6"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          aria-hidden
+                        >
+                          <circle cx="12" cy="12" r="9" />
+                          <path d="M12 7v5l3 2" />
+                        </svg>
+                      </span>
+                      <span className="font-body text-lg font-bold text-accent leading-none">
                         {p.duration}
                       </span>
-                    </span>
+                    </div>
                   </div>
                 </div>
               </Link>

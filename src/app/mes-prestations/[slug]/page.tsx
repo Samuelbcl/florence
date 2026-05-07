@@ -65,7 +65,7 @@ export default async function PrestationPage({ params }: Props) {
               </p>
 
               {/* Prix + Durée */}
-              <div className="flex flex-wrap gap-8 py-6 border-y border-border mb-8">
+              <div className="flex flex-wrap gap-10 py-6 border-y border-border mb-8">
                 <div className="flex items-center gap-4">
                   <span className="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center shadow-md">
                     <svg
@@ -74,7 +74,7 @@ export default async function PrestationPage({ params }: Props) {
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      strokeWidth="2.4"
+                      strokeWidth="2.6"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       aria-hidden
@@ -85,10 +85,10 @@ export default async function PrestationPage({ params }: Props) {
                     </svg>
                   </span>
                   <div>
-                    <p className="text-[10px] tracking-[0.3em] uppercase text-muted mb-0.5">
+                    <p className="text-[10px] tracking-[0.3em] uppercase text-muted mb-1">
                       Tarif
                     </p>
-                    <p className="font-display text-2xl text-accent font-medium leading-none">
+                    <p className="font-body text-3xl text-accent font-bold leading-none">
                       {prestation.price}
                     </p>
                   </div>
@@ -102,7 +102,7 @@ export default async function PrestationPage({ params }: Props) {
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      strokeWidth="2.4"
+                      strokeWidth="2.6"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       aria-hidden
@@ -112,10 +112,10 @@ export default async function PrestationPage({ params }: Props) {
                     </svg>
                   </span>
                   <div>
-                    <p className="text-[10px] tracking-[0.3em] uppercase text-muted mb-0.5">
+                    <p className="text-[10px] tracking-[0.3em] uppercase text-muted mb-1">
                       Durée
                     </p>
-                    <p className="font-display text-2xl text-accent font-medium leading-none">
+                    <p className="font-body text-3xl text-accent font-bold leading-none">
                       {prestation.duration}
                     </p>
                   </div>
