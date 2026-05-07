@@ -19,7 +19,6 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             <li><Link href="/" className="hover:text-accent">Bienvenue</Link></li>
             <li><Link href="/votre-naturopathe" className="hover:text-accent">Votre naturopathe</Link></li>
-            <li><Link href="/la-naturopathie/les-bases" className="hover:text-accent">La naturopathie</Link></li>
             <li><Link href="/pourquoi-consulter" className="hover:text-accent">Pourquoi consulter ?</Link></li>
             <li><Link href="/mes-prestations" className="hover:text-accent">Mes prestations</Link></li>
             <li><Link href="/blog" className="hover:text-accent">Blog</Link></li>

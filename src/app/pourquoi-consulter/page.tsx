@@ -113,15 +113,6 @@ export default function PourquoiConsulter() {
           actuelle, à vos envies et à votre motif de consultation.
         </p>
         <p>
-          En tant que naturopathe certifiée par la FENA, je suis soumise au
-          secret professionnel et à la confidentialité.
-        </p>
-        <p>
-          Je suis plus particulièrement spécialisée sur l&apos;accompagnement
-          des allergies respiratoires et des dérèglements hormonaux chez la
-          femme.
-        </p>
-        <p>
           À votre écoute avec douceur et bienveillance, mon rôle peut
           s&apos;apparenter à un éducateur de santé qui élabore des conseils
           simples et naturels à mettre en œuvre dont le but est de soutenir
@@ -136,85 +127,6 @@ export default function PourquoiConsulter() {
           place des conseils, d&apos;ajuster certains et de vous en donner de
           nouveaux en fonction de l&apos;évolution de votre terrain.
         </p>
-      </section>
-
-      <section className="bg-primary-light/30 py-20">
-        <div className="max-w-3xl mx-auto px-6">
-          <h2 className="font-script text-5xl md:text-6xl text-center text-foreground mb-10 leading-none">
-            la force vitale
-          </h2>
-          <div className="space-y-5 text-lg text-muted leading-relaxed">
-            <p>
-              C&apos;est le capital énergétique dont dispose l&apos;être vivant
-              pour maintenir un équilibre propice à la vie. Dans d&apos;autres
-              cultures, on parle de Chi (Chine), de Prana (Inde) ou de Pneuma
-              chez les Grecs.
-            </p>
-            <p>
-              Il s&apos;agit d&apos;une force vitale qui peut évoluer dans le
-              temps et qui dépend de facteurs innés et acquis : hérédité,
-              environnement, tempérament hippocratique, hygiène de vie. Nous
-              avons tous en nous des capacités d&apos;auto-guérison que nous
-              pouvons activer plus ou moins efficacement selon notre terrain.
-            </p>
-            <p>
-              Cette force vitale est sollicitée en permanence dans les
-              processus de guérison et d&apos;adaptation. Le naturopathe
-              cherche à appréhender le niveau de cette force afin
-              d&apos;orienter ses conseils de manière individualisée pour
-              chaque personne.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="max-w-5xl mx-auto px-6 py-20">
-        <h2 className="font-script text-5xl md:text-6xl text-center text-foreground mb-14 leading-none">
-          réflexologie plantaire : pour qui ? pourquoi ?
-        </h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-card p-8 border border-border">
-            <h3 className="font-display text-2xl text-primary-dark mb-5">
-              Indications
-            </h3>
-            <ul className="space-y-2 text-muted">
-              {[
-                "Améliorer un état de stress",
-                "Relâcher les tensions nerveuses et musculaires",
-                "Apaiser ou activer la sphère digestive",
-                "Soutenir le système immunitaire",
-                "Réguler les hormones",
-                "Éliminer les toxines",
-                "Activer la circulation sanguine et lymphatique",
-                "Apporter de la détente",
-              ].map((i) => (
-                <li key={i} className="flex gap-3">
-                  <span className="text-primary mt-1">•</span>
-                  <span>{i}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="bg-card p-8 border border-border">
-            <h3 className="font-display text-2xl text-primary-dark mb-5">
-              Contre-indications
-            </h3>
-            <ul className="space-y-2 text-muted">
-              {[
-                "Phlébite ou artérite en phase aigüe",
-                "Pied blessé : coupure, foulure, fracture, ecchymose",
-                "Premier trimestre de grossesse",
-                "Problèmes cardiaques",
-                "Maladies dégénératives et immunodépressives",
-              ].map((i) => (
-                <li key={i} className="flex gap-3">
-                  <span className="text-accent mt-1">•</span>
-                  <span>{i}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
       </section>
 
       <section className="bg-primary text-white py-20">

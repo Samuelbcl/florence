@@ -109,11 +109,6 @@ export default function PrendreRDV() {
             Comptez environ 1h30 pour la première séance.
           </li>
           <li className="pl-6 border-l-2 border-primary">
-            <strong className="text-foreground block mb-1">À apporter</strong>
-            Vos derniers bilans sanguins ou médicaux si vous en avez, ainsi
-            qu&apos;un cahier pour noter les conseils.
-          </li>
-          <li className="pl-6 border-l-2 border-primary">
             <strong className="text-foreground block mb-1">Tarifs</strong>
             70€ la première consultation. Règlement par chèque ou espèces.
           </li>

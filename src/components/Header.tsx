@@ -4,17 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const navLinks = [
+const navLinks: {
+  href: string;
+  label: string;
+  children?: { href: string; label: string }[];
+}[] = [
   { href: "/", label: "Bienvenue" },
   { href: "/votre-naturopathe", label: "Votre naturopathe" },
-  {
-    href: "/la-naturopathie",
-    label: "La naturopathie",
-    children: [
-      { href: "/la-naturopathie/les-bases", label: "Les bases" },
-      { href: "/la-naturopathie/les-techniques", label: "Les techniques" },
-    ],
-  },
   { href: "/pourquoi-consulter", label: "Pourquoi consulter ?" },
   { href: "/mes-prestations", label: "Mes prestations" },
   { href: "/blog", label: "Blog" },

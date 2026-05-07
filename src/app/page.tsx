@@ -196,14 +196,6 @@ export default function Home() {
             ))}
           </ul>
 
-          <div className="text-center mt-12">
-            <Link
-              href="/la-naturopathie/les-bases"
-              className="inline-block text-primary-dark border-b border-primary-dark pb-1 text-sm tracking-[0.2em] uppercase hover:text-primary hover:border-primary"
-            >
-              en savoir plus
-            </Link>
-          </div>
         </div>
       </section>
 
