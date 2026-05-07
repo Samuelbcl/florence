@@ -102,7 +102,7 @@ export default function PourquoiConsulter() {
             ].map(({ Icon, title, text }) => (
               <div key={title} className="text-center flex flex-col">
                 <Icon className="w-20 h-20 mx-auto mb-5" />
-                <h3 className="font-script text-3xl md:text-4xl text-primary-dark mb-4 leading-tight min-h-[2.5em] flex items-center justify-center">
+                <h3 className="font-script text-3xl md:text-4xl text-accent mb-4 leading-tight min-h-[2.5em] flex items-center justify-center">
                   {title}
                 </h3>
                 <p className="text-sm text-foreground/75 leading-relaxed">

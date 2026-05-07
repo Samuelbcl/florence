@@ -13,7 +13,7 @@ export default function VotreNaturopathe() {
       {/* HERO photo (objets à gauche), titre à droite, passe derrière le header transparent */}
       <section className="relative -mt-[100px] min-h-[440px] md:min-h-[520px] flex items-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-[center_30%]"
+          className="absolute inset-0 bg-cover bg-[center_75%]"
           style={{
             backgroundImage: "url('/hero-naturopathe.png')",
           }}
@@ -24,13 +24,13 @@ export default function VotreNaturopathe() {
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pt-[100px] pb-10">
           <div className="md:ml-auto md:max-w-md text-left">
-            <p className="text-[10px] md:text-xs tracking-[0.5em] uppercase mb-4 text-primary-dark font-medium">
+            <p className="text-[10px] md:text-xs tracking-[0.5em] uppercase mb-4 text-primary-dark font-medium -ml-[3px] md:-ml-[5px]">
               Votre naturopathe
             </p>
             <h1 className="font-display text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3">
               Qui suis-je ?
             </h1>
-            <p className="font-script text-3xl md:text-4xl text-primary-dark leading-none">
+            <p className="font-script text-3xl md:text-4xl text-primary-dark leading-none -ml-[1px] md:-ml-[2px]">
               ravie de vous rencontrer
             </p>
           </div>
@@ -125,7 +125,7 @@ export default function VotreNaturopathe() {
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-card p-8 border border-border">
-              <p className="font-script text-4xl text-primary-dark mb-3 leading-none">
+              <p className="font-script text-4xl text-accent mb-3 leading-none">
                 l&apos;empathie
               </p>
               <p className="text-foreground/85 leading-[1.7]">
@@ -134,7 +134,7 @@ export default function VotreNaturopathe() {
               </p>
             </div>
             <div className="bg-card p-8 border border-border">
-              <p className="font-script text-4xl text-primary-dark mb-3 leading-none">
+              <p className="font-script text-4xl text-accent mb-3 leading-none">
                 la bienveillance
               </p>
               <p className="text-foreground/85 leading-[1.7]">
@@ -144,7 +144,7 @@ export default function VotreNaturopathe() {
             </div>
           </div>
 
-          <blockquote className="font-display text-2xl md:text-3xl text-primary-dark italic">
+          <blockquote className="font-display text-2xl md:text-3xl text-accent italic">
             « La santé est un voyage universel, propre à chacun. »
           </blockquote>
         </div>

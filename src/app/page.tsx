@@ -8,7 +8,7 @@ export default function Home() {
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative -mt-[100px] min-h-[480px] flex items-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-bottom"
+          className="absolute inset-0 bg-cover bg-[center_80%]"
           style={{
             backgroundImage: "url('/hero-home.png')",
           }}
