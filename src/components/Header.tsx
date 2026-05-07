@@ -20,7 +20,9 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const isHome = pathname === "/";
+  // Pages dont le hero doit passer derrière le header transparent
+  const transparentPages = ["/", "/votre-naturopathe"];
+  const hasTransparentHero = transparentPages.includes(pathname);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -29,8 +31,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Header transparent uniquement sur la home, en haut de page
-  const transparent = isHome && !scrolled;
+  const transparent = hasTransparentHero && !scrolled;
 
   return (
     <header
