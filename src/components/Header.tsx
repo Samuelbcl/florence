@@ -33,6 +33,10 @@ export default function Header() {
 
   const transparent = hasTransparentHero && !scrolled;
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
@@ -42,7 +46,11 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-        <Link href="/" className="flex flex-col leading-none">
+        <Link
+          href="/"
+          onClick={scrollToTop}
+          className="flex flex-col leading-none"
+        >
           <span className="font-display text-2xl tracking-wide text-primary-dark">
             Florence Debattice
           </span>
@@ -56,6 +64,7 @@ export default function Header() {
             <div key={link.href} className="relative group">
               <Link
                 href={link.href}
+                onClick={scrollToTop}
                 className="text-sm text-foreground hover:text-primary transition-colors"
               >
                 {link.label}
@@ -67,6 +76,7 @@ export default function Header() {
                       <Link
                         key={child.href}
                         href={child.href}
+                        onClick={scrollToTop}
                         className="block px-4 py-2 text-sm text-foreground hover:bg-background hover:text-primary"
                       >
                         {child.label}
@@ -79,6 +89,7 @@ export default function Header() {
           ))}
           <Link
             href="/prendre-rdv"
+            onClick={scrollToTop}
             className="ml-2 px-5 py-2.5 bg-primary text-white text-xs tracking-[0.2em] uppercase hover:bg-primary-dark transition-colors"
           >
             Prendre RDV
@@ -103,7 +114,10 @@ export default function Header() {
               <div key={link.href}>
                 <Link
                   href={link.href}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={() => {
+                    setMobileOpen(false);
+                    scrollToTop();
+                  }}
                   className="block py-2 text-foreground hover:text-primary"
                 >
                   {link.label}
@@ -114,7 +128,10 @@ export default function Header() {
                       <Link
                         key={child.href}
                         href={child.href}
-                        onClick={() => setMobileOpen(false)}
+                        onClick={() => {
+                          setMobileOpen(false);
+                          scrollToTop();
+                        }}
                         className="block py-1.5 text-sm text-muted hover:text-primary"
                       >
                         — {child.label}
@@ -126,7 +143,10 @@ export default function Header() {
             ))}
             <Link
               href="/prendre-rdv"
-              onClick={() => setMobileOpen(false)}
+              onClick={() => {
+                setMobileOpen(false);
+                scrollToTop();
+              }}
               className="mt-3 px-5 py-3 bg-primary text-white text-xs tracking-[0.2em] uppercase text-center"
             >
               Prendre RDV

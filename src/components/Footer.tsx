@@ -32,8 +32,9 @@ export default function Footer() {
           </h4>
           <p className="text-sm text-white/80 mb-4">
             Cabinet de naturopathie<br />
-            Adresse à compléter<br />
-            06 00 00 00 00
+            Rue de Beaufays 17b<br />
+            4870 Trooz<br />
+            Belgique
           </p>
           <div className="flex gap-3">
             <a href="#" aria-label="Facebook" className="w-9 h-9 border border-white/30 rounded-full flex items-center justify-center hover:bg-white/10">

@@ -32,15 +32,27 @@ export default function PourquoiConsulter() {
       </section>
 
       <section className="max-w-3xl mx-auto px-6 py-20">
-        <p className="text-lg text-muted leading-relaxed">
+        <p className="text-lg text-foreground/85 leading-[1.8]">
           Tout le monde peut consulter un naturopathe, que ce soit pour
-          recevoir des conseils en hygiène de vie et en alimentation afin de
-          rester en bonne santé, pour accompagner certains troubles chroniques
+          recevoir des{" "}
+          <strong className="text-primary-dark font-bold">
+            conseils en hygiène de vie et en alimentation
+          </strong>{" "}
+          afin de rester en bonne santé, pour accompagner certains{" "}
+          <strong className="text-primary-dark font-bold">
+            troubles chroniques
+          </strong>{" "}
           de santé ou par simple curiosité. Il n&apos;y a pas de motif de
-          consultation plus valable qu&apos;un autre. La naturopathie est une
-          approche de terrain qui s&apos;adapte à chaque personne et qui
-          procure des conseils totalement individualisés.{" "}
-          <strong className="text-foreground">
+          consultation plus valable qu&apos;un autre. La naturopathie est une{" "}
+          <strong className="text-primary-dark font-bold">
+            approche de terrain
+          </strong>{" "}
+          qui s&apos;adapte à chaque personne et qui procure des{" "}
+          <strong className="text-primary-dark font-bold">
+            conseils totalement individualisés
+          </strong>
+          .{" "}
+          <strong className="text-primary-dark font-bold">
             N&apos;attendez pas que votre santé se dégrade pour consulter !
           </strong>
         </p>
@@ -50,7 +62,7 @@ export default function PourquoiConsulter() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-14">
             <IconCouple className="w-16 h-16 mx-auto mb-6" />
-            <h2 className="font-script text-5xl md:text-6xl text-foreground leading-none">
+            <h2 className="font-script text-5xl md:text-6xl text-primary-dark leading-none">
               un accompagnement pour tous
             </h2>
           </div>
@@ -88,9 +100,9 @@ export default function PourquoiConsulter() {
                 text: "Alimentation équilibrée, carences, croissance, allergies.",
               },
             ].map(({ Icon, title, text }) => (
-              <div key={title} className="text-center">
+              <div key={title} className="text-center flex flex-col">
                 <Icon className="w-20 h-20 mx-auto mb-5" />
-                <h3 className="font-script text-3xl md:text-4xl text-foreground mb-4 leading-none">
+                <h3 className="font-script text-3xl md:text-4xl text-primary-dark mb-4 leading-tight min-h-[2.5em] flex items-center justify-center">
                   {title}
                 </h3>
                 <p className="text-sm text-foreground/75 leading-relaxed">
@@ -103,29 +115,50 @@ export default function PourquoiConsulter() {
       </section>
 
       <section className="max-w-3xl mx-auto px-6 py-20 space-y-6 text-lg text-foreground/85 leading-[1.8]">
-        <h2 className="font-script text-5xl md:text-6xl text-center text-foreground mb-10 leading-none">
+        <h2 className="font-script text-5xl md:text-6xl text-center text-primary-dark mb-10 leading-none">
           pourquoi me consulter ?
         </h2>
         <p>
-          À votre écoute pendant plus d&apos;une heure lors de notre première
-          consultation, je réalise un bilan global de vitalité dont découle des
-          conseils naturopathiques adaptés à votre personnalité, à votre vie
-          actuelle, à vos envies et à votre motif de consultation.
+          À votre écoute pendant{" "}
+          <strong className="text-primary-dark font-bold">
+            plus d&apos;une heure
+          </strong>{" "}
+          lors de notre première consultation, je réalise un{" "}
+          <strong className="text-primary-dark font-bold">
+            bilan global de vitalité
+          </strong>{" "}
+          dont découle des conseils naturopathiques adaptés à votre
+          personnalité, à votre vie actuelle, à vos envies et à votre motif de
+          consultation.
         </p>
         <p>
-          À votre écoute avec douceur et bienveillance, mon rôle peut
-          s&apos;apparenter à un éducateur de santé qui élabore des conseils
-          simples et naturels à mettre en œuvre dont le but est de soutenir
-          votre santé et votre bien-être. Nous élaborons ensemble un programme
-          personnalisé qui porte sur votre alimentation, votre hygiène de vie
-          et éventuellement des régulateurs de terrain (compléments
-          alimentaires, phytothérapie…).
+          À votre écoute avec{" "}
+          <strong className="text-primary-dark font-bold">
+            douceur et bienveillance
+          </strong>
+          , mon rôle peut s&apos;apparenter à un{" "}
+          <strong className="text-primary-dark font-bold">
+            éducateur de santé
+          </strong>{" "}
+          qui élabore des conseils simples et naturels à mettre en œuvre dont
+          le but est de soutenir votre santé et votre bien-être. Nous élaborons
+          ensemble un{" "}
+          <strong className="text-primary-dark font-bold">
+            programme personnalisé
+          </strong>{" "}
+          qui porte sur votre alimentation, votre hygiène de vie et
+          éventuellement des régulateurs de terrain (compléments alimentaires,
+          phytothérapie…).
         </p>
         <p>
-          Si nécessaire, je vous proposerai un deuxième RDV dans le cadre
-          d&apos;un suivi naturopathique afin de faire le point sur la mise en
-          place des conseils, d&apos;ajuster certains et de vous en donner de
-          nouveaux en fonction de l&apos;évolution de votre terrain.
+          Si nécessaire, je vous proposerai un{" "}
+          <strong className="text-primary-dark font-bold">
+            deuxième RDV
+          </strong>{" "}
+          dans le cadre d&apos;un suivi naturopathique afin de faire le point
+          sur la mise en place des conseils, d&apos;ajuster certains et de vous
+          en donner de nouveaux en fonction de l&apos;évolution de votre
+          terrain.
         </p>
       </section>
 

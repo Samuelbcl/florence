@@ -96,7 +96,7 @@ export default function Home() {
             <p className="text-xs tracking-[0.5em] uppercase text-primary-dark mb-4">
               Bienvenue
             </p>
-            <h2 className="font-script text-6xl md:text-7xl text-foreground mb-8 leading-none">
+            <h2 className="font-script text-6xl md:text-7xl text-primary-dark mb-8 leading-none">
               ravie de vous rencontrer
             </h2>
             <div className="space-y-5 text-foreground/85 text-lg leading-[1.8]">
@@ -133,7 +133,7 @@ export default function Home() {
             <p className="text-xs tracking-[0.5em] uppercase text-primary-dark mb-4">
               Pédagogie
             </p>
-            <h2 className="font-script text-5xl md:text-7xl text-foreground leading-none">
+            <h2 className="font-script text-5xl md:text-7xl text-primary-dark leading-none">
               la naturopathie, c&apos;est quoi ?
             </h2>
           </div>

@@ -100,7 +100,7 @@ export default function PrendreRDV() {
       </section>
 
       <section className="max-w-3xl mx-auto px-6 pb-20">
-        <h2 className="font-script text-5xl md:text-6xl text-center mb-10 leading-none text-foreground">
+        <h2 className="font-script text-5xl md:text-6xl text-center mb-10 leading-none text-primary-dark">
           avant votre première consultation
         </h2>
         <ul className="space-y-4 text-muted">

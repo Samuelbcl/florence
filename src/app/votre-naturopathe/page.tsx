@@ -23,14 +23,14 @@ export default function VotreNaturopathe() {
         <div className="absolute inset-0 bg-gradient-to-l from-background/50 via-background/15 to-transparent" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pt-[100px] pb-10">
-          <div className="md:ml-auto max-w-sm md:max-w-md md:text-right">
-            <p className="text-[10px] md:text-xs tracking-[0.5em] uppercase mb-4 text-primary-dark font-medium">
+          <div className="md:ml-auto md:max-w-md flex flex-col md:items-end text-left md:text-right">
+            <p className="text-[10px] md:text-xs tracking-[0.5em] uppercase mb-4 text-primary-dark font-medium md:mr-[-0.5em]">
               Votre naturopathe
             </p>
             <h1 className="font-display text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3">
               Qui suis-je ?
             </h1>
-            <p className="font-script text-3xl md:text-4xl text-accent leading-none">
+            <p className="font-script text-3xl md:text-4xl text-primary-dark leading-none">
               ravie de vous rencontrer
             </p>
           </div>
@@ -64,14 +64,14 @@ export default function VotreNaturopathe() {
                   </h2>
                   <p className="text-foreground/85 leading-[1.8]">
                     Pendant dix ans, j&apos;ai évolué dans l&apos;univers de la{" "}
-                    <strong className="text-primary-dark font-medium">
+                    <strong className="text-primary-dark font-bold">
                       comptabilité
                     </strong>
                     . Mon quotidien consistait à analyser, conseiller et
                     veiller à la santé financière des entreprises. C&apos;était
                     un métier de rigueur, mais avec le temps, une évidence
                     s&apos;est imposée : il me manquait l&apos;essentiel, le{" "}
-                    <strong className="text-primary-dark font-medium">
+                    <strong className="text-primary-dark font-bold">
                       sens
                     </strong>
                     .
@@ -90,7 +90,7 @@ export default function VotreNaturopathe() {
                     mon expertise au service de l&apos;individu plutôt que des
                     organisations. Ce chemin m&apos;a d&apos;abord menée vers
                     l&apos;enseignement auprès de{" "}
-                    <strong className="text-primary-dark font-medium">
+                    <strong className="text-primary-dark font-bold">
                       jeunes en difficulté
                     </strong>
                     . Cette expérience a été un véritable catalyseur :
@@ -111,13 +111,13 @@ export default function VotreNaturopathe() {
           <p className="text-xs tracking-[0.4em] uppercase text-primary mb-6">
             Ma mission aujourd&apos;hui
           </p>
-          <h2 className="font-script text-5xl md:text-7xl text-foreground mb-10 leading-none">
+          <h2 className="font-script text-5xl md:text-7xl text-primary-dark mb-10 leading-none">
             votre bien-être
           </h2>
           <p className="text-lg text-foreground/85 leading-[1.9] mb-10">
             Aujourd&apos;hui, riche de ces expériences, je vous accompagne en
             tant que{" "}
-            <strong className="text-primary-dark font-medium">naturopathe</strong>
+            <strong className="text-primary-dark font-bold">naturopathe</strong>
             . Prendre soin de mon entourage a toujours été dans ma nature ;
             c&apos;est désormais mon métier. Mon approche repose sur deux
             piliers.
@@ -125,7 +125,7 @@ export default function VotreNaturopathe() {
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-card p-8 border border-border">
-              <p className="font-script text-4xl text-foreground mb-3 leading-none">
+              <p className="font-script text-4xl text-primary-dark mb-3 leading-none">
                 l&apos;empathie
               </p>
               <p className="text-foreground/85 leading-[1.7]">
@@ -134,7 +134,7 @@ export default function VotreNaturopathe() {
               </p>
             </div>
             <div className="bg-card p-8 border border-border">
-              <p className="font-script text-4xl text-foreground mb-3 leading-none">
+              <p className="font-script text-4xl text-primary-dark mb-3 leading-none">
                 la bienveillance
               </p>
               <p className="text-foreground/85 leading-[1.7]">
@@ -181,7 +181,7 @@ export default function VotreNaturopathe() {
       {/* CTA */}
       <section className="bg-primary-light/20 py-24">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="font-script text-5xl md:text-6xl text-foreground mb-6 leading-none">
+          <h2 className="font-script text-5xl md:text-6xl text-primary-dark mb-6 leading-none">
             une envie de me rencontrer ?
           </h2>
           <p className="text-foreground/85 mb-10">
