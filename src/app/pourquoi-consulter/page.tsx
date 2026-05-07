@@ -17,16 +17,25 @@ export const metadata: Metadata = {
 export default function PourquoiConsulter() {
   return (
     <>
-      <section className="bg-primary-light/30 py-20">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <p className="text-xs tracking-[0.4em] uppercase text-primary-dark mb-6">
+      {/* HERO photo, header transparent en haut, titre centré */}
+      <section className="relative -mt-[100px] min-h-[420px] md:min-h-[500px] flex items-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/hero-pourquoi-consulter.png')",
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-background/20 to-background/40" />
+
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-12 pt-[100px] pb-10 text-center">
+          <p className="text-[10px] md:text-xs tracking-[0.5em] uppercase mb-4 text-primary-dark font-medium">
             Parce que la naturopathie
           </p>
-          <h1 className="font-display text-5xl md:text-6xl mb-4">
+          <h1 className="font-display text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3">
             Pourquoi consulter ?
           </h1>
-          <p className="text-lg text-muted mt-4">
-            Agit en préventif comme en accompagnement
+          <p className="font-script text-3xl md:text-4xl text-accent leading-none">
+            agit en préventif comme en accompagnement
           </p>
         </div>
       </section>
@@ -69,11 +78,27 @@ export default function PourquoiConsulter() {
 
           <div className="mb-16 max-w-3xl mx-auto text-center">
             <p className="text-foreground/85 leading-[1.9]">
-              Sommeil, digestion, intolérances alimentaires, surpoids,
-              allergies, migraines, problèmes de peau, chutes de cheveux,
-              perturbations hormonales, stress, burn-out, chocs émotionnels,
-              douleurs articulaires, système immunitaire fragile, troubles
-              ORL à répétition…
+              <strong className="text-primary-dark font-bold">Sommeil</strong>
+              ,{" "}
+              <strong className="text-primary-dark font-bold">digestion</strong>
+              , intolérances alimentaires, surpoids,{" "}
+              <strong className="text-primary-dark font-bold">
+                allergies
+              </strong>
+              , migraines, problèmes de peau, chutes de cheveux, perturbations
+              hormonales,{" "}
+              <strong className="text-primary-dark font-bold">
+                stress, burn-out
+              </strong>
+              ,{" "}
+              <strong className="text-primary-dark font-bold">
+                chocs émotionnels
+              </strong>
+              , douleurs articulaires,{" "}
+              <strong className="text-primary-dark font-bold">
+                système immunitaire fragile
+              </strong>
+              , troubles ORL à répétition…
             </p>
           </div>
 

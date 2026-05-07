@@ -21,7 +21,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   // Pages dont le hero doit passer derrière le header transparent
-  const transparentPages = ["/", "/votre-naturopathe"];
+  const transparentPages = ["/", "/votre-naturopathe", "/pourquoi-consulter"];
   const hasTransparentHero = transparentPages.includes(pathname);
 
   useEffect(() => {
