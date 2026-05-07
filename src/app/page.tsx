@@ -51,12 +51,14 @@ export default function Home() {
         {/* Desktop : médaillon "Réserve ton appel" — circulaire rotaté */}
         <Link
           href="/prendre-rdv"
-          className="group hidden md:flex absolute right-12 md:right-20 lg:right-32 top-[calc(50%+12px)] -translate-y-1/2 z-20 w-44 h-44 lg:w-48 lg:h-48 rounded-full border-2 border-primary-dark bg-background/90 backdrop-blur-sm flex-col items-center justify-center text-center rotate-[-8deg] hover:rotate-0 hover:bg-primary-dark transition-all duration-500 shadow-lg"
+          className="group hidden md:flex absolute right-12 md:right-20 lg:right-32 top-[calc(50%+12px)] -translate-y-1/2 z-20 w-36 h-36 lg:w-40 lg:h-40 rounded-full border-2 border-primary-dark bg-background/90 backdrop-blur-sm flex-col items-center justify-center text-center rotate-[-8deg] hover:rotate-0 hover:bg-primary-dark transition-all duration-500 shadow-lg"
         >
-          <span className="font-script text-3xl lg:text-4xl text-primary-dark group-hover:text-white leading-none mb-1.5 transition-colors">
-            appel gratuit
+          <span className="text-[10px] tracking-[0.3em] uppercase text-primary-dark group-hover:text-white leading-relaxed transition-colors">
+            appel
+            <br />
+            gratuit
           </span>
-          <span className="block w-10 h-px bg-primary-dark/60 group-hover:bg-white mb-2 transition-colors" />
+          <span className="block w-10 h-px bg-primary-dark/60 group-hover:bg-white my-2 transition-colors" />
           <span className="text-[10px] tracking-[0.3em] uppercase text-primary-dark group-hover:text-white leading-relaxed transition-colors">
             Réserve ton
             <br />
