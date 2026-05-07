@@ -13,7 +13,7 @@ export default function VotreNaturopathe() {
       {/* HERO avec photo (femme à droite), titre à gauche sur la zone claire */}
       <section className="relative h-[32vh] min-h-[260px] md:h-[38vh] md:min-h-[300px] max-h-[400px] flex items-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-top"
           style={{
             backgroundImage: "url('/hero-naturopathe.png')",
           }}
