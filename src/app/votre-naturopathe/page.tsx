@@ -11,9 +11,9 @@ export default function VotreNaturopathe() {
   return (
     <>
       {/* HERO avec photo (objets à gauche), titre à droite sur la zone claire */}
-      <section className="relative h-[40vh] min-h-[280px] md:h-[50vh] md:min-h-[340px] max-h-[460px] flex items-center overflow-hidden bg-background">
+      <section className="relative h-[32vh] min-h-[260px] md:h-[38vh] md:min-h-[300px] max-h-[400px] flex items-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-contain bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: "url('/hero-naturopathe.png')",
           }}
