@@ -23,14 +23,14 @@ export default function VotreNaturopathe() {
         <div className="absolute inset-0 bg-gradient-to-l from-background/50 via-background/15 to-transparent" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pt-[100px] pb-10">
-          <div className="md:ml-auto md:max-w-md text-left">
-            <p className="text-[10px] md:text-xs tracking-[0.5em] uppercase mb-4 text-primary-dark font-medium -ml-[3px] md:-ml-[5px]">
+          <div className="md:ml-auto md:max-w-md text-center">
+            <p className="text-[10px] md:text-xs tracking-[0.5em] uppercase mb-4 text-primary-dark font-medium">
               Votre naturopathe
             </p>
-            <h1 className="font-display text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3 -ml-[3px] md:-ml-[5px]">
+            <h1 className="font-display text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3">
               Qui suis-je ?
             </h1>
-            <p className="font-script text-3xl md:text-4xl text-primary-dark leading-none -ml-[1px] md:-ml-[2px]">
+            <p className="font-script text-3xl md:text-4xl text-primary-dark leading-none">
               ravie de vous rencontrer
             </p>
           </div>
