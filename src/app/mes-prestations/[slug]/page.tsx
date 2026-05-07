@@ -53,7 +53,7 @@ export default async function PrestationPage({ params }: Props) {
 
             {/* TITRE + DESC + PRIX/DURÉE À DROITE */}
             <div className="md:pt-4">
-              <p className="text-xs tracking-[0.5em] uppercase text-primary-dark font-medium mb-4">
+              <p className="text-xs tracking-[0.5em] uppercase text-accent font-medium mb-4">
                 Prestation
               </p>
               <h1 className="font-display text-4xl md:text-5xl text-primary-dark leading-tight mb-6">
@@ -67,7 +67,7 @@ export default async function PrestationPage({ params }: Props) {
               {/* Prix + Durée */}
               <div className="flex flex-wrap gap-6 py-6 border-y border-border mb-8">
                 <div className="flex items-center gap-3">
-                  <span className="w-12 h-12 rounded-full border border-primary-dark flex items-center justify-center text-primary-dark">
+                  <span className="w-12 h-12 rounded-full border border-accent flex items-center justify-center text-accent">
                     <svg
                       width="22"
                       height="22"
@@ -88,14 +88,14 @@ export default async function PrestationPage({ params }: Props) {
                     <p className="text-[10px] tracking-[0.3em] uppercase text-muted">
                       Tarif
                     </p>
-                    <p className="font-display text-2xl text-primary-dark">
+                    <p className="font-script text-3xl text-accent leading-none">
                       {prestation.price}
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <span className="w-12 h-12 rounded-full border border-primary-dark flex items-center justify-center text-primary-dark">
+                  <span className="w-12 h-12 rounded-full border border-accent flex items-center justify-center text-accent">
                     <svg
                       width="22"
                       height="22"
@@ -115,7 +115,7 @@ export default async function PrestationPage({ params }: Props) {
                     <p className="text-[10px] tracking-[0.3em] uppercase text-muted">
                       Durée
                     </p>
-                    <p className="font-display text-2xl text-primary-dark">
+                    <p className="font-script text-3xl text-accent leading-none">
                       {prestation.duration}
                     </p>
                   </div>

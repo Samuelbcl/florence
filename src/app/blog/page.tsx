@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -9,9 +10,9 @@ export const metadata: Metadata = {
 
 export default function Blog() {
   return (
-    <article className="max-w-2xl mx-auto px-6 py-16 md:py-24">
-      {/* Étiquette */}
-      <span className="inline-block text-[11px] font-medium tracking-[0.15em] uppercase text-primary-dark bg-primary-light/30 px-3 py-1 rounded-full mb-6">
+    <article className="max-w-3xl mx-auto px-6 py-16 md:py-24">
+      {/* Étiquette en doré */}
+      <span className="inline-block text-[11px] font-medium tracking-[0.15em] uppercase text-accent bg-accent/10 px-3 py-1 rounded-full mb-6">
         Premier article
       </span>
 
@@ -28,86 +29,117 @@ export default function Blog() {
         Que c&apos;est normal. Que c&apos;est le stress.
       </p>
 
-      <hr className="border-t border-border my-8" />
+      <hr className="border-t border-border my-10" />
 
-      <p className="text-base text-foreground leading-[1.85] mb-5">
-        Je veux te parler d&apos;une chose que j&apos;entends très souvent :
-        des femmes qui savent que quelque chose ne va pas dans leur corps,
-        mais qu&apos;on n&apos;a jamais vraiment écoutées.
-      </p>
+      {/* SECTION 1 — image à gauche, texte à droite */}
+      <div className="grid md:grid-cols-2 gap-8 md:gap-10 items-center mb-12">
+        <div className="aspect-[4/3] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1532635241-17e820acc59f?w=800&q=80"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div>
+          <p className="text-base text-foreground leading-[1.85] mb-4">
+            Je veux te parler d&apos;une chose que j&apos;entends très souvent
+            : des femmes qui savent que quelque chose ne va pas dans leur
+            corps, mais qu&apos;on n&apos;a jamais vraiment écoutées.
+          </p>
+          <p className="text-base text-foreground leading-[1.85]">
+            Des femmes brillantes, actives, qui font tout bien en apparence —
+            et qui pourtant traînent une fatigue chronique, des variations
+            d&apos;humeur inexpliquées, un cycle qui les épuise chaque mois.
+          </p>
+        </div>
+      </div>
 
-      <p className="text-base text-foreground leading-[1.85] mb-5">
-        Des femmes brillantes, actives, qui font tout bien en apparence — et
-        qui pourtant traînent une fatigue chronique, des variations
-        d&apos;humeur inexpliquées, un cycle qui les épuise chaque mois.
-      </p>
-
-      <p className="text-base text-foreground leading-[1.85] mb-5">
-        On leur a dit : c&apos;est l&apos;âge. C&apos;est le stress.
-        C&apos;est dans la tête.
+      <p className="font-script text-3xl md:text-4xl text-accent leading-tight text-center my-12">
+        On leur a dit : c&apos;est l&apos;âge.
+        <br />
+        C&apos;est le stress. C&apos;est dans la tête.
       </p>
 
       {/* Highlight box */}
-      <div className="bg-primary-light/30 border-l-[4px] border-primary-dark rounded-r-lg px-5 py-4 my-6">
+      <div className="bg-primary-light/30 border-l-[4px] border-primary-dark rounded-r-lg px-5 py-4 my-8">
         <p className="text-base italic text-primary-dark leading-[1.75] m-0">
           Mais si votre corps n&apos;était pas en train de flancher — mais
           simplement en train d&apos;essayer de vous dire quelque chose ?
         </p>
       </div>
 
-      {/* Section title */}
-      <h2 className="font-display text-2xl text-primary-dark mt-10 mb-3">
-        Ce que la naturopathie change vraiment
-      </h2>
+      {/* SECTION 2 — texte à gauche, image à droite (inversé) */}
+      <div className="grid md:grid-cols-2 gap-8 md:gap-10 items-center my-12">
+        <div className="md:order-2 aspect-[4/3] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="md:order-1">
+          <h2 className="font-display text-2xl text-primary-dark mb-3">
+            Ce que la naturopathie change vraiment
+          </h2>
+          <p className="text-base text-foreground leading-[1.85] mb-4">
+            La naturopathie ne remplace pas la médecine. Elle l&apos;accompagne,
+            là où elle a ses limites : comprendre pourquoi votre corps réagit
+            comme il réagit, identifier ce qui perturbe votre équilibre
+            hormonal, et agir en douceur.
+          </p>
+          <p className="text-base text-foreground leading-[1.85]">
+            Alimentation anti-inflammatoire, plantes adaptogènes, gestion du
+            cortisol, soutien du foie : il existe des leviers puissants, peu
+            connus, et pourtant accessibles à toutes.
+          </p>
+        </div>
+      </div>
 
-      <p className="text-base text-foreground leading-[1.85] mb-5">
-        La naturopathie ne remplace pas la médecine. Elle l&apos;accompagne,
-        là où elle a ses limites : comprendre pourquoi votre corps réagit
-        comme il réagit, identifier ce qui perturbe votre équilibre hormonal,
-        et agir en douceur, avec des outils concrets adaptés à votre vie.
-      </p>
+      {/* SECTION 3 — image à gauche, texte à droite (comme la première) */}
+      <div className="grid md:grid-cols-2 gap-8 md:gap-10 items-center my-12">
+        <div className="aspect-[4/3] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1543362906-acfc16c67564?w=800&q=80"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div>
+          <h2 className="font-display text-2xl text-primary-dark mb-3">
+            Pourquoi ce blog existe
+          </h2>
+          <p className="text-base text-foreground leading-[1.85] mb-4">
+            Je suis naturopathe spécialisée dans la santé hormonale féminine.
+            J&apos;ai créé cet espace pour partager des informations fiables,
+            des conseils pratiques, et surtout pour vous montrer que vous
+            n&apos;avez pas à accepter de vous sentir « comme ça ».
+          </p>
+          <p className="text-base text-foreground leading-[1.85]">
+            Chaque mois, vous trouverez ici des articles sur le cycle, la
+            ménopause, l&apos;endométriose, la thyroïde, la fatigue
+            surrénalienne — et les approches naturelles qui font vraiment une
+            différence.
+          </p>
+        </div>
+      </div>
 
-      <p className="text-base text-foreground leading-[1.85] mb-5">
-        Alimentation anti-inflammatoire, plantes adaptogènes, gestion du
-        cortisol, soutien du foie — organe clé dans l&apos;élimination des
-        hormones en excès — : il existe des leviers puissants, peu connus,
-        et pourtant accessibles à toutes.
-      </p>
-
-      <h2 className="font-display text-2xl text-primary-dark mt-10 mb-3">
-        Pourquoi ce blog existe
-      </h2>
-
-      <p className="text-base text-foreground leading-[1.85] mb-5">
-        Je suis naturopathe spécialisée dans la santé hormonale féminine.
-        J&apos;ai créé cet espace pour partager des informations fiables, des
-        conseils pratiques, et surtout pour vous montrer que vous n&apos;avez
-        pas à accepter de vous sentir « comme ça ».
-      </p>
-
-      <p className="text-base text-foreground leading-[1.85] mb-5">
-        Chaque mois, vous trouverez ici des articles sur le cycle, la
-        ménopause, l&apos;endométriose, la thyroïde, la fatigue surrénalienne
-        — et les approches naturelles qui font vraiment une différence.
-      </p>
-
-      <div className="bg-primary-light/30 border-l-[4px] border-primary-dark rounded-r-lg px-5 py-4 my-6">
+      <div className="bg-primary-light/30 border-l-[4px] border-primary-dark rounded-r-lg px-5 py-4 my-8">
         <p className="text-base italic text-primary-dark leading-[1.75] m-0">
           Parce qu&apos;une femme qui comprend son corps est une femme qui
           peut en prendre soin.
         </p>
       </div>
 
-      {/* CTA block */}
-      <div className="bg-card border border-border rounded-xl px-6 py-6 mt-10 text-center">
+      {/* CTA newsletter */}
+      <div className="bg-card border border-border rounded-xl px-6 py-7 mt-12 text-center">
         <p className="text-sm text-foreground/75 mb-4">
-          Tu veux recevoir le prochain article directement dans ta boîte mail ?
+          Inscrivez-vous à la newsletter pour recevoir le prochain article.
         </p>
         <Link
-          href="/prendre-rdv"
+          href="/contact"
           className="inline-block bg-primary-dark text-white rounded-full px-6 py-2.5 text-sm font-medium hover:bg-primary transition-colors"
         >
-          Je rejoins la communauté ↗
+          Inscription newsletter ↗
         </Link>
       </div>
 

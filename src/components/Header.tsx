@@ -14,6 +14,7 @@ const navLinks: {
   { href: "/pourquoi-consulter", label: "Pourquoi consulter ?" },
   { href: "/mes-prestations", label: "Mes prestations" },
   { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
