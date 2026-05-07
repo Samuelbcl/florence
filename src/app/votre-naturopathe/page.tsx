@@ -13,7 +13,7 @@ export default function VotreNaturopathe() {
       {/* HERO photo (objets à gauche), titre à droite, passe derrière le header transparent */}
       <section className="relative -mt-[100px] min-h-[440px] md:min-h-[520px] flex items-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-[center_30%]"
           style={{
             backgroundImage: "url('/hero-naturopathe.png')",
           }}
@@ -23,8 +23,8 @@ export default function VotreNaturopathe() {
         <div className="absolute inset-0 bg-gradient-to-l from-background/50 via-background/15 to-transparent" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pt-[100px] pb-10">
-          <div className="md:ml-auto md:max-w-md flex flex-col md:items-end text-left md:text-right">
-            <p className="text-[10px] md:text-xs tracking-[0.5em] uppercase mb-4 text-primary-dark font-medium md:mr-[-0.5em]">
+          <div className="md:ml-auto md:max-w-md text-left">
+            <p className="text-[10px] md:text-xs tracking-[0.5em] uppercase mb-4 text-primary-dark font-medium">
               Votre naturopathe
             </p>
             <h1 className="font-display text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3">
