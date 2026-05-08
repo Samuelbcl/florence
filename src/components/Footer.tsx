@@ -38,6 +38,14 @@ export default function Footer() {
             4870 Trooz<br />
             Belgique
           </p>
+          <p className="text-sm text-white/80 mb-4">
+            <a
+              href="mailto:flonaturopathie@gmail.com"
+              className="hover:text-accent break-all"
+            >
+              flonaturopathie@gmail.com
+            </a>
+          </p>
           <div className="flex gap-3">
             <a href="#" aria-label="Facebook" className="w-9 h-9 border border-white/30 rounded-full flex items-center justify-center hover:bg-white/10">
               <span className="text-sm">f</span>
