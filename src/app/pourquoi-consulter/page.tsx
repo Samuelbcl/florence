@@ -35,7 +35,7 @@ export default function PourquoiConsulter() {
             Pourquoi consulter ?
           </h1>
           <p className="font-script text-2xl sm:text-3xl md:text-4xl text-accent leading-none">
-            agit en préventif comme en accompagnement
+            Agit en préventif comme en accompagnement
           </p>
         </div>
       </section>
@@ -72,7 +72,7 @@ export default function PourquoiConsulter() {
           <div className="text-center mb-10 md:mb-14">
             <IconCouple className="w-14 h-14 md:w-16 md:h-16 mx-auto mb-5 md:mb-6" />
             <h2 className="font-script text-4xl sm:text-5xl md:text-6xl text-primary-dark leading-none">
-              un accompagnement pour tous
+              Un accompagnement pour tous
             </h2>
           </div>
 
@@ -107,12 +107,12 @@ export default function PourquoiConsulter() {
               {
                 Icon: IconWoman,
                 title: "femmes",
-                text: "Cycle perturbé, désir d'enfant, grossesse, allaitement, ménopause.",
+                text: "Cycle perturbé, désir d'enfant, grossesse, allaitement, ménopause, gestion du stress.",
               },
               {
                 Icon: IconMan,
                 title: "hommes",
-                text: "Désir d'enfant, troubles prostatiques, vitalité.",
+                text: "Désir d'enfant, troubles prostatiques, vitalité, gestion du stress.",
               },
               {
                 Icon: IconElderly,
@@ -141,7 +141,7 @@ export default function PourquoiConsulter() {
 
       <section className="max-w-3xl mx-auto px-5 md:px-6 py-12 md:py-20 space-y-5 md:space-y-6 text-base md:text-lg text-foreground/85 leading-[1.7] md:leading-[1.8]">
         <h2 className="font-script text-4xl sm:text-5xl md:text-6xl text-center text-primary-dark mb-8 md:mb-10 leading-none">
-          pourquoi me consulter ?
+          Pourquoi me consulter ?
         </h2>
         <p>
           À votre écoute pendant{" "}

@@ -87,22 +87,10 @@ export default function MesPrestations() {
         </div>
       </section>
 
-      <section className="bg-card py-12 md:py-16 border-t border-border">
-        <div className="max-w-3xl mx-auto px-5 md:px-6 text-center">
-          <p className="text-sm md:text-base text-foreground/85 leading-relaxed mb-3">
-            Paiements acceptés : chèques, espèces et virement.
-          </p>
-          <p className="text-foreground/70 text-xs md:text-sm italic">
-            Non remboursé par la Sécurité Sociale, mais possibles
-            remboursements partiels par certaines mutuelles.
-          </p>
-        </div>
-      </section>
-
       <section className="bg-primary-dark text-white py-14 md:py-20">
         <div className="max-w-3xl mx-auto px-5 md:px-6 text-center">
           <h2 className="font-script text-4xl sm:text-5xl md:text-6xl text-accent mb-5 md:mb-6 leading-none">
-            réservez votre prochain rendez-vous
+            Réservez votre prochain rendez-vous
           </h2>
           <Link
             href="/prendre-rdv"

@@ -43,7 +43,7 @@ export default function Contact() {
         {/* Coordonnées */}
         <div className="text-center md:text-left">
           <h2 className="font-script text-3xl sm:text-4xl md:text-5xl text-primary-dark mb-5 md:mb-6 leading-none">
-            le cabinet
+            Le cabinet
           </h2>
           <div className="space-y-4 text-sm md:text-base text-foreground/85 leading-[1.7] md:leading-[1.8]">
             <p>
@@ -71,7 +71,7 @@ export default function Contact() {
         {/* Newsletter */}
         <div className="bg-card border border-border rounded-xl p-6 sm:p-8 md:p-10">
           <h2 className="font-script text-3xl sm:text-4xl md:text-5xl text-accent mb-3 leading-none">
-            la newsletter
+            La newsletter
           </h2>
           <p className="text-sm md:text-base text-foreground/85 leading-[1.7] mb-5 md:mb-6">
             Recevez chaque mois mes articles, conseils et inspirations

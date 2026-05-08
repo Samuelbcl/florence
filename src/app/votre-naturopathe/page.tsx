@@ -28,9 +28,6 @@ export default function VotreNaturopathe() {
             <h1 className="font-display text-3xl sm:text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3">
               Qui suis-je ?
             </h1>
-            <p className="font-script text-2xl sm:text-3xl md:text-4xl text-primary-dark leading-none">
-              ravie de vous rencontrer
-            </p>
           </div>
         </div>
       </section>
@@ -110,7 +107,7 @@ export default function VotreNaturopathe() {
             Ma mission aujourd&apos;hui
           </p>
           <h2 className="font-script text-4xl sm:text-5xl md:text-7xl text-primary-dark mb-8 md:mb-10 leading-none">
-            votre bien-être
+            Votre bien-être
           </h2>
           <p className="text-base md:text-lg text-foreground/85 leading-[1.8] md:leading-[1.9] mb-8 md:mb-10">
             Aujourd&apos;hui, riche de ces expériences, je vous accompagne en
@@ -123,8 +120,8 @@ export default function VotreNaturopathe() {
 
           <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-10 md:mb-12">
             <div className="bg-card p-6 sm:p-7 md:p-8 border border-border">
-              <p className="font-script text-3xl md:text-4xl text-accent mb-3 leading-none">
-                l&apos;empathie
+              <p className="font-display text-2xl md:text-3xl italic text-accent mb-3 leading-tight">
+                L&apos;empathie
               </p>
               <p className="text-sm md:text-base text-foreground/85 leading-[1.7]">
                 Comprendre comment votre corps et votre esprit interagissent,
@@ -132,8 +129,8 @@ export default function VotreNaturopathe() {
               </p>
             </div>
             <div className="bg-card p-6 sm:p-7 md:p-8 border border-border">
-              <p className="font-script text-3xl md:text-4xl text-accent mb-3 leading-none">
-                la bienveillance
+              <p className="font-display text-2xl md:text-3xl italic text-accent mb-3 leading-tight">
+                La bienveillance
               </p>
               <p className="text-sm md:text-base text-foreground/85 leading-[1.7]">
                 Vous proposer des solutions concrètes et adaptées pour
@@ -163,7 +160,7 @@ export default function VotreNaturopathe() {
             Mon approche
           </p>
           <h2 className="font-script text-4xl sm:text-5xl md:text-7xl mb-6 md:mb-8 leading-none">
-            un chemin de connaissance de soi
+            Un chemin de connaissance de soi
           </h2>
           <p className="text-base md:text-lg leading-[1.8] md:leading-[1.9] text-white/90">
             La naturopathie n&apos;est pas une solution miracle, mais un chemin
@@ -180,7 +177,7 @@ export default function VotreNaturopathe() {
       <section className="bg-primary-light/20 py-14 md:py-24">
         <div className="max-w-3xl mx-auto px-5 md:px-6 text-center">
           <h2 className="font-script text-4xl sm:text-5xl md:text-6xl text-primary-dark mb-4 md:mb-6 leading-none">
-            une envie de me rencontrer ?
+            Une envie de me rencontrer ?
           </h2>
           <p className="text-sm md:text-base text-foreground/85 mb-8 md:mb-10">
             Réservez votre appel découverte gratuit, sans engagement.

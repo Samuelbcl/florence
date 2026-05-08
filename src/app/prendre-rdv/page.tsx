@@ -109,7 +109,7 @@ function PrendreRdvContent() {
       <section className="bg-card py-12 md:py-16">
         <div className="max-w-3xl mx-auto px-5 md:px-6">
           <h2 className="font-script text-3xl sm:text-4xl md:text-5xl text-primary-dark mb-6 md:mb-8 text-center leading-none">
-            avant votre première consultation
+            Avant votre première consultation
           </h2>
           <ul className="space-y-4 text-sm md:text-base text-foreground/85">
             <li className="pl-6 border-l-2 border-accent">

@@ -37,7 +37,7 @@ export default function Blog() {
           <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
             <div className="aspect-[4/3] overflow-hidden shadow-md">
               <img
-                src="https://images.unsplash.com/photo-1532635241-17e820acc59f?w=900&q=80"
+                src="https://images.unsplash.com/photo-1499728603263-13726abce5fd?w=900&q=80"
                 alt=""
                 className="w-full h-full object-cover"
               />
@@ -163,7 +163,7 @@ export default function Blog() {
       <section className="bg-primary-dark text-white py-14 md:py-20">
         <div className="max-w-3xl mx-auto px-5 md:px-6 text-center">
           <p className="font-script text-3xl sm:text-4xl md:text-5xl text-accent leading-none mb-3">
-            recevoir le prochain article
+            Recevoir le prochain article
           </p>
           <p className="text-sm md:text-base text-white/85 leading-relaxed mb-6 md:mb-7 max-w-md mx-auto">
             Inscrivez-vous à la newsletter pour ne rater aucun article.
@@ -183,7 +183,6 @@ export default function Blog() {
               <strong className="block text-white text-[13px] md:text-[14px] font-medium">
                 Florence Debattice — Naturopathe
               </strong>
-              Spécialiste santé hormonale féminine
             </div>
           </div>
         </div>

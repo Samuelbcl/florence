@@ -19,9 +19,6 @@ export default function Home() {
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-12 pt-[90px] md:pt-[100px] pb-10">
           <div className="max-w-2xl text-center md:text-left mx-auto md:mx-0">
-            <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-primary-dark mb-3 font-medium">
-              Florence Debattice — Naturopathe
-            </p>
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary-dark leading-[1.1] mb-1">
               Trouvez votre équilibre naturel
             </h1>
@@ -100,7 +97,7 @@ export default function Home() {
               Bienvenue
             </p>
             <h2 className="font-script text-4xl sm:text-5xl md:text-7xl text-primary-dark mb-6 md:mb-8 leading-none">
-              ravie de vous rencontrer
+              Ravie de vous rencontrer
             </h2>
             <div className="space-y-5 text-foreground/85 text-lg leading-[1.8]">
               <p>
@@ -137,7 +134,7 @@ export default function Home() {
               Pédagogie
             </p>
             <h2 className="font-script text-4xl sm:text-5xl md:text-7xl text-primary-dark leading-none">
-              la naturopathie, c&apos;est quoi ?
+              La naturopathie, c&apos;est quoi ?
             </h2>
           </div>
 
@@ -218,7 +215,7 @@ export default function Home() {
             Pour qui ? Pour quoi ?
           </p>
           <h2 className="font-script text-4xl sm:text-5xl md:text-7xl text-primary-dark leading-none mb-8 md:mb-10">
-            la naturopathie est pour tous
+            La naturopathie est pour tous
           </h2>
           <p className="text-base md:text-lg text-foreground/85 leading-[1.8] md:leading-[1.9] max-w-3xl mx-auto mb-7 md:mb-8">
             Hommes, femmes, adolescents, enfants, bébés, femmes enceintes,
@@ -241,7 +238,7 @@ export default function Home() {
               Mes prestations
             </p>
             <h2 className="font-script text-4xl sm:text-5xl md:text-7xl text-white leading-none">
-              mes naturopathie
+              Mes naturopathie
             </h2>
           </div>
 
@@ -329,7 +326,7 @@ export default function Home() {
               À découvrir sur
             </p>
             <h2 className="font-script text-4xl sm:text-5xl md:text-7xl text-primary-dark leading-none">
-              mon blog
+              Mon blog
             </h2>
           </div>
 
@@ -367,7 +364,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-primary-dark/80" />
         <div className="relative z-10 max-w-3xl mx-auto px-5 md:px-6 text-center text-white">
           <p className="font-script text-3xl sm:text-4xl md:text-5xl text-accent mb-6 md:mb-8 leading-none">
-            prendre soin de vous
+            Prendre soin de vous
           </p>
           <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-8 md:mb-10 font-light">
             La naturopathie, en prévention ou en complément de la médecine
