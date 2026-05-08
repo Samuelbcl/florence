@@ -59,10 +59,10 @@ export default function Contact() {
                 Email
               </span>
               <a
-                href="mailto:contact@florence-debattice.be"
+                href="mailto:flonaturopathie@gmail.com"
                 className="text-primary-dark hover:text-primary border-b border-primary-dark/40 hover:border-primary"
               >
-                contact@florence-debattice.be
+                flonaturopathie@gmail.com
               </a>
             </p>
           </div>
