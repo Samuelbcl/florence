@@ -234,11 +234,8 @@ export default function Home() {
       <section className="bg-primary-dark text-white py-14 md:py-28">
         <div className="max-w-7xl mx-auto px-5 md:px-6">
           <div className="text-center mb-10 md:mb-16">
-            <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-white/70 mb-3 md:mb-4">
-              Mes prestations
-            </p>
             <h2 className="font-script text-4xl sm:text-5xl md:text-7xl text-white leading-none">
-              Mes naturopathie
+              Mes prestations
             </h2>
           </div>
 
