@@ -99,8 +99,10 @@ export default function Contact() {
           {submitted ? (
             <div className="bg-primary-light/30 border-l-[4px] border-primary-dark rounded-r-lg px-5 py-4">
               <p className="text-base italic text-primary-dark leading-[1.7] m-0">
-                Merci ! Votre inscription est bien enregistrée. Vous recevrez
-                bientôt mon prochain article.
+                Merci ! Un email de confirmation vient de vous être envoyé.
+                Cliquez sur le lien à l&apos;intérieur pour valider votre
+                inscription. (Pensez à vérifier vos spams si vous ne le
+                voyez pas.)
               </p>
             </div>
           ) : (
