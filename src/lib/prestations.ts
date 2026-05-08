@@ -19,7 +19,7 @@ export type Prestation = {
 
 // 👉 PLACEHOLDER : remplacer par les vrais liens Cal.com une fois le compte créé.
 // Voir le README pour la marche à suivre (création compte, event types, etc.).
-const CAL_USER = "d-b-concept-pv3owe";
+const CAL_USER = "flo-naturopathe";
 
 export const prestations: Prestation[] = [
   {
