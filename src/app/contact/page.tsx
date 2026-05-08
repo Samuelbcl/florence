@@ -5,6 +5,7 @@ import type { FormEvent } from "react";
 
 export default function Contact() {
   const [email, setEmail] = useState("");
+  const [consent, setConsent] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -14,6 +15,10 @@ export default function Contact() {
     setError("");
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setError("Merci d'entrer une adresse email valide.");
+      return;
+    }
+    if (!consent) {
+      setError("Merci d'accepter la réception de la newsletter.");
       return;
     }
 
@@ -31,6 +36,7 @@ export default function Contact() {
       }
       setSubmitted(true);
       setEmail("");
+      setConsent(false);
     } catch {
       setError("Erreur réseau. Réessayez dans un instant.");
     } finally {
@@ -99,14 +105,13 @@ export default function Contact() {
           {submitted ? (
             <div className="bg-primary-light/30 border-l-[4px] border-primary-dark rounded-r-lg px-5 py-4">
               <p className="text-base italic text-primary-dark leading-[1.7] m-0">
-                Merci ! Un email de confirmation vient de vous être envoyé.
-                Cliquez sur le lien à l&apos;intérieur pour valider votre
-                inscription. (Pensez à vérifier vos spams si vous ne le
-                voyez pas.)
+                Merci ! Votre inscription est bien enregistrée. Vous recevrez
+                bientôt mes prochains articles directement dans votre boîte
+                mail.
               </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-3">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <label className="block">
                 <span className="text-xs tracking-[0.3em] uppercase text-muted mb-2 block">
                   Adresse email
@@ -120,6 +125,21 @@ export default function Contact() {
                   required
                 />
               </label>
+
+              <label className="flex items-start gap-3 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={consent}
+                  onChange={(e) => setConsent(e.target.checked)}
+                  className="mt-1 w-4 h-4 accent-primary-dark cursor-pointer shrink-0"
+                />
+                <span className="text-xs text-foreground/75 leading-relaxed">
+                  J&apos;accepte de recevoir la newsletter de Florence
+                  Debattice. Je peux me désinscrire à tout moment via le lien
+                  de désinscription présent dans chaque email.
+                </span>
+              </label>
+
               {error && (
                 <p className="text-xs text-red-700">{error}</p>
               )}
