@@ -8,11 +8,11 @@
  *
  * Stratégie :
  *   1. POST /api/contacts pour créer le contact
- *      - 200/201 : contact créé, on récupère son id
- *      - 422 / autre code "déjà existant" : on cherche le contact par email
- *   2. Tentative d'attachement du tag avec plusieurs formats (Systeme.io
- *      a parfois des variations entre comptes/versions). On loggue celui
- *      qui marche pour pouvoir simplifier après.
+ *      - Succès → on récupère son id, on attache le tag
+ *      - 422 → email déjà existant : on renvoie simplement succès
+ *        (la personne est déjà dans la liste, taguée à la 1ʳᵉ inscription)
+ *   2. Pour l'attachement de tag, on tente 3 formats connus de
+ *      l'API Systeme.io. Le premier qui marche gagne.
  */
 
 const SYSTEME_API = "https://api.systeme.io/api";
@@ -28,31 +28,8 @@ async function fetchJson(url: string, init?: RequestInit) {
   }
 }
 
-async function findContactIdByEmail(
-  email: string,
-  apiKey: string
-): Promise<number | undefined> {
-  try {
-    const res = await fetchJson(
-      `${SYSTEME_API}/contacts?email=${encodeURIComponent(email)}`,
-      {
-        headers: {
-          "X-API-Key": apiKey,
-          accept: "application/json",
-        },
-      }
-    );
-    if (!res.ok) return undefined;
-    const data = await res.json();
-    return data?.items?.[0]?.id ?? data?.[0]?.id;
-  } catch {
-    return undefined;
-  }
-}
-
 /**
- * Tente plusieurs formats d'attachement de tag connus pour Systeme.io.
- * Retourne true si l'un a fonctionné.
+ * Tente plusieurs formats d'attachement de tag.
  */
 async function attachTag(
   contactId: number,
@@ -139,9 +116,7 @@ export async function POST(request: Request) {
       );
     }
 
-    // 1. Créer le contact (ou récupérer son ID s'il existe déjà)
-    let contactId: number | undefined;
-
+    // Création du contact
     const createRes = await fetchJson(`${SYSTEME_API}/contacts`, {
       method: "POST",
       headers: {
@@ -152,40 +127,48 @@ export async function POST(request: Request) {
       body: JSON.stringify({ email, locale: "fr" }),
     });
 
-    if (createRes.ok) {
-      const created = await createRes.json();
-      contactId = created?.id;
-      console.log("[newsletter] contact created", contactId);
-    } else {
-      // Souvent 422 si déjà existant. On cherche son ID.
-      const errBody = await createRes.text().catch(() => "");
-      console.warn(
-        "[newsletter] create returned",
-        createRes.status,
-        errBody.slice(0, 200)
+    if (createRes.status === 422) {
+      // Email déjà inscrit → succès silencieux
+      // (en production, la personne est déjà taguée depuis sa 1ʳᵉ inscription)
+      console.log(
+        "[newsletter] email déjà existant, on renvoie succès"
       );
-      contactId = await findContactIdByEmail(email, apiKey);
-      if (contactId) {
-        console.log("[newsletter] contact already existed, id=", contactId);
-      }
+      return Response.json({ ok: true, alreadyExists: true });
     }
 
-    if (!contactId) {
-      console.error("[newsletter] impossible de récupérer le contact");
+    if (!createRes.ok) {
+      const errBody = await createRes.text().catch(() => "");
+      console.error(
+        "[newsletter] create error",
+        createRes.status,
+        errBody.slice(0, 300)
+      );
       return Response.json(
         { error: "Impossible d'inscrire pour le moment." },
         { status: 502 }
       );
     }
 
-    // 2. Attacher le tag
+    const created = await createRes.json();
+    const contactId: number | undefined = created?.id;
+
+    if (!contactId) {
+      console.error("[newsletter] pas d'ID retourné", created);
+      return Response.json(
+        { error: "Impossible d'inscrire pour le moment." },
+        { status: 502 }
+      );
+    }
+
+    console.log("[newsletter] contact created", contactId);
+
+    // Attachement du tag
     const tagged = await attachTag(contactId, tagId, apiKey);
     if (!tagged) {
       console.error(
-        "[newsletter] AUCUN format d'attachement de tag n'a fonctionné — vérifier l'API ou l'ID du tag"
+        "[newsletter] AUCUN format d'attachement de tag n'a fonctionné"
       );
-      // On ne retourne pas d'erreur au user : son contact est créé.
-      // Ta mère pourra l'ajouter manuellement au tag dans Systeme.io.
+      // On ne bloque pas le user : son contact est créé.
     }
 
     return Response.json({ ok: true });
