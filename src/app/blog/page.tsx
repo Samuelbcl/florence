@@ -37,7 +37,7 @@ export default function Blog() {
           <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
             <div className="aspect-[4/3] overflow-hidden shadow-md">
               <img
-                src="https://images.unsplash.com/photo-1499728603263-13726abce5fd?w=900&q=80"
+                src="/blog-1.png"
                 alt=""
                 className="w-full h-full object-cover"
               />
