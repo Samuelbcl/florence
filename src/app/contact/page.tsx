@@ -7,18 +7,35 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError("");
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setError("Merci d'entrer une adresse email valide.");
       return;
     }
-    // TODO : brancher à un service de newsletter (Mailchimp, Brevo, Resend…).
-    // Pour l'instant on simule la soumission côté client.
-    setSubmitted(true);
-    setEmail("");
+
+    setLoading(true);
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setError(data.error ?? "Impossible d'inscrire pour le moment.");
+        return;
+      }
+      setSubmitted(true);
+      setEmail("");
+    } catch {
+      setError("Erreur réseau. Réessayez dans un instant.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -106,9 +123,10 @@ export default function Contact() {
               )}
               <button
                 type="submit"
-                className="w-full bg-primary-dark text-white rounded-full px-6 py-3 text-sm font-medium hover:bg-primary transition-colors"
+                disabled={loading}
+                className="w-full bg-primary-dark text-white rounded-full px-6 py-3 text-sm font-medium hover:bg-primary transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Je m&apos;inscris à la newsletter
+                {loading ? "Inscription en cours…" : "Je m'inscris à la newsletter"}
               </button>
             </form>
           )}
