@@ -3,24 +3,20 @@
  * Inscrit un email à la newsletter via Systeme.io.
  *
  * Variables d'env requises sur Vercel :
- *   - systeme_api_key : clé API Systeme.io (Settings → Public API Keys)
+ *   - systeme_api_key : clé API Systeme.io
  *   - systeme_tag_id  : ID numérique du tag "Newsletter Florence Naturopathe"
- *
- * Stratégie :
- *   1. POST /api/contacts pour créer le contact
- *      - Succès → on récupère son id, on attache le tag
- *      - 422 → email déjà existant : on renvoie simplement succès
- *        (la personne est déjà dans la liste, taguée à la 1ʳᵉ inscription)
- *   2. Pour l'attachement de tag, on tente 3 formats connus de
- *      l'API Systeme.io. Le premier qui marche gagne.
  */
 
 const SYSTEME_API = "https://api.systeme.io/api";
-const FETCH_TIMEOUT_MS = 5000;
+const FETCH_TIMEOUT_MS = 2500;
 
-async function fetchJson(url: string, init?: RequestInit) {
+async function fetchTimed(
+  url: string,
+  init?: RequestInit,
+  timeoutMs = FETCH_TIMEOUT_MS
+) {
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
   try {
     return await fetch(url, { ...init, signal: controller.signal });
   } finally {
@@ -29,13 +25,14 @@ async function fetchJson(url: string, init?: RequestInit) {
 }
 
 /**
- * Tente plusieurs formats d'attachement de tag.
+ * Tente plusieurs endpoints/formats connus de Systeme.io pour attacher
+ * un tag à un contact. Retourne true au premier qui réussit.
  */
 async function attachTag(
   contactId: number,
   tagId: number,
   apiKey: string
-): Promise<boolean> {
+): Promise<{ ok: boolean; tried: string[] }> {
   const baseHeaders = {
     "X-API-Key": apiKey,
     "Content-Type": "application/json",
@@ -46,7 +43,7 @@ async function attachTag(
     {
       label: "POST /contacts/{id}/tags { tagId }",
       req: () =>
-        fetchJson(`${SYSTEME_API}/contacts/${contactId}/tags`, {
+        fetchTimed(`${SYSTEME_API}/contacts/${contactId}/tags`, {
           method: "POST",
           headers: baseHeaders,
           body: JSON.stringify({ tagId }),
@@ -55,16 +52,34 @@ async function attachTag(
     {
       label: "POST /contacts/{id}/tags { id }",
       req: () =>
-        fetchJson(`${SYSTEME_API}/contacts/${contactId}/tags`, {
+        fetchTimed(`${SYSTEME_API}/contacts/${contactId}/tags`, {
           method: "POST",
           headers: baseHeaders,
           body: JSON.stringify({ id: tagId }),
         }),
     },
     {
+      label: "POST /tags/{tagId}/contacts { contactId }",
+      req: () =>
+        fetchTimed(`${SYSTEME_API}/tags/${tagId}/contacts`, {
+          method: "POST",
+          headers: baseHeaders,
+          body: JSON.stringify({ contactId }),
+        }),
+    },
+    {
+      label: "POST /tags/{tagId}/contacts { id: contactId }",
+      req: () =>
+        fetchTimed(`${SYSTEME_API}/tags/${tagId}/contacts`, {
+          method: "POST",
+          headers: baseHeaders,
+          body: JSON.stringify({ id: contactId }),
+        }),
+    },
+    {
       label: "PATCH /contacts/{id} { tags: [tagId] }",
       req: () =>
-        fetchJson(`${SYSTEME_API}/contacts/${contactId}`, {
+        fetchTimed(`${SYSTEME_API}/contacts/${contactId}`, {
           method: "PATCH",
           headers: baseHeaders,
           body: JSON.stringify({ tags: [tagId] }),
@@ -72,25 +87,29 @@ async function attachTag(
     },
   ];
 
+  const tried: string[] = [];
   for (const a of attempts) {
     try {
       const res = await a.req();
-      if (res.ok || res.status === 204) {
-        console.log(`[newsletter] tag attached via: ${a.label}`);
-        return true;
+      const status = res.status;
+      const txt = await res.text().catch(() => "");
+      tried.push(`${a.label} → ${status}`);
+      if (res.ok || status === 204) {
+        console.log(`[newsletter] ✓ tag attached via: ${a.label}`);
+        return { ok: true, tried };
       } else {
-        const txt = await res.text().catch(() => "");
         console.warn(
-          `[newsletter] ${a.label} → ${res.status}`,
-          txt.slice(0, 200)
+          `[newsletter] ✗ ${a.label} → ${status} ${txt.slice(0, 200)}`
         );
       }
     } catch (e) {
-      console.warn(`[newsletter] ${a.label} → exception`, e);
+      const msg = e instanceof Error ? e.message : "?";
+      tried.push(`${a.label} → exception ${msg}`);
+      console.warn(`[newsletter] ✗ ${a.label} → exception`, msg);
     }
   }
 
-  return false;
+  return { ok: false, tried };
 }
 
 export async function POST(request: Request) {
@@ -107,40 +126,69 @@ export async function POST(request: Request) {
     const tagId = tagIdStr ? Number(tagIdStr) : NaN;
 
     if (!apiKey || !tagIdStr || Number.isNaN(tagId)) {
-      console.error(
-        "[newsletter] Variables d'env Systeme.io manquantes ou invalides"
-      );
+      console.error("[newsletter] Variables d'env manquantes");
       return Response.json(
         { error: "Configuration serveur manquante." },
         { status: 500 }
       );
     }
 
-    // Création du contact
-    const createRes = await fetchJson(`${SYSTEME_API}/contacts`, {
+    // Tentative 1 : créer le contact avec le tag dans le body (le plus
+    // efficace si Systeme.io accepte ce format)
+    const createWithTagsRes = await fetchTimed(`${SYSTEME_API}/contacts`, {
       method: "POST",
       headers: {
         "X-API-Key": apiKey,
         "Content-Type": "application/json",
         accept: "application/json",
       },
-      body: JSON.stringify({ email, locale: "fr" }),
+      body: JSON.stringify({ email, locale: "fr", tags: [tagId] }),
     });
 
-    if (createRes.status === 422) {
-      // Email déjà inscrit → succès silencieux
-      // (en production, la personne est déjà taguée depuis sa 1ʳᵉ inscription)
+    if (createWithTagsRes.ok) {
+      const created = await createWithTagsRes.json().catch(() => null);
+      const id = created?.id;
+      const responseTags = created?.tags;
       console.log(
-        "[newsletter] email déjà existant, on renvoie succès"
+        "[newsletter] contact créé avec tags dans body, id=",
+        id,
+        "tags=",
+        responseTags
       );
-      return Response.json({ ok: true, alreadyExists: true });
-    }
 
-    if (!createRes.ok) {
-      const errBody = await createRes.text().catch(() => "");
+      // Vérifie si le tag a bien été appliqué (selon le retour API)
+      // Si on a bien le tag dans la réponse, c'est gagné en 1 appel
+      const hasTag =
+        Array.isArray(responseTags) &&
+        responseTags.some(
+          (t: unknown) =>
+            typeof t === "number"
+              ? t === tagId
+              : (t as { id?: number })?.id === tagId
+        );
+
+      if (hasTag) {
+        return Response.json({ ok: true });
+      }
+
+      // Sinon on attache via un endpoint séparé
+      if (id) {
+        const result = await attachTag(id, tagId, apiKey);
+        return Response.json({
+          ok: true,
+          tagAttached: result.ok,
+          tried: result.tried,
+        });
+      }
+    } else if (createWithTagsRes.status === 422) {
+      // Email déjà inscrit
+      console.log("[newsletter] email déjà existant");
+      return Response.json({ ok: true, alreadyExists: true });
+    } else {
+      const errBody = await createWithTagsRes.text().catch(() => "");
       console.error(
         "[newsletter] create error",
-        createRes.status,
+        createWithTagsRes.status,
         errBody.slice(0, 300)
       );
       return Response.json(
@@ -149,31 +197,10 @@ export async function POST(request: Request) {
       );
     }
 
-    const created = await createRes.json();
-    const contactId: number | undefined = created?.id;
-
-    if (!contactId) {
-      console.error("[newsletter] pas d'ID retourné", created);
-      return Response.json(
-        { error: "Impossible d'inscrire pour le moment." },
-        { status: 502 }
-      );
-    }
-
-    console.log("[newsletter] contact created", contactId);
-
-    // Attachement du tag
-    const tagged = await attachTag(contactId, tagId, apiKey);
-    if (!tagged) {
-      console.error(
-        "[newsletter] AUCUN format d'attachement de tag n'a fonctionné"
-      );
-      // On ne bloque pas le user : son contact est créé.
-    }
-
     return Response.json({ ok: true });
   } catch (e) {
-    console.error("[newsletter] Unexpected error:", e);
+    const msg = e instanceof Error ? e.message : "?";
+    console.error("[newsletter] Unexpected error:", msg);
     return Response.json({ error: "Erreur inattendue." }, { status: 500 });
   }
 }
