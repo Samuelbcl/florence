@@ -93,7 +93,7 @@ function PrendreRdvContent() {
               conviennent. Une confirmation vous sera envoyée par email.
             </p>
 
-            <CalEmbed bookingUrl={selected.bookingUrl} />
+            <CalEmbed key={selected.slug} bookingUrl={selected.bookingUrl} />
           </div>
         ) : (
           <div className="mt-10 md:mt-12 bg-card border border-dashed border-border p-8 md:p-12 text-center">
