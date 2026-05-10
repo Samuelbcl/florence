@@ -1,0 +1,10 @@
+{
+  "title": "Consultation de suivi au cabinet",
+  "slug": "consultation-suivi-cabinet",
+  "short": "Rendez-vous de suivi au cabinet pour ajuster votre accompagnement.",
+  "description": "Au cabinet, nous faisons le point sur la mise en place des conseils du précédent rendez-vous. J'ajuste votre programme en fonction de votre évolution, de vos sensations et de l'évolution de votre terrain. C'est aussi un moment pour aborder de nouveaux sujets si besoin et continuer l'accompagnement en profondeur.",
+  "price": "65 €",
+  "duration": "60 min",
+  "image": "/presta-cabinet-suivi.png",
+  "order": 5
+}

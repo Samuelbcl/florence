@@ -1,9 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { IconCouple } from "../components/PersonIcons";
-import { prestations } from "../lib/prestations";
+import { getAllPrestations } from "../lib/prestations";
 
-export default function Home() {
+export default async function Home() {
+  const prestations = await getAllPrestations();
   return (
     <>
       {/* ═══════════ HERO ═══════════ */}

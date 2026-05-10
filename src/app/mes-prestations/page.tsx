@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import Link from "next/link";
-import { prestations } from "../../lib/prestations";
+import { getAllPrestations } from "../../lib/prestations";
 
 export const metadata: Metadata = {
   title: "Mes prestations — Florence Debattice",
@@ -9,7 +9,8 @@ export const metadata: Metadata = {
     "Consultations en ligne ou au cabinet, rendez-vous informatif gratuit. Découvrez les prestations proposées par Florence Debattice, naturopathe.",
 };
 
-export default function MesPrestations() {
+export default async function MesPrestations() {
+  const prestations = await getAllPrestations();
   return (
     <>
       <section className="bg-primary-light/20 py-14 md:py-24">

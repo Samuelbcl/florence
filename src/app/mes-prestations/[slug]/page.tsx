@@ -2,19 +2,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { prestations, getPrestation } from "../../../lib/prestations";
+import { getAllPrestations, getPrestation } from "../../../lib/prestations";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
 export async function generateStaticParams() {
+  const prestations = await getAllPrestations();
   return prestations.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const prestation = getPrestation(slug);
+  const prestation = await getPrestation(slug);
   if (!prestation) return { title: "Prestation — Florence Debattice" };
   return {
     title: `${prestation.title} — Florence Debattice`,
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function PrestationPage({ params }: Props) {
   const { slug } = await params;
-  const prestation = getPrestation(slug);
+  const prestation = await getPrestation(slug);
   if (!prestation) notFound();
 
   return (

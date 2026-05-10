@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import Link from "next/link";
+import { marked } from "marked";
+import { getLatestBlogPost } from "../../lib/blog";
 
 export const metadata: Metadata = {
   title: "Blog — Florence Debattice",
@@ -8,158 +10,69 @@ export const metadata: Metadata = {
     "Articles de naturopathie pour la santé hormonale féminine, le cycle, la ménopause, l'endométriose et les approches naturelles.",
 };
 
-export default function Blog() {
+export default async function Blog() {
+  const post = await getLatestBlogPost();
+
+  if (!post) {
+    return (
+      <section className="min-h-[60vh] flex items-center justify-center px-6">
+        <p className="text-foreground/70 text-center">
+          Aucun article publié pour le moment. Revenez bientôt !
+        </p>
+      </section>
+    );
+  }
+
+  // Convertit le markdown du body en HTML
+  const bodyHtml = await marked.parse(post.body, { gfm: true });
+
   return (
     <>
-      {/* INTRO sur fond crème */}
+      {/* INTRO */}
       <section className="bg-background py-12 md:py-20">
         <div className="max-w-3xl mx-auto px-5 md:px-6">
-          <span className="inline-block text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-accent bg-accent/10 px-3 py-1 rounded-full mb-5 md:mb-6">
-            Premier article
-          </span>
+          {post.tag && (
+            <span className="inline-block text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-accent bg-accent/10 px-3 py-1 rounded-full mb-5 md:mb-6">
+              {post.tag}
+            </span>
+          )}
 
           <h1 className="font-display text-2xl sm:text-3xl md:text-4xl text-primary-dark leading-[1.25] mb-5">
-            « Tu es juste fatiguée » — et si c&apos;était faux ?
+            {post.title}
           </h1>
 
-          <p className="text-base md:text-lg italic text-foreground/80 leading-[1.7] md:leading-[1.8] border-l-[3px] border-primary pl-4">
-            Tu te lèves épuisée. Tu as des règles douloureuses, une humeur en
-            dents de scie, une peau capricieuse ou des kilos qui s&apos;
-            installent sans raison. Et à chaque consultation, on te dit que
-            tout va bien. Que c&apos;est normal. Que c&apos;est le stress.
-          </p>
+          {post.intro && (
+            <p className="text-base md:text-lg italic text-foreground/80 leading-[1.7] md:leading-[1.8] border-l-[3px] border-primary pl-4">
+              {post.intro}
+            </p>
+          )}
         </div>
       </section>
 
-      {/* SECTION 1 — image gauche / texte droite — fond vert clair */}
-      <section className="bg-primary-light/20 py-12 md:py-20">
-        <div className="max-w-5xl mx-auto px-5 md:px-6">
-          <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
-            <div className="aspect-[4/3] overflow-hidden shadow-md">
+      {/* IMAGE PRINCIPALE */}
+      {post.image1 && (
+        <section className="bg-primary-light/20 py-10 md:py-16">
+          <div className="max-w-3xl mx-auto px-5 md:px-6">
+            <div className="aspect-[16/9] overflow-hidden shadow-md">
               <img
-                src="/blog-1.png"
-                alt=""
+                src={post.image1}
+                alt={post.title}
                 className="w-full h-full object-cover"
               />
             </div>
-            <div>
-              <p className="text-sm md:text-base text-foreground leading-[1.7] md:leading-[1.85] mb-4">
-                Je veux te parler d&apos;une chose que j&apos;entends très
-                souvent : des femmes qui savent que quelque chose ne va pas
-                dans leur corps, mais qu&apos;on n&apos;a jamais vraiment
-                écoutées.
-              </p>
-              <p className="text-sm md:text-base text-foreground leading-[1.7] md:leading-[1.85]">
-                Des femmes brillantes, actives, qui font tout bien en
-                apparence — et qui pourtant traînent une fatigue chronique,
-                des variations d&apos;humeur inexpliquées, un cycle qui les
-                épuise chaque mois.
-              </p>
-            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* PHRASE FORTE en doré centré sur fond crème */}
+      {/* CONTENU MARKDOWN */}
       <section className="bg-background py-10 md:py-16">
-        <div className="max-w-3xl mx-auto px-5 md:px-6">
-          <p className="font-script text-2xl sm:text-3xl md:text-5xl text-accent leading-tight text-center">
-            On leur a dit : c&apos;est l&apos;âge.
-            <br />
-            C&apos;est le stress. C&apos;est dans la tête.
-          </p>
-        </div>
+        <div
+          className="max-w-3xl mx-auto px-5 md:px-6 blog-prose"
+          dangerouslySetInnerHTML={{ __html: bodyHtml }}
+        />
       </section>
 
-      {/* HIGHLIGHT BOX sur fond crème */}
-      <section className="bg-background pb-10 md:pb-16">
-        <div className="max-w-3xl mx-auto px-5 md:px-6">
-          <div className="bg-card border-l-[4px] border-primary-dark rounded-r-lg px-5 md:px-6 py-4 md:py-5">
-            <p className="text-sm md:text-base italic text-primary-dark leading-[1.7] md:leading-[1.75] m-0">
-              Mais si votre corps n&apos;était pas en train de flancher — mais
-              simplement en train d&apos;essayer de vous dire quelque chose ?
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 2 — texte gauche / image droite — fond doré pâle */}
-      <section className="bg-accent/10 py-12 md:py-20">
-        <div className="max-w-5xl mx-auto px-5 md:px-6">
-          <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
-            <div className="md:order-2 aspect-[4/3] overflow-hidden shadow-md">
-              <img
-                src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=900&q=80"
-                alt=""
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="md:order-1">
-              <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-primary-dark mb-3">
-                Ce que la naturopathie change vraiment
-              </h2>
-              <p className="text-sm md:text-base text-foreground leading-[1.7] md:leading-[1.85] mb-4">
-                La naturopathie ne remplace pas la médecine. Elle l&apos;
-                accompagne, là où elle a ses limites : comprendre pourquoi
-                votre corps réagit comme il réagit, identifier ce qui perturbe
-                votre équilibre hormonal, et agir en douceur.
-              </p>
-              <p className="text-sm md:text-base text-foreground leading-[1.7] md:leading-[1.85]">
-                Alimentation anti-inflammatoire, plantes adaptogènes, gestion
-                du cortisol, soutien du foie : il existe des leviers
-                puissants, peu connus, et pourtant accessibles à toutes.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 3 — image gauche / texte droite — fond vert clair */}
-      <section className="bg-primary-light/20 py-12 md:py-20">
-        <div className="max-w-5xl mx-auto px-5 md:px-6">
-          <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
-            <div className="aspect-[4/3] overflow-hidden shadow-md">
-              <img
-                src="https://images.unsplash.com/photo-1543362906-acfc16c67564?w=900&q=80"
-                alt=""
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div>
-              <h2 className="font-display text-xl sm:text-2xl md:text-3xl text-primary-dark mb-3">
-                Pourquoi ce blog existe
-              </h2>
-              <p className="text-sm md:text-base text-foreground leading-[1.7] md:leading-[1.85] mb-4">
-                Je suis naturopathe spécialisée dans la santé hormonale
-                féminine. J&apos;ai créé cet espace pour partager des
-                informations fiables, des conseils pratiques, et surtout pour
-                vous montrer que vous n&apos;avez pas à accepter de vous
-                sentir « comme ça ».
-              </p>
-              <p className="text-sm md:text-base text-foreground leading-[1.7] md:leading-[1.85]">
-                Chaque mois, vous trouverez ici des articles sur le cycle, la
-                ménopause, l&apos;endométriose, la thyroïde, la fatigue
-                surrénalienne — et les approches naturelles qui font vraiment
-                une différence.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CITATION FORTE sur fond crème */}
-      <section className="bg-background py-12 md:py-16">
-        <div className="max-w-3xl mx-auto px-5 md:px-6">
-          <div className="bg-card border-l-[4px] border-primary-dark rounded-r-lg px-5 md:px-6 py-4 md:py-5">
-            <p className="text-sm md:text-base italic text-primary-dark leading-[1.7] md:leading-[1.75] m-0">
-              Parce qu&apos;une femme qui comprend son corps est une femme
-              qui peut en prendre soin.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA NEWSLETTER + AUTEUR sur fond vert sauge foncé */}
+      {/* CTA NEWSLETTER + AUTEUR */}
       <section className="bg-primary-dark text-white py-14 md:py-20">
         <div className="max-w-3xl mx-auto px-5 md:px-6 text-center">
           <p className="font-script text-3xl sm:text-4xl md:text-5xl text-accent leading-none mb-3">
