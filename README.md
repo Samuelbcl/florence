@@ -62,9 +62,10 @@ Le système de prise de rendez-vous est branché sur **[Cal.com](https://cal.com
 ### Côté code
 
 Une fois le compte créé :
-- Si le username Cal.com est bien `florence-debattice` et les slugs respectent la liste ci-dessus → **rien à toucher**, tout fonctionnera automatiquement.
+- Si le username Cal.com est `flo-naturopathe` (déjà configuré) → **rien à toucher**, tout fonctionnera automatiquement.
 - Si le username est différent : éditer la constante `CAL_USER` au début de [`src/lib/prestations.ts`](src/lib/prestations.ts).
-- Si un slug d'event est différent : éditer le champ `bookingUrl` correspondant dans le tableau `prestations` du même fichier.
+- Si un slug d'event Cal.com diffère du slug de l'URL du site : ajouter `bookingSlug` dans le JSON correspondant de [`content/prestations/`](content/prestations/) (ou via Tina CMS).
+  Exemple : pour le rendez-vous informatif, l'URL du site est `/mes-prestations/rendez-vous-informatif` mais Cal.com utilise `rdv-informatif` → on a donc `"bookingSlug": "rdv-informatif"` dans le JSON.
 
 ### Désactiver des jours / fermer des plages horaires
 

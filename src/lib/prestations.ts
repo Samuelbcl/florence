@@ -10,6 +10,8 @@ export type Prestation = {
   duration: string;
   image: string;
   bookingUrl: string;
+  /** Slug Cal.com — différent du slug d'URL si renseigné (ex: site /rendez-vous-informatif → Cal.com /rdv-informatif) */
+  bookingSlug?: string;
   order?: number;
 };
 
@@ -32,9 +34,10 @@ export async function getAllPrestations(): Promise<Prestation[]> {
           "utf-8"
         );
         const data = JSON.parse(raw) as Omit<Prestation, "bookingUrl">;
+        const calSlug = data.bookingSlug ?? data.slug;
         return {
           ...data,
-          bookingUrl: `https://cal.com/${CAL_USER}/${data.slug}`,
+          bookingUrl: `https://cal.com/${CAL_USER}/${calSlug}`,
         } as Prestation;
       })
   );

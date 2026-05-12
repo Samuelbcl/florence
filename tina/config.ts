@@ -85,10 +85,17 @@ export default defineConfig({
           {
             type: "string",
             name: "slug",
-            label: "Slug (URL)",
+            label: "Slug (URL du site)",
             description:
-              "Identifiant utilisé dans l'URL et le lien Cal.com. Ne pas modifier sans précaution !",
+              "Identifiant utilisé dans l'URL de la page (ex: /mes-prestations/rendez-vous-informatif). Ne pas modifier sans précaution !",
             required: true,
+          },
+          {
+            type: "string",
+            name: "bookingSlug",
+            label: "Slug Cal.com (optionnel)",
+            description:
+              "À remplir uniquement si l'event Cal.com a un slug différent du slug d'URL ci-dessus. Ex: 'rdv-informatif' alors que l'URL du site est 'rendez-vous-informatif'.",
           },
           {
             type: "string",
