@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import type { SiteSettings } from "../lib/settings";
 
 const navLinks: {
   href: string;
@@ -17,7 +18,7 @@ const navLinks: {
   { href: "/contact", label: "Contact" },
 ];
 
-export default function Header() {
+export default function Header({ settings }: { settings: SiteSettings }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
@@ -77,10 +78,10 @@ export default function Header() {
             className="flex flex-col leading-none"
           >
             <span className="font-display text-lg sm:text-xl md:text-2xl tracking-wide text-primary-dark">
-              Florence Debattice
+              {settings.siteName}
             </span>
             <span className="text-[9px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-muted mt-1">
-              Naturopathe
+              {settings.tagline}
             </span>
           </Link>
 
@@ -179,10 +180,8 @@ export default function Header() {
               <p className="text-xs tracking-[0.25em] uppercase text-muted mb-3">
                 Cabinet
               </p>
-              <p className="text-sm text-foreground/85 leading-relaxed">
-                Rue de Beaufays 17b
-                <br />
-                4870 Trooz, Belgique
+              <p className="text-sm text-foreground/85 leading-relaxed whitespace-pre-line">
+                {settings.address}
               </p>
             </div>
           </nav>
