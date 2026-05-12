@@ -137,9 +137,7 @@ export default function ContactClient({
                   className="mt-1 w-4 h-4 accent-primary-dark cursor-pointer shrink-0"
                 />
                 <span className="text-xs text-foreground/75 leading-relaxed">
-                  J&apos;accepte de recevoir la newsletter de {settings.siteName}.
-                  Je peux me désinscrire à tout moment via le lien de
-                  désinscription présent dans chaque email.
+                  J&apos;accepte de recevoir la newsletter.
                 </span>
               </label>
 
