@@ -150,8 +150,7 @@ export default function VotreNaturopathe() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1920&q=80')",
+            backgroundImage: "url('/cropped-cascade-foret.png')",
           }}
         />
         <div className="absolute inset-0 bg-primary-dark/75" />
