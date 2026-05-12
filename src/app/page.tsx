@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 import Link from "next/link";
 import { IconCouple } from "../components/PersonIcons";
 import { getAllPrestations } from "../lib/prestations";
@@ -83,10 +83,13 @@ export default async function Home() {
         <div className="max-w-6xl mx-auto px-5 md:px-6 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div className="order-2 md:order-1">
             <div className="relative h-[280px] sm:h-[360px] md:h-[520px] w-full">
-              <img
+              <Image
                 src="/presentation-home.png"
                 alt="Florence Debattice"
-                className="absolute inset-0 w-full h-full object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+                priority
               />
               <div className="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 w-16 h-16 md:w-24 md:h-24 border-2 border-primary -z-10" />
               <div className="absolute -top-3 -left-3 md:-top-4 md:-left-4 w-16 h-16 md:w-24 md:h-24 bg-primary-light/40 -z-10" />
@@ -255,11 +258,13 @@ export default async function Home() {
                 href={`/mes-prestations/${p.slug}`}
                 className="group bg-white text-foreground overflow-hidden flex flex-col shadow-md hover:shadow-xl transition-shadow snap-center shrink-0 w-[85%] sm:w-[70%] md:w-auto"
               >
-                <div className="aspect-square overflow-hidden bg-background">
-                  <img
+                <div className="relative aspect-square overflow-hidden bg-background">
+                  <Image
                     src={p.image}
                     alt={p.title}
-                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                    fill
+                    sizes="(max-width: 640px) 85vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-contain transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-6 md:p-7 flex flex-col flex-1">
@@ -355,8 +360,7 @@ export default async function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1920&q=80')",
+            backgroundImage: "url('/cropped-cascade-foret.png')",
           }}
         />
         <div className="absolute inset-0 bg-primary-dark/80" />

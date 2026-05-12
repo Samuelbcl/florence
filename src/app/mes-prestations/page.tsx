@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { getAllPrestations } from "../../lib/prestations";
 
@@ -35,11 +35,13 @@ export default async function MesPrestations() {
               href={`/mes-prestations/${p.slug}`}
               className="group bg-white shadow-md hover:shadow-xl transition-shadow overflow-hidden flex flex-col snap-center shrink-0 w-[85%] sm:w-[60%] md:w-auto"
             >
-              <div className="aspect-square overflow-hidden bg-background">
-                <img
+              <div className="relative aspect-square overflow-hidden bg-background">
+                <Image
                   src={p.image}
                   alt={p.title}
-                  className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                  fill
+                  sizes="(max-width: 640px) 85vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-contain transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
 

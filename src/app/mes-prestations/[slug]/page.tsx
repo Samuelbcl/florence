@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllPrestations, getPrestation } from "../../../lib/prestations";
@@ -42,11 +42,14 @@ export default async function PrestationPage({ params }: Props) {
           <div className="grid md:grid-cols-2 gap-8 md:gap-14 items-start">
             {/* IMAGE À GAUCHE — carrée */}
             <div className="relative">
-              <div className="aspect-square w-full overflow-hidden shadow-xl bg-background">
-                <img
+              <div className="relative aspect-square w-full overflow-hidden shadow-xl bg-background">
+                <Image
                   src={prestation.image}
                   alt={prestation.title}
-                  className="w-full h-full object-contain"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-contain"
+                  priority
                 />
               </div>
               <div className="absolute -bottom-3 -left-3 md:-bottom-4 md:-left-4 w-14 h-14 md:w-20 md:h-20 border-2 border-accent -z-10" />

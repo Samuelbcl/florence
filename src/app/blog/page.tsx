@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { marked } from "marked";
 import { getLatestBlogPost } from "../../lib/blog";
@@ -53,11 +53,14 @@ export default async function Blog() {
       {post.image1 && (
         <section className="bg-primary-light/20 py-10 md:py-16">
           <div className="max-w-3xl mx-auto px-5 md:px-6">
-            <div className="aspect-[16/9] overflow-hidden shadow-md">
-              <img
+            <div className="relative aspect-[16/9] overflow-hidden shadow-md">
+              <Image
                 src={post.image1}
                 alt={post.title}
-                className="w-full h-full object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, 768px"
+                className="object-cover"
+                priority
               />
             </div>
           </div>
