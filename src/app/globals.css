@@ -36,15 +36,6 @@ body {
   line-height: 1.7;
 }
 
-/* ⚠️ TEMPORAIRE — POUR SCREENSHOTS — À RETIRER APRÈS ⚠️ */
-html {
-  scrollbar-width: none;
-}
-html::-webkit-scrollbar {
-  display: none;
-}
-/* ⚠️ FIN DU BLOC TEMPORAIRE ⚠️ */
-
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-cormorant), Georgia, serif;
   font-weight: 400;
