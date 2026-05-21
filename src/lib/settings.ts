@@ -21,7 +21,7 @@ const DEFAULTS: SiteSettings = {
   siteName: "Florence Debattice",
   tagline: "Naturopathe",
   address: "Rue de Beaufays 17b\n4870 Trooz, Belgique",
-  email: "flonaturopathie@gmail.com",
+  email: "contact@flonaturopathie.com",
   facebookUrl: "",
   instagramUrl: "",
 };
