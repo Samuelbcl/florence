@@ -6,6 +6,7 @@ export type SiteSettings = {
   tagline: string;
   address: string;
   email: string;
+  phone: string;
   facebookUrl: string;
   instagramUrl: string;
 };
@@ -22,6 +23,7 @@ const DEFAULTS: SiteSettings = {
   tagline: "Naturopathe",
   address: "Rue de Beaufays 17b\n4870 Trooz, Belgique",
   email: "contact@flonaturopathie.com",
+  phone: "+32486927140",
   facebookUrl: "",
   instagramUrl: "",
 };

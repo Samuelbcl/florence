@@ -50,6 +50,16 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
               {settings.email}
             </a>
           </p>
+          {settings.phone && (
+            <p className="text-sm text-white/80 mb-4">
+              <a
+                href={`tel:${settings.phone.replace(/\s/g, "")}`}
+                className="hover:text-accent"
+              >
+                {settings.phone}
+              </a>
+            </p>
+          )}
           {hasSocial && (
             <div className="flex gap-3">
               {hasFacebook && (

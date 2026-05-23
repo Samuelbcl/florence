@@ -5,9 +5,10 @@ import { marked } from "marked";
 import { getLatestBlogPost } from "../../lib/blog";
 
 export const metadata: Metadata = {
-  title: "Blog — Florence Debattice",
+  title: "Blog naturopathie & santé naturelle",
   description:
-    "Articles de naturopathie pour la santé hormonale féminine, le cycle, la ménopause, l'endométriose et les approches naturelles.",
+    "Articles de naturopathie par Florence Debattice (Liège) : santé hormonale féminine, cycle, ménopause, endométriose, sommeil, digestion, approches naturelles.",
+  alternates: { canonical: "/blog" },
 };
 
 export default async function Blog() {

@@ -166,6 +166,11 @@ export default defineConfig({
           },
           {
             type: "string",
+            name: "phone",
+            label: "Téléphone (format international, ex: +32486927140)",
+          },
+          {
+            type: "string",
             name: "facebookUrl",
             label: "URL Facebook (optionnel)",
           },

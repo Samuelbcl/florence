@@ -16,10 +16,11 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const prestation = await getPrestation(slug);
-  if (!prestation) return { title: "Prestation — Florence Debattice" };
+  if (!prestation) return { title: "Prestation" };
   return {
-    title: `${prestation.title} — Florence Debattice`,
-    description: prestation.short,
+    title: `${prestation.title} — Naturopathe Liège`,
+    description: `${prestation.short} Avec Florence Debattice, naturopathe à Trooz (Liège) et en ligne pour toute la Wallonie.`,
+    alternates: { canonical: `/mes-prestations/${slug}` },
   };
 }
 

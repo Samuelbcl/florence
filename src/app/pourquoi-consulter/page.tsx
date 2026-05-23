@@ -9,9 +9,10 @@ import {
 } from "../../components/PersonIcons";
 
 export const metadata: Metadata = {
-  title: "Pourquoi consulter ? — Florence Debattice",
+  title: "Pourquoi consulter une naturopathe ?",
   description:
-    "La naturopathie agit en préventif comme en accompagnement. Découvrez pourquoi et quand consulter une naturopathe.",
+    "Stress, sommeil, digestion, hormones, fatigue : découvrez pourquoi et quand consulter une naturopathe à Liège. Accompagnement préventif et complémentaire pour adultes, enfants et femmes enceintes en Wallonie.",
+  alternates: { canonical: "/pourquoi-consulter" },
 };
 
 export default function PourquoiConsulter() {

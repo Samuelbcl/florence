@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Qui suis-je ? — Florence Debattice",
+  title: "Qui suis-je ? — Naturopathe à Liège",
   description:
-    "Découvrez le parcours de Florence Debattice : de la rigueur des chiffres à l'équilibre de l'humain.",
+    "Florence Debattice, naturopathe certifiée à Trooz (Liège). Découvrez son parcours : de la rigueur des chiffres à l'accompagnement humain, en Wallonie et en ligne.",
+  alternates: { canonical: "/votre-naturopathe" },
 };
 
 export default function VotreNaturopathe() {

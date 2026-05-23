@@ -4,9 +4,10 @@ import Link from "next/link";
 import { getAllPrestations } from "../../lib/prestations";
 
 export const metadata: Metadata = {
-  title: "Mes prestations — Florence Debattice",
+  title: "Prestations naturopathie à Liège & en ligne",
   description:
-    "Consultations en ligne ou au cabinet, rendez-vous informatif gratuit. Découvrez les prestations proposées par Florence Debattice, naturopathe.",
+    "Consultations de naturopathie au cabinet de Trooz (Liège) ou en ligne pour toute la Wallonie et la Belgique. Rendez-vous informatif gratuit, bilan initial et consultations de suivi.",
+  alternates: { canonical: "/mes-prestations" },
 };
 
 export default async function MesPrestations() {
