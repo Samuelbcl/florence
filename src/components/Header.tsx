@@ -14,6 +14,7 @@ const navLinks: {
   { href: "/votre-naturopathe", label: "Votre naturopathe" },
   { href: "/pourquoi-consulter", label: "Pourquoi consulter ?" },
   { href: "/mes-prestations", label: "Mes prestations" },
+  { href: "/ebook", label: "Ebook" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];

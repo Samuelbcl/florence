@@ -133,6 +133,95 @@ export default defineConfig({
         ],
       },
 
+      // ════════════ EBOOKS ════════════
+      {
+        name: "ebook",
+        label: "Ebooks",
+        path: "content/ebook",
+        format: "json",
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Titre principal (court)",
+            description:
+              "Ex: « 4 saisons pour retrouver forme, énergie et douceur »",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "string",
+            name: "slug",
+            label: "Slug (URL)",
+            description:
+              "Identifiant interne. Pas de modification sans précaution.",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "subtitle",
+            label: "Sous-titre / accroche",
+            description: "Ex: Livre numérique bien-être · Guide naturopathique",
+          },
+          {
+            type: "string",
+            name: "tag",
+            label: "Étiquette (ex: Nouveau, Best-seller)",
+          },
+          {
+            type: "string",
+            name: "short",
+            label: "Description courte (1-2 phrases)",
+            ui: { component: "textarea" },
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Description longue",
+            ui: { component: "textarea" },
+          },
+          {
+            type: "string",
+            name: "highlights",
+            label: "Points clés (liste, un par ligne)",
+            list: true,
+            description: "Ex: Format PDF · 4 modules saisonniers · + 2 bonus",
+          },
+          {
+            type: "image",
+            name: "cover",
+            label: "Image principale (cover)",
+          },
+          {
+            type: "image",
+            name: "image2",
+            label: "Image secondaire (optionnel)",
+          },
+          {
+            type: "image",
+            name: "image3",
+            label: "Image secondaire 2 (optionnel)",
+          },
+          {
+            type: "string",
+            name: "etsyUrl",
+            label: "Lien Etsy (URL complète)",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "ctaLabel",
+            label: "Texte du bouton (ex: Découvrir sur Etsy)",
+          },
+          {
+            type: "number",
+            name: "order",
+            label: "Ordre d'affichage",
+            description: "Plus petit = affiché en premier",
+          },
+        ],
+      },
+
       // ════════════ PARAMÈTRES SITE ════════════
       {
         name: "settings",

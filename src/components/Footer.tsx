@@ -28,6 +28,7 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
             <li><Link href="/votre-naturopathe" className="hover:text-accent">Votre naturopathe</Link></li>
             <li><Link href="/pourquoi-consulter" className="hover:text-accent">Pourquoi consulter ?</Link></li>
             <li><Link href="/mes-prestations" className="hover:text-accent">Mes prestations</Link></li>
+            <li><Link href="/ebook" className="hover:text-accent">Ebook</Link></li>
             <li><Link href="/blog" className="hover:text-accent">Blog</Link></li>
             <li><Link href="/prendre-rdv" className="hover:text-accent">Prendre RDV</Link></li>
           </ul>
