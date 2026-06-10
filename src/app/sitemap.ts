@@ -43,7 +43,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: "/naturopathe-trooz", file: "naturopathe-trooz/page.tsx", priority: 0.9, changeFrequency: "monthly" },
     { path: "/ebook", file: "ebook/page.tsx", priority: 0.85, changeFrequency: "monthly" },
     { path: "/blog", file: "blog/page.tsx", priority: 0.8, changeFrequency: "weekly" },
+    { path: "/faq", file: "faq/page.tsx", priority: 0.75, changeFrequency: "monthly" },
     { path: "/contact", file: "contact/page.tsx", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/mentions-legales", file: "mentions-legales/page.tsx", priority: 0.3, changeFrequency: "monthly" },
+    { path: "/politique-de-confidentialite", file: "politique-de-confidentialite/page.tsx", priority: 0.3, changeFrequency: "monthly" },
   ];
 
   const staticUrls = await Promise.all(

@@ -61,7 +61,7 @@ export default function ContactClient({
           <h1 className="font-display text-3xl sm:text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3">
             Restons en contact
           </h1>
-          <p className="font-script text-2xl sm:text-3xl md:text-4xl text-accent leading-none">
+          <p className="font-display italic text-xl sm:text-2xl md:text-3xl text-accent leading-snug">
             une question, un échange ?
           </p>
         </div>

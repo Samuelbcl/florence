@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { getSiteSettings } from "../../lib/settings";
 
@@ -60,11 +61,13 @@ export default async function VotreNaturopathe() {
       />
       {/* HERO photo (objets à gauche), titre à droite, passe derrière le header transparent */}
       <section className="relative -mt-[100px] min-h-[400px] md:min-h-[520px] flex items-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-[center_75%]"
-          style={{
-            backgroundImage: "url('/hero-naturopathe.png')",
-          }}
+        <Image
+          src="/hero-naturopathe.png"
+          alt="Florence Debattice — Naturopathe à Trooz, province de Liège"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[center_75%]"
         />
         <div className="absolute inset-0 bg-gradient-to-l from-background/60 via-background/20 to-transparent md:from-background/50 md:via-background/15" />
 
@@ -90,12 +93,15 @@ export default async function VotreNaturopathe() {
           <div className="relative grid md:grid-cols-12 md:gap-0 items-center">
             {/* Photo à droite */}
             <div className="md:col-span-6 md:col-start-7 md:row-start-1">
-              <div
-                className="h-[240px] sm:h-[300px] md:h-[560px] w-full bg-cover bg-center shadow-xl"
-                style={{
-                  backgroundImage: "url('/presentation-naturopathe.png')",
-                }}
-              />
+              <div className="relative h-[240px] sm:h-[300px] md:h-[560px] w-full shadow-xl">
+                <Image
+                  src="/presentation-naturopathe.png"
+                  alt="Portrait de Florence Debattice, naturopathe à Trooz (Liège)"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-center"
+                />
+              </div>
             </div>
 
             {/* Cadre texte qui chevauche à gauche */}

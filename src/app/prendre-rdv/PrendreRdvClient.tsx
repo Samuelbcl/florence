@@ -1,10 +1,19 @@
 "use client";
 
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useMemo } from "react";
 import type { Prestation } from "../../lib/prestations";
-import CalEmbed from "../../components/CalEmbed";
+
+const CalEmbed = dynamic(() => import("../../components/CalEmbed"), {
+  ssr: false,
+  loading: () => (
+    <div className="min-h-[400px] flex items-center justify-center bg-card border border-border text-muted text-sm">
+      Chargement du calendrier…
+    </div>
+  ),
+});
 
 type Props = {
   prestations: Prestation[];
@@ -34,12 +43,9 @@ export default function PrendreRdvClient({ prestations }: Props) {
           <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-accent font-medium mb-3 md:mb-4">
             Naturopathe à Liège & en ligne
           </p>
-          <h1 className="font-display text-3xl sm:text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-6xl text-primary-dark leading-[1.05]">
             Prendre rendez-vous
           </h1>
-          <p className="font-script text-2xl sm:text-3xl md:text-4xl text-accent leading-none">
-            au cabinet à Trooz ou en visio
-          </p>
         </div>
       </section>
 

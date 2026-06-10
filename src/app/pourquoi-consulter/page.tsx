@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   IconChild,
@@ -20,11 +21,13 @@ export default function PourquoiConsulter() {
     <>
       {/* HERO photo, header transparent en haut, titre centré */}
       <section className="relative -mt-[100px] min-h-[400px] md:min-h-[500px] flex items-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-left md:bg-center"
-          style={{
-            backgroundImage: "url('/hero-pourquoi-consulter.png')",
-          }}
+        <Image
+          src="/hero-pourquoi-consulter.png"
+          alt="Pourquoi consulter une naturopathe — cabinet Florence Debattice à Trooz (Liège)"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-left md:object-center"
         />
         <div className="absolute inset-0 bg-background/70 md:bg-gradient-to-t md:from-background/60 md:via-background/20 md:to-background/40" />
 
@@ -35,7 +38,7 @@ export default function PourquoiConsulter() {
           <h1 className="font-display text-3xl sm:text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3">
             Pourquoi consulter une naturopathe ?
           </h1>
-          <p className="font-script text-2xl sm:text-3xl md:text-4xl text-accent leading-none">
+          <p className="font-display italic text-xl sm:text-2xl md:text-3xl text-accent leading-snug">
             Agit en préventif comme en accompagnement
           </p>
         </div>

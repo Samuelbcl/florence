@@ -11,11 +11,13 @@ export default async function Home() {
     <>
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative -mt-[100px] min-h-[480px] flex items-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-[right_80%] md:bg-[center_80%]"
-          style={{
-            backgroundImage: "url('/hero-home.png')",
-          }}
+        <Image
+          src="/hero-home.png"
+          alt="Cabinet de naturopathie de Florence Debattice à Trooz (Liège)"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[right_80%] md:object-[center_80%]"
         />
         {/* Calque blanc semi-opaque pour assurer la lisibilité par-dessus la photo */}
         <div className="absolute inset-0 bg-background/70 md:bg-gradient-to-r md:from-background/95 md:via-background/80 md:to-background/30" />

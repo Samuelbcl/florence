@@ -30,6 +30,7 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
             <li><Link href="/mes-prestations" className="hover:text-accent">Mes prestations</Link></li>
             <li><Link href="/ebook" className="hover:text-accent">Ebook</Link></li>
             <li><Link href="/blog" className="hover:text-accent">Blog</Link></li>
+            <li><Link href="/faq" className="hover:text-accent">FAQ</Link></li>
             <li><Link href="/prendre-rdv" className="hover:text-accent">Prendre RDV</Link></li>
           </ul>
         </div>
@@ -90,34 +91,17 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
         </div>
       </div>
 
-      {/* Zones desservies — utile SEO + UX */}
-      <div className="border-t border-white/15">
-        <div className="max-w-7xl mx-auto px-6 py-4 text-xs text-white/65 flex flex-wrap items-center gap-x-3 gap-y-1">
-          <span className="tracking-[0.18em] uppercase text-white/45">
-            Zones desservies
-          </span>
-          <Link href="/naturopathe-liege" className="hover:text-accent">
-            Naturopathe à Liège
-          </Link>
-          <span aria-hidden className="text-white/30">·</span>
-          <Link href="/naturopathe-trooz" className="hover:text-accent">
-            Naturopathe à Trooz
-          </Link>
-          <span aria-hidden className="text-white/30">·</span>
-          <span>Verviers</span>
-          <span aria-hidden className="text-white/30">·</span>
-          <span>Province de Liège</span>
-          <span aria-hidden className="text-white/30">·</span>
-          <span>Wallonie · Belgique</span>
-        </div>
-      </div>
-
       <div className="border-t border-white/15">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between gap-3 text-xs text-white/60">
           <span>© {new Date().getFullYear()} {settings.siteName} {settings.tagline}</span>
-          <Link href="/mentions-legales" className="hover:text-accent">
-            Mentions légales
-          </Link>
+          <div className="flex gap-4 md:gap-5">
+            <Link href="/mentions-legales" className="hover:text-accent">
+              Mentions légales
+            </Link>
+            <Link href="/politique-de-confidentialite" className="hover:text-accent">
+              Confidentialité
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

@@ -9,19 +9,23 @@ import { getSiteSettings } from "../lib/settings";
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
+  display: "swap",
 });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "700"],
+  display: "swap",
 });
 
 const sparkling = localFont({
   src: "../../public/font/SparklingValentine.ttf",
   variable: "--font-sparkling",
   display: "swap",
+  preload: true,
 });
 
 const SITE_URL = "https://flonaturopathie.com";
