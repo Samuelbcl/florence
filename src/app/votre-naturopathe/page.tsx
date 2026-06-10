@@ -49,7 +49,6 @@ export default async function VotreNaturopathe() {
       { "@type": "AdministrativeArea", name: "Province de Liège" },
       { "@type": "AdministrativeArea", name: "Wallonie" },
     ],
-    // TODO: ajouter alumniOf (école de naturopathie) + hasCredential (certification) une fois confirmé avec Florence
     sameAs: [settings.facebookUrl, settings.instagramUrl].filter(Boolean),
   };
 

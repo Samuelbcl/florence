@@ -94,14 +94,9 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
       <div className="border-t border-white/15">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between gap-3 text-xs text-white/60">
           <span>© {new Date().getFullYear()} {settings.siteName} {settings.tagline}</span>
-          <div className="flex gap-4 md:gap-5">
-            <Link href="/mentions-legales" className="hover:text-accent">
-              Mentions légales
-            </Link>
-            <Link href="/politique-de-confidentialite" className="hover:text-accent">
-              Confidentialité
-            </Link>
-          </div>
+          <Link href="/politique-de-confidentialite" className="hover:text-accent">
+            Confidentialité
+          </Link>
         </div>
       </div>
     </footer>
