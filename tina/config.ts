@@ -256,7 +256,14 @@ export default defineConfig({
           {
             type: "string",
             name: "phone",
-            label: "Téléphone (format international, ex: +32486927140)",
+            label: "Téléphone — format E.164 brut (ex: +32486927140) — pour les liens cliquables",
+            description: "Sans espaces ni séparateurs. Utilisé pour le clic-pour-appeler.",
+          },
+          {
+            type: "string",
+            name: "phoneDisplay",
+            label: "Téléphone — format d'affichage (ex: +32 486 92 71 40)",
+            description: "Version lisible affichée sur le site.",
           },
           {
             type: "string",

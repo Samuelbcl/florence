@@ -55,7 +55,7 @@ export default function ContactClient({
       <section className="bg-primary-light/20 py-14 md:py-24">
         <div className="max-w-4xl mx-auto px-5 md:px-6 text-center">
           <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-accent font-medium mb-3 md:mb-4">
-            Contact
+            Cabinet de naturopathie à Trooz (Liège)
           </p>
           <h1 className="font-display text-3xl sm:text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3">
             Restons en contact
@@ -71,8 +71,13 @@ export default function ContactClient({
         {/* Coordonnées */}
         <div className="text-center md:text-left">
           <h2 className="font-script text-3xl sm:text-4xl md:text-5xl text-primary-dark mb-5 md:mb-6 leading-none">
-            Le cabinet
+            Le cabinet à Trooz
           </h2>
+          <p className="text-sm md:text-base text-foreground/75 leading-[1.7] mb-5">
+            Cabinet de naturopathie à <strong>Trooz</strong>, à 15 min du centre
+            de <strong>Liège</strong>. Accueil également en ligne pour toute la
+            Wallonie et la Belgique.
+          </p>
           <div className="space-y-4 text-sm md:text-base text-foreground/85 leading-[1.7] md:leading-[1.8]">
             <p>
               <span className="block text-xs tracking-[0.3em] uppercase text-muted mb-1">

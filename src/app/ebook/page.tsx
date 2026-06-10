@@ -6,7 +6,7 @@ import { getAllEbooks } from "../../lib/ebooks";
 export const metadata: Metadata = {
   title: "Ebook naturopathie — Guide saisonnier",
   description:
-    "Découvrez l'ebook bien-être de Florence Debattice : un guide naturopathique complet pour retrouver forme, énergie et douceur au fil des saisons. Format PDF téléchargeable.",
+    "Ebook naturopathie de Florence Debattice (Liège) : guide bien-être pour retrouver forme et énergie au fil des 4 saisons. PDF téléchargeable.",
   alternates: { canonical: "/ebook" },
 };
 

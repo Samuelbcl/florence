@@ -24,11 +24,15 @@ export default function VotreNaturopathe() {
         <div className="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-12 pt-[90px] md:pt-[100px] pb-10">
           <div className="md:ml-auto md:max-w-md text-center">
             <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase mb-3 md:mb-4 text-primary-dark font-medium">
-              Votre naturopathe
+              Naturopathe à Liège · Trooz
             </p>
             <h1 className="font-display text-3xl sm:text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3">
               Qui suis-je ?
             </h1>
+            <p className="text-sm md:text-base text-foreground/85 leading-relaxed">
+              Florence Debattice, votre naturopathe à Trooz dans la province
+              de Liège.
+            </p>
           </div>
         </div>
       </section>

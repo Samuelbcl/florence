@@ -32,13 +32,13 @@ export default function PrendreRdvClient({ prestations }: Props) {
       <section className="bg-primary-light/20 py-12 md:py-20">
         <div className="max-w-4xl mx-auto px-5 md:px-6 text-center">
           <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-accent font-medium mb-3 md:mb-4">
-            Réservation en ligne
+            Naturopathe à Liège & en ligne
           </p>
           <h1 className="font-display text-3xl sm:text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3">
             Prendre rendez-vous
           </h1>
           <p className="font-script text-2xl sm:text-3xl md:text-4xl text-accent leading-none">
-            choisissez votre créneau
+            au cabinet à Trooz ou en visio
           </p>
         </div>
       </section>

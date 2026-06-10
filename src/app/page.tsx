@@ -20,6 +20,9 @@ export default async function Home() {
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-5 md:px-12 pt-[90px] md:pt-[100px] pb-10">
           <div className="max-w-2xl text-center md:text-left mx-auto md:mx-0">
+            <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.4em] uppercase text-primary-dark font-medium mb-3 md:mb-4">
+              Naturopathe à Liège · Trooz · Wallonie
+            </p>
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary-dark leading-[1.1] mb-1">
               Trouvez votre équilibre naturel
             </h1>
@@ -27,8 +30,10 @@ export default async function Home() {
               en douceur
             </p>
             <p className="text-sm md:text-base text-foreground leading-relaxed mb-5 max-w-xl mx-auto md:mx-0">
-              « Décodez les messages de votre corps grâce à la naturopathie
-              pour cultiver votre santé et booster votre vitalité. »
+              Florence Debattice, naturopathe certifiée à <strong>Trooz</strong>
+              {" "}(à 15 min de <strong>Liège</strong>), vous accompagne en cabinet
+              ou en visio pour décoder les messages de votre corps et cultiver
+              votre vitalité.
             </p>
             <div className="flex flex-col items-center md:items-start gap-3">
               <Link
@@ -85,7 +90,7 @@ export default async function Home() {
             <div className="relative h-[280px] sm:h-[360px] md:h-[520px] w-full">
               <Image
                 src="/presentation-home.png"
-                alt="Florence Debattice"
+                alt="Florence Debattice, naturopathe à Trooz (Liège)"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
@@ -109,15 +114,18 @@ export default async function Home() {
                 <strong className="text-primary-dark font-bold">
                   Florence Debattice
                 </strong>
-                , naturopathe. Mon parcours m&apos;a menée de la rigueur des
-                chiffres en comptabilité à l&apos;accompagnement humain, en
-                passant par l&apos;enseignement auprès de jeunes en difficulté.
+                , <strong className="text-primary-dark font-bold">naturopathe à Trooz</strong>, dans la
+                province de <strong className="text-primary-dark font-bold">Liège</strong>. Mon parcours
+                m&apos;a menée de la rigueur des chiffres en comptabilité à
+                l&apos;accompagnement humain, en passant par l&apos;enseignement
+                auprès de jeunes en difficulté.
               </p>
               <p>
                 Aujourd&apos;hui, je vous accompagne avec écoute et
-                bienveillance pour retrouver votre équilibre, par des conseils
-                personnalisés en hygiène de vie, alimentation et techniques
-                naturelles.
+                bienveillance — au cabinet à Trooz ou en visio pour toute la{" "}
+                <strong className="text-primary-dark font-bold">Wallonie et la Belgique</strong> — pour
+                retrouver votre équilibre, par des conseils personnalisés en
+                hygiène de vie, alimentation et techniques naturelles.
               </p>
             </div>
             <Link
@@ -261,7 +269,7 @@ export default async function Home() {
                 <div className="relative aspect-square overflow-hidden bg-background">
                   <Image
                     src={p.image}
-                    alt={p.title}
+                    alt={`${p.title} — Naturopathe à Trooz (Liège)`}
                     fill
                     sizes="(max-width: 640px) 85vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-contain transition-transform duration-700 group-hover:scale-105"

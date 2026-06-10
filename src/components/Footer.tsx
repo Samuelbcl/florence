@@ -57,7 +57,7 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
                 href={`tel:${settings.phone.replace(/\s/g, "")}`}
                 className="hover:text-accent"
               >
-                {settings.phone}
+                {settings.phoneDisplay || settings.phone}
               </a>
             </p>
           )}

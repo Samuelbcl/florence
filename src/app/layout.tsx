@@ -33,25 +33,17 @@ export const metadata: Metadata = {
     template: "%s | Florence Debattice",
   },
   description:
-    "Florence Debattice, naturopathe certifiée à Trooz (Liège). Consultations en cabinet ou en ligne pour toute la Wallonie et la Belgique. Accompagnement naturel pour votre équilibre et votre vitalité.",
-  keywords: [
-    "naturopathe Liège",
-    "naturopathie Liège",
-    "naturopathe Trooz",
-    "naturopathe Verviers",
-    "naturopathie Wallonie",
-    "naturopathie Belgique",
-    "naturopathe province de Liège",
-    "consultation naturopathie en ligne",
-    "hygiène de vie",
-    "phytothérapie",
-    "Florence Debattice",
-  ],
+    "Naturopathe à Liège et Trooz. Florence Debattice vous accompagne en cabinet ou en ligne pour toute la Wallonie. Premier appel découverte gratuit.",
   authors: [{ name: "Florence Debattice" }],
   creator: "Florence Debattice",
   publisher: "Florence Debattice",
   alternates: {
     canonical: "/",
+    languages: {
+      "fr-BE": "/",
+      fr: "/",
+      "x-default": "/",
+    },
   },
   openGraph: {
     type: "website",
@@ -66,7 +58,7 @@ export const metadata: Metadata = {
         url: "/portrait-florence.png",
         width: 1200,
         height: 630,
-        alt: "Florence Debattice — Naturopathe à Liège",
+        alt: "Florence Debattice — Naturopathe à Trooz (Liège)",
       },
     ],
   },
@@ -106,8 +98,10 @@ export default async function RootLayout({
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "HealthAndBeautyBusiness"],
+    "@type": ["LocalBusiness", "HealthAndBeautyBusiness", "ProfessionalService"],
+    "@id": `${SITE_URL}#localbusiness`,
     name: "Florence Debattice — Naturopathe",
+    alternateName: "Flo Naturopathie",
     description:
       "Cabinet de naturopathie à Trooz, près de Liège. Consultations en cabinet ou en ligne pour toute la Wallonie et la Belgique.",
     url: SITE_URL,
@@ -125,33 +119,55 @@ export default async function RootLayout({
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 50.5667,
-      longitude: 5.7,
+      latitude: 50.5612,
+      longitude: 5.6877,
     },
     areaServed: [
       { "@type": "City", name: "Trooz" },
       { "@type": "City", name: "Liège" },
       { "@type": "City", name: "Verviers" },
+      { "@type": "City", name: "Chaudfontaine" },
+      { "@type": "City", name: "Fléron" },
+      { "@type": "City", name: "Esneux" },
       { "@type": "AdministrativeArea", name: "Province de Liège" },
       { "@type": "AdministrativeArea", name: "Wallonie" },
       { "@type": "Country", name: "Belgique" },
     ],
     priceRange: "€€",
+    paymentAccepted: "Espèces, Bancontact, Virement bancaire",
+    currenciesAccepted: "EUR",
+    knowsLanguage: ["fr", "fr-BE"],
     knowsAbout: [
       "Naturopathie",
       "Hygiène de vie",
       "Nutrition",
       "Phytothérapie",
       "Aromathérapie",
+      "Santé hormonale féminine",
       "Conseil en santé naturelle",
       "Bilan vital",
+    ],
+    // TODO: confirmer les horaires réels avec Florence et mettre à jour
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "18:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Saturday",
+        opens: "09:00",
+        closes: "13:00",
+      },
     ],
     sameAs: [settings.facebookUrl, settings.instagramUrl].filter(Boolean),
   };
 
   return (
     <html
-      lang="fr"
+      lang="fr-BE"
       className={`${cormorant.variable} ${inter.variable} ${sparkling.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">

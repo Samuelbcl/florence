@@ -4,9 +4,9 @@ import { getAllPrestations } from "../../lib/prestations";
 import PrendreRdvClient from "./PrendreRdvClient";
 
 export const metadata: Metadata = {
-  title: "Prendre rendez-vous avec une naturopathe à Liège",
+  title: "Prendre rendez-vous — Naturopathe Liège",
   description:
-    "Réservez votre consultation de naturopathie avec Florence Debattice : au cabinet de Trooz (Liège) ou en ligne pour toute la Wallonie et la Belgique. Premier appel gratuit.",
+    "Réservez votre consultation naturopathie à Trooz (Liège) ou en ligne pour toute la Wallonie. Premier appel découverte gratuit avec Florence Debattice.",
   alternates: { canonical: "/prendre-rdv" },
 };
 

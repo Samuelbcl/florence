@@ -46,7 +46,7 @@ export default async function PrestationPage({ params }: Props) {
               <div className="relative aspect-square w-full overflow-hidden shadow-xl bg-background">
                 <Image
                   src={prestation.image}
-                  alt={prestation.title}
+                  alt={`${prestation.title} — Naturopathe à Trooz (Liège)`}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-contain"

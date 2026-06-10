@@ -9,9 +9,9 @@ import {
 } from "../../components/PersonIcons";
 
 export const metadata: Metadata = {
-  title: "Pourquoi consulter une naturopathe ?",
+  title: "Pourquoi consulter une naturopathe à Liège ?",
   description:
-    "Stress, sommeil, digestion, hormones, fatigue : découvrez pourquoi et quand consulter une naturopathe à Liège. Accompagnement préventif et complémentaire pour adultes, enfants et femmes enceintes en Wallonie.",
+    "Stress, sommeil, hormones, digestion : pourquoi consulter une naturopathe à Liège ? Accompagnement préventif pour toute la famille à Trooz et en Wallonie.",
   alternates: { canonical: "/pourquoi-consulter" },
 };
 
@@ -30,10 +30,10 @@ export default function PourquoiConsulter() {
 
         <div className="relative z-10 w-full max-w-5xl mx-auto px-5 md:px-12 pt-[90px] md:pt-[100px] pb-10 text-center">
           <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase mb-3 md:mb-4 text-primary-dark font-medium">
-            Parce que la naturopathie
+            Naturopathe à Liège — Trooz
           </p>
           <h1 className="font-display text-3xl sm:text-4xl md:text-6xl text-primary-dark leading-[1.05] mb-3">
-            Pourquoi consulter ?
+            Pourquoi consulter une naturopathe à Liège ?
           </h1>
           <p className="font-script text-2xl sm:text-3xl md:text-4xl text-accent leading-none">
             Agit en préventif comme en accompagnement
