@@ -90,6 +90,28 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
         </div>
       </div>
 
+      {/* Zones desservies — utile SEO + UX */}
+      <div className="border-t border-white/15">
+        <div className="max-w-7xl mx-auto px-6 py-4 text-xs text-white/65 flex flex-wrap items-center gap-x-3 gap-y-1">
+          <span className="tracking-[0.18em] uppercase text-white/45">
+            Zones desservies
+          </span>
+          <Link href="/naturopathe-liege" className="hover:text-accent">
+            Naturopathe à Liège
+          </Link>
+          <span aria-hidden className="text-white/30">·</span>
+          <Link href="/naturopathe-trooz" className="hover:text-accent">
+            Naturopathe à Trooz
+          </Link>
+          <span aria-hidden className="text-white/30">·</span>
+          <span>Verviers</span>
+          <span aria-hidden className="text-white/30">·</span>
+          <span>Province de Liège</span>
+          <span aria-hidden className="text-white/30">·</span>
+          <span>Wallonie · Belgique</span>
+        </div>
+      </div>
+
       <div className="border-t border-white/15">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between gap-3 text-xs text-white/60">
           <span>© {new Date().getFullYear()} {settings.siteName} {settings.tagline}</span>

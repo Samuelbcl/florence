@@ -147,19 +147,12 @@ export default async function RootLayout({
       "Conseil en santé naturelle",
       "Bilan vital",
     ],
-    // TODO: confirmer les horaires réels avec Florence et mettre à jour
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "09:00",
-        closes: "18:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Saturday",
-        opens: "09:00",
-        closes: "13:00",
+        dayOfWeek: ["Monday", "Wednesday"],
+        opens: "11:00",
+        closes: "19:30",
       },
     ],
     sameAs: [settings.facebookUrl, settings.instagramUrl].filter(Boolean),

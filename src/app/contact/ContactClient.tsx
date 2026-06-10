@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
 import type { SiteSettings } from "../../lib/settings";
+import GoogleMap from "../../components/GoogleMap";
 
 export default function ContactClient({
   settings,
@@ -158,6 +159,21 @@ export default function ContactClient({
               </button>
             </form>
           )}
+        </div>
+      </section>
+
+      {/* CARTE GOOGLE MAPS */}
+      <section className="bg-background pb-12 md:pb-20">
+        <div className="max-w-5xl mx-auto px-5 md:px-6">
+          <div className="text-center mb-6 md:mb-8">
+            <p className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-primary-dark font-medium mb-3">
+              Comment venir
+            </p>
+            <h2 className="font-script text-3xl sm:text-4xl md:text-5xl text-primary-dark leading-none">
+              Le cabinet sur la carte
+            </h2>
+          </div>
+          <GoogleMap className="aspect-[16/10] md:aspect-[21/9]" />
         </div>
       </section>
     </>

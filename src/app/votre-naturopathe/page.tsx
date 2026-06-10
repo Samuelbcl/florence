@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getSiteSettings } from "../../lib/settings";
+
+const SITE_URL = "https://flonaturopathie.com";
 
 export const metadata: Metadata = {
   title: "Qui suis-je ? — Naturopathe à Liège",
@@ -8,9 +11,53 @@ export const metadata: Metadata = {
   alternates: { canonical: "/votre-naturopathe" },
 };
 
-export default function VotreNaturopathe() {
+export default async function VotreNaturopathe() {
+  const settings = await getSiteSettings();
+
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${SITE_URL}#florence`,
+    name: "Florence Debattice",
+    givenName: "Florence",
+    familyName: "Debattice",
+    jobTitle: "Naturopathe",
+    description:
+      "Naturopathe certifiée à Trooz (province de Liège). Spécialisée en santé hormonale féminine, hygiène de vie, nutrition et accompagnement global.",
+    url: `${SITE_URL}/votre-naturopathe`,
+    image: `${SITE_URL}/portrait-florence.png`,
+    email: settings.email,
+    telephone: settings.phone,
+    worksFor: {
+      "@id": `${SITE_URL}#localbusiness`,
+    },
+    knowsAbout: [
+      "Naturopathie",
+      "Hygiène de vie",
+      "Nutrition",
+      "Phytothérapie",
+      "Aromathérapie",
+      "Santé hormonale féminine",
+      "Gestion du stress",
+      "Bilan vital",
+    ],
+    knowsLanguage: ["fr", "fr-BE"],
+    areaServed: [
+      { "@type": "City", name: "Trooz" },
+      { "@type": "City", name: "Liège" },
+      { "@type": "AdministrativeArea", name: "Province de Liège" },
+      { "@type": "AdministrativeArea", name: "Wallonie" },
+    ],
+    // TODO: ajouter alumniOf (école de naturopathie) + hasCredential (certification) une fois confirmé avec Florence
+    sameAs: [settings.facebookUrl, settings.instagramUrl].filter(Boolean),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       {/* HERO photo (objets à gauche), titre à droite, passe derrière le header transparent */}
       <section className="relative -mt-[100px] min-h-[400px] md:min-h-[520px] flex items-center overflow-hidden">
         <div

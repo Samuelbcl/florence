@@ -2,9 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { IconCouple } from "../components/PersonIcons";
 import { getAllPrestations } from "../lib/prestations";
+import { getLatestBlogPost } from "../lib/blog";
 
 export default async function Home() {
   const prestations = await getAllPrestations();
+  const latestPost = await getLatestBlogPost();
   return (
     <>
       {/* ═══════════ HERO ═══════════ */}
@@ -330,38 +332,42 @@ export default async function Home() {
       </section>
 
       {/* ═══════════ BLOG ═══════════ */}
-      <section className="bg-background py-14 md:py-28">
-        <div className="max-w-3xl mx-auto px-5 md:px-6">
-          <div className="text-center mb-8 md:mb-10">
-            <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-primary-dark mb-3 md:mb-4">
-              À découvrir sur
-            </p>
-            <h2 className="font-script text-4xl sm:text-5xl md:text-7xl text-primary-dark leading-none">
-              Mon blog
-            </h2>
-          </div>
+      {latestPost && (
+        <section className="bg-background py-14 md:py-28">
+          <div className="max-w-3xl mx-auto px-5 md:px-6">
+            <div className="text-center mb-8 md:mb-10">
+              <p className="text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-primary-dark mb-3 md:mb-4">
+                À découvrir sur
+              </p>
+              <h2 className="font-script text-4xl sm:text-5xl md:text-7xl text-primary-dark leading-none">
+                Mon blog
+              </h2>
+            </div>
 
-          <Link
-            href="/blog"
-            className="group block bg-card border border-border rounded-xl px-5 py-6 md:px-10 md:py-8 text-center hover:border-primary-dark hover:shadow-md transition-all"
-          >
-            <span className="inline-block text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">
-              Premier article
-            </span>
-            <h3 className="font-display text-xl sm:text-2xl md:text-3xl text-primary-dark mb-3 leading-snug">
-              « Tu es juste fatiguée » — et si c&apos;était faux ?
-            </h3>
-            <p className="text-sm md:text-base text-foreground/75 leading-relaxed mb-5">
-              Des femmes brillantes, actives, qui savent que quelque chose ne
-              va pas mais qu&apos;on n&apos;a jamais vraiment écoutées.
-              Découvrez l&apos;article complet sur le blog.
-            </p>
-            <span className="inline-block text-primary-dark border-b border-primary-dark pb-1 text-xs md:text-sm tracking-[0.25em] uppercase group-hover:text-primary group-hover:border-primary">
-              Lire l&apos;article ↗
-            </span>
-          </Link>
-        </div>
-      </section>
+            <Link
+              href={`/blog/${latestPost.slug}`}
+              className="group block bg-card border border-border rounded-xl px-5 py-6 md:px-10 md:py-8 text-center hover:border-primary-dark hover:shadow-md transition-all"
+            >
+              {latestPost.tag && (
+                <span className="inline-block text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">
+                  {latestPost.tag}
+                </span>
+              )}
+              <h3 className="font-display text-xl sm:text-2xl md:text-3xl text-primary-dark mb-3 leading-snug">
+                {latestPost.title}
+              </h3>
+              {latestPost.intro && (
+                <p className="text-sm md:text-base text-foreground/75 leading-relaxed mb-5">
+                  {latestPost.intro}
+                </p>
+              )}
+              <span className="inline-block text-primary-dark border-b border-primary-dark pb-1 text-xs md:text-sm tracking-[0.25em] uppercase group-hover:text-primary group-hover:border-primary">
+                Lire l&apos;article ↗
+              </span>
+            </Link>
+          </div>
+        </section>
+      )}
 
       {/* ═══════════ CTA FINAL ═══════════ */}
       <section className="relative py-16 md:py-32 overflow-hidden">

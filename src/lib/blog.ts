@@ -44,3 +44,8 @@ export async function getLatestBlogPost(): Promise<BlogPost | undefined> {
   const all = await getAllBlogPosts();
   return all[0];
 }
+
+export async function getBlogPost(slug: string): Promise<BlogPost | undefined> {
+  const all = await getAllBlogPosts();
+  return all.find((p) => p.slug === slug);
+}
