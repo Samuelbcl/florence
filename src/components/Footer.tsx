@@ -30,7 +30,6 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
             <li><Link href="/mes-prestations" className="hover:text-accent">Mes prestations</Link></li>
             <li><Link href="/ebook" className="hover:text-accent">Ebook</Link></li>
             <li><Link href="/blog" className="hover:text-accent">Blog</Link></li>
-            <li><Link href="/faq" className="hover:text-accent">FAQ</Link></li>
             <li><Link href="/prendre-rdv" className="hover:text-accent">Prendre RDV</Link></li>
           </ul>
         </div>
@@ -94,9 +93,6 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
       <div className="border-t border-white/15">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between gap-3 text-xs text-white/60">
           <span>© {new Date().getFullYear()} {settings.siteName} {settings.tagline}</span>
-          <Link href="/politique-de-confidentialite" className="hover:text-accent">
-            Confidentialité
-          </Link>
         </div>
       </div>
     </footer>
