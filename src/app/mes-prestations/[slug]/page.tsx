@@ -122,15 +122,15 @@ export default async function PrestationPage({ params }: Props) {
           </Link>
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-14 items-start">
-            {/* IMAGE À GAUCHE — carrée */}
+            {/* IMAGE À GAUCHE — format paysage 16:10 */}
             <div className="relative">
-              <div className="relative aspect-square w-full overflow-hidden shadow-xl bg-background">
+              <div className="relative aspect-[16/10] w-full overflow-hidden shadow-xl bg-background">
                 <Image
                   src={prestation.image}
                   alt={`${prestation.title} — Naturopathe à Trooz (Liège)`}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-contain"
+                  className="object-cover"
                   priority
                 />
               </div>

@@ -41,13 +41,13 @@ export default async function MesPrestations() {
               href={`/mes-prestations/${p.slug}`}
               className="group bg-white shadow-md hover:shadow-xl transition-shadow overflow-hidden flex flex-col snap-center shrink-0 w-[85%] sm:w-[60%] md:w-auto"
             >
-              <div className="relative aspect-square overflow-hidden bg-background">
+              <div className="relative aspect-[16/10] overflow-hidden bg-background">
                 <Image
                   src={p.image}
                   alt={`${p.title} — Naturopathe à Trooz (Liège)`}
                   fill
                   sizes="(max-width: 640px) 85vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-contain transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
 
