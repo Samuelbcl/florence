@@ -50,10 +50,10 @@ Le système de prise de rendez-vous est branché sur **[Cal.com](https://cal.com
    | Slug Cal.com | Durée | Description |
    |---|---|---|
    | `rdv-informatif` | 30 min | Premier échange gratuit |
-   | `consultation-initiale-en-ligne` | 90 min | 80 € — visio Google Meet |
-   | `consultation-suivi-en-ligne` | 60 min | 65 € — visio Google Meet |
-   | `consultation-initiale-cabinet` | 90 min | 80 € — au cabinet (Trooz) |
-   | `consultation-suivi-cabinet` | 60 min | 65 € — au cabinet (Trooz) |
+   | `consultation-initiale-en-ligne` | 90 min | 60 € — visio Google Meet |
+   | `consultation-suivi-en-ligne` | 60 min | 50 € — visio Google Meet |
+   | `consultation-initiale-cabinet` | 90 min | 60 € — au cabinet (Trooz) |
+   | `consultation-suivi-cabinet` | 60 min | 50 € — au cabinet (Trooz) |
 5. Pour chaque event :
    - Définir lieu (visio auto-créée pour "en ligne", adresse du cabinet pour "cabinet")
    - Activer rappels email automatiques

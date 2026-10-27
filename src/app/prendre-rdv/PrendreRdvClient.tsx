@@ -132,7 +132,7 @@ export default function PrendreRdvClient({ prestations }: Props) {
               <strong className="text-primary-dark block mb-1">
                 Tarifs
               </strong>
-              80 € la première consultation, 65 € pour un suivi. Le rendez-vous
+              60 € la première consultation, 50 € pour un suivi. Le rendez-vous
               informatif (30 min) est gratuit.
             </li>
             <li className="pl-6 border-l-2 border-accent">

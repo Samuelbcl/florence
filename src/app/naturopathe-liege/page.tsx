@@ -40,7 +40,7 @@ const FAQ = [
   {
     question: "Combien coûte une consultation de naturopathie à Liège ?",
     answer:
-      "Le premier rendez-vous d'information (30 min) est gratuit pour faire connaissance et déterminer si la naturopathie correspond à vos attentes. La consultation initiale (1h30) est à 80 €. Les consultations de suivi (1h) sont à 65 €. Tarifs identiques en cabinet à Trooz et en visio.",
+      "Le premier rendez-vous d'information (30 min) est gratuit pour faire connaissance et déterminer si la naturopathie correspond à vos attentes. La consultation initiale (1h30) est à 60 €. Les consultations de suivi (1h) sont à 50 €. Tarifs identiques en cabinet à Trooz et en visio.",
   },
 ];
 
